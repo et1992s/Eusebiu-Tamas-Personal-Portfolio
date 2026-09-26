@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "echo 'Build script not yet implemented.'"
+  },
+  "devDependencies": {
+    "eslint": "^10.10.0",
+    "eslint-config-react-app": "^7.0.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "svg-path-properties": "^2.1.0",
+    "svg-path-to-polygons": "^0.1.0"
+  }
+}

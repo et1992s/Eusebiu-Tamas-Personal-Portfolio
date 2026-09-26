@@ -1,0 +1,7738 @@
+{
+  "Abbey_Road": {
+    "id": "Abbey_Road",
+    "coordinate": [
+      2036,
+      402
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Abbey_Wood": {
+    "id": "Abbey_Wood",
+    "coordinate": [
+      2353.33,
+      704
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Acton_Central": {
+    "id": "Acton_Central",
+    "coordinate": [
+      540.5,
+      764
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Acton_Main_Line": {
+    "id": "Acton_Main_Line",
+    "coordinate": [
+      460,
+      723.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Acton_Town": {
+    "id": "Acton_Town",
+    "coordinate": [
+      445,
+      778
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Aldgate_East": {
+    "id": "Aldgate_East",
+    "coordinate": [
+      1653,
+      556
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "All_Saints": {
+    "id": "All_Saints",
+    "coordinate": [
+      1900,
+      540
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Alperton": {
+    "id": "Alperton",
+    "coordinate": [
+      384,
+      550
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Amersham": {
+    "id": "Amersham",
+    "coordinate": [
+      100,
+      60
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Anerley": {
+    "id": "Anerley",
+    "coordinate": [
+      1484,
+      1069
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Angel": {
+    "id": "Angel",
+    "coordinate": [
+      1419.782,
+      384.928
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Archway": {
+    "id": "Archway",
+    "coordinate": [
+      1074,
+      169.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Arnos_Grove": {
+    "id": "Arnos_Grove",
+    "coordinate": [
+      1245,
+      6.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Arsenal": {
+    "id": "Arsenal",
+    "coordinate": [
+      1366,
+      215
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Baker_Street": {
+    "id": "Baker_Street",
+    "coordinate": [
+      1038.5,
+      519
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Balham": {
+    "id": "Balham",
+    "coordinate": [
+      1150.5,
+      1031.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Barbican": {
+    "id": "Barbican",
+    "coordinate": [
+      1415,
+      493
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Barking": {
+    "id": "Barking",
+    "coordinate": [
+      2159.5,
+      357
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Barking_Riverside": {
+    "id": "Barking_Riverside",
+    "coordinate": [
+      2390,
+      433
+    ],
+    "lines": [
+      "gospel-oak-barking"
+    ],
+    "sources": [
+      {
+        "group": "Suffragette_line_stations",
+        "type": "line",
+        "href": "#termsuffragette"
+      }
+    ]
+  },
+  "Barkingside": {
+    "id": "Barkingside",
+    "coordinate": [
+      2111,
+      90
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Barons_Court_district": {
+    "id": "Barons_Court_district",
+    "coordinate": [
+      705,
+      869.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Barons_Court_piccadilly": {
+    "id": "Barons_Court_piccadilly",
+    "coordinate": [
+      705,
+      854.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Battersea_Park": {
+    "id": "Battersea_Park",
+    "coordinate": [
+      1110,
+      946
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Battersea_Power_Station": {
+    "id": "Battersea_Power_Station",
+    "coordinate": [
+      1135,
+      927.25
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "Bayswater_circle": {
+    "id": "Bayswater_circle",
+    "coordinate": [
+      890.969,
+      669.002
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Bayswater_district": {
+    "id": "Bayswater_district",
+    "coordinate": [
+      886.367,
+      667.049
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Beckton": {
+    "id": "Beckton",
+    "coordinate": [
+      2390,
+      513
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#termdlr"
+      }
+    ]
+  },
+  "Beckton_Park": {
+    "id": "Beckton_Park",
+    "coordinate": [
+      2315,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Becontree": {
+    "id": "Becontree",
+    "coordinate": [
+      2221,
+      314
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Belsize_Park": {
+    "id": "Belsize_Park",
+    "coordinate": [
+      1010,
+      281
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Bermondsey": {
+    "id": "Bermondsey",
+    "coordinate": [
+      1590,
+      675
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Bethnal_Green_central": {
+    "id": "Bethnal_Green_central",
+    "coordinate": [
+      1660,
+      452
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Bethnal_Green_overground": {
+    "id": "Bethnal_Green_overground",
+    "coordinate": [
+      1615,
+      478.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Blackfriars": {
+    "id": "Blackfriars",
+    "coordinate": [
+      1372,
+      639
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Blackhorse_Road": {
+    "id": "Blackhorse_Road",
+    "coordinate": [
+      1602,
+      118
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Blackwall": {
+    "id": "Blackwall",
+    "coordinate": [
+      1940,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Bond_Street": {
+    "id": "Bond_Street",
+    "coordinate": [
+      1105.75,
+      608.75
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2l"
+      }
+    ]
+  },
+  "Borough": {
+    "id": "Borough",
+    "coordinate": [
+      1479,
+      730
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Boston_Manor": {
+    "id": "Boston_Manor",
+    "coordinate": [
+      310,
+      835
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Bounds_Green": {
+    "id": "Bounds_Green",
+    "coordinate": [
+      1275,
+      29
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Bow_Church": {
+    "id": "Bow_Church",
+    "coordinate": [
+      1900,
+      418
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Bow_Road": {
+    "id": "Bow_Road",
+    "coordinate": [
+      1878,
+      434
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Brent_Cross": {
+    "id": "Brent_Cross",
+    "coordinate": [
+      828,
+      216
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Brentwood": {
+    "id": "Brentwood",
+    "coordinate": [
+      2347,
+      50.5
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Brixton": {
+    "id": "Brixton",
+    "coordinate": [
+      1305,
+      958
+    ],
+    "lines": [
+      "victoria"
+    ],
+    "sources": [
+      {
+        "group": "Victoria_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Brockley": {
+    "id": "Brockley",
+    "coordinate": [
+      1700,
+      887
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Bromley-by-Bow_district": {
+    "id": "Bromley-by-Bow_district",
+    "coordinate": [
+      1963,
+      436.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Bromley-by-Bow_hnc": {
+    "id": "Bromley-by-Bow_hnc",
+    "coordinate": [
+      1963,
+      431.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Brondesbury": {
+    "id": "Brondesbury",
+    "coordinate": [
+      816.5,
+      376
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Brondesbury_Park": {
+    "id": "Brondesbury_Park",
+    "coordinate": [
+      782.5,
+      401.5
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Bruce_Grove": {
+    "id": "Bruce_Grove",
+    "coordinate": [
+      1403,
+      76
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Buckhurst_Hill": {
+    "id": "Buckhurst_Hill",
+    "coordinate": [
+      1926,
+      16
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Burnham": {
+    "id": "Burnham",
+    "coordinate": [
+      0,
+      600
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Burnt_Oak": {
+    "id": "Burnt_Oak",
+    "coordinate": [
+      738,
+      148.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Bush_Hill_Park": {
+    "id": "Bush_Hill_Park",
+    "coordinate": [
+      1403,
+      -31.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Bushey": {
+    "id": "Bushey",
+    "coordinate": [
+      534,
+      95
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Caledonian_Road": {
+    "id": "Caledonian_Road",
+    "coordinate": [
+      1306,
+      260
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Caledonian_Road_and_Barnsbury": {
+    "id": "Caledonian_Road_and_Barnsbury",
+    "coordinate": [
+      1315,
+      295
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Cambridge_Heath": {
+    "id": "Cambridge_Heath",
+    "coordinate": [
+      1633,
+      390
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Camden_Road": {
+    "id": "Camden_Road",
+    "coordinate": [
+      1185.33,
+      266
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Camden_Town": {
+    "id": "Camden_Town",
+    "coordinate": [
+      1165,
+      281
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canada_Water": {
+    "id": "Canada_Water",
+    "coordinate": [
+      1700,
+      675
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canary_Wharf_dlr": {
+    "id": "Canary_Wharf_dlr",
+    "coordinate": [
+      1880,
+      635
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canary_Wharf_elizabeth": {
+    "id": "Canary_Wharf_elizabeth",
+    "coordinate": [
+      1893.5,
+      622
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canary_Wharf_jubilee": {
+    "id": "Canary_Wharf_jubilee",
+    "coordinate": [
+      1893.5,
+      648
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canning_Town": {
+    "id": "Canning_Town",
+    "coordinate": [
+      2026,
+      584
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2l"
+      }
+    ]
+  },
+  "Cannon_Street": {
+    "id": "Cannon_Street",
+    "coordinate": [
+      1432,
+      594
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Canonbury": {
+    "id": "Canonbury",
+    "coordinate": [
+      1505,
+      300
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "Canons_Park": {
+    "id": "Canons_Park",
+    "coordinate": [
+      651,
+      192
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Carpenders_Park": {
+    "id": "Carpenders_Park",
+    "coordinate": [
+      534,
+      131
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Castle_Green": {
+    "id": "Castle_Green",
+    "coordinate": [
+      2280,
+      433
+    ],
+    "lines": [
+      "gospel-oak-barking"
+    ],
+    "sources": [
+      {
+        "group": "Suffragette_line_stations",
+        "type": "line",
+        "href": "#stsuffragettex"
+      }
+    ]
+  },
+  "Chadwell_Heath": {
+    "id": "Chadwell_Heath",
+    "coordinate": [
+      2227,
+      140.5
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Chalfont_and_Latimer": {
+    "id": "Chalfont_and_Latimer",
+    "coordinate": [
+      140,
+      90
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Chalk_Farm": {
+    "id": "Chalk_Farm",
+    "coordinate": [
+      1090,
+      281
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Chancery_Lane": {
+    "id": "Chancery_Lane",
+    "coordinate": [
+      1330,
+      520
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Charing_Cross": {
+    "id": "Charing_Cross",
+    "coordinate": [
+      1287.32,
+      671.26
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Chesham": {
+    "id": "Chesham",
+    "coordinate": [
+      124,
+      38
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#termmetropolitan"
+      }
+    ]
+  },
+  "Cheshunt": {
+    "id": "Cheshunt",
+    "coordinate": [
+      1509,
+      -91
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Chigwell": {
+    "id": "Chigwell",
+    "coordinate": [
+      2018.5,
+      10
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Chingford": {
+    "id": "Chingford",
+    "coordinate": [
+      1682,
+      23
+    ],
+    "lines": [
+      "chingford"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#termweaver"
+      }
+    ]
+  },
+  "Chiswick_Park": {
+    "id": "Chiswick_Park",
+    "coordinate": [
+      475,
+      800.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Chorleywood": {
+    "id": "Chorleywood",
+    "coordinate": [
+      170,
+      112.5
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Clapham_Common": {
+    "id": "Clapham_Common",
+    "coordinate": [
+      1210.5,
+      986.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Clapham_High_Street": {
+    "id": "Clapham_High_Street",
+    "coordinate": [
+      1240.5,
+      946
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Clapham_Junction": {
+    "id": "Clapham_Junction",
+    "coordinate": [
+      1098.333,
+      981
+    ],
+    "lines": [
+      "west-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Clapham_North": {
+    "id": "Clapham_North",
+    "coordinate": [
+      1240.5,
+      964
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Clapham_South": {
+    "id": "Clapham_South",
+    "coordinate": [
+      1180.5,
+      1009
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Clapton": {
+    "id": "Clapton",
+    "coordinate": [
+      1682,
+      210
+    ],
+    "lines": [
+      "chingford"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Cockfosters": {
+    "id": "Cockfosters",
+    "coordinate": [
+      1155,
+      -60
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#termpiccadilly"
+      }
+    ]
+  },
+  "Colindale": {
+    "id": "Colindale",
+    "coordinate": [
+      768,
+      171
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Colliers_Wood": {
+    "id": "Colliers_Wood",
+    "coordinate": [
+      1060.5,
+      1099
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Covent_Garden": {
+    "id": "Covent_Garden",
+    "coordinate": [
+      1282,
+      573.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Crossharbour": {
+    "id": "Crossharbour",
+    "coordinate": [
+      1880,
+      720
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Crouch_Hill": {
+    "id": "Crouch_Hill",
+    "coordinate": [
+      1206,
+      138
+    ],
+    "lines": [
+      "gospel-oak-barking"
+    ],
+    "sources": [
+      {
+        "group": "Suffragette_line_stations",
+        "type": "line",
+        "href": "#stsuffragette"
+      }
+    ]
+  },
+  "Croxley": {
+    "id": "Croxley",
+    "coordinate": [
+      223,
+      130
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Crystal_Palace": {
+    "id": "Crystal_Palace",
+    "coordinate": [
+      1514,
+      1009
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Custom_House_for_ExCeL": {
+    "id": "Custom_House_for_ExCeL",
+    "coordinate": [
+      2180,
+      590
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Cutty_Sark_for_Maritime_Greenwich": {
+    "id": "Cutty_Sark_for_Maritime_Greenwich",
+    "coordinate": [
+      1880,
+      810
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Cyprus": {
+    "id": "Cyprus",
+    "coordinate": [
+      2360,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Dagenham_East": {
+    "id": "Dagenham_East",
+    "coordinate": [
+      2281,
+      269
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Dagenham_Heathway": {
+    "id": "Dagenham_Heathway",
+    "coordinate": [
+      2251,
+      291.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Dalston_Junction": {
+    "id": "Dalston_Junction",
+    "coordinate": [
+      1564.625,
+      337
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Dalston_Kingsland": {
+    "id": "Dalston_Kingsland",
+    "coordinate": [
+      1583,
+      295
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Debden": {
+    "id": "Debden",
+    "coordinate": [
+      1926,
+      -44
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Denmark_Hill": {
+    "id": "Denmark_Hill",
+    "coordinate": [
+      1440,
+      946
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Deptford_Bridge": {
+    "id": "Deptford_Bridge",
+    "coordinate": [
+      1880,
+      870
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Devons_Road": {
+    "id": "Devons_Road",
+    "coordinate": [
+      1900,
+      488
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Dollis_Hill": {
+    "id": "Dollis_Hill",
+    "coordinate": [
+      741,
+      309
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Ealing_Broadway": {
+    "id": "Ealing_Broadway",
+    "coordinate": [
+      340,
+      723.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Ealing_Common": {
+    "id": "Ealing_Common",
+    "coordinate": [
+      405,
+      748
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Earls_Court": {
+    "id": "Earls_Court",
+    "coordinate": [
+      871,
+      869.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "East_Acton": {
+    "id": "East_Acton",
+    "coordinate": [
+      580,
+      723.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "East_Finchley": {
+    "id": "East_Finchley",
+    "coordinate": [
+      1014,
+      124.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "East_Ham_district": {
+    "id": "East_Ham_district",
+    "coordinate": [
+      2131,
+      381.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "East_Ham_hnc": {
+    "id": "East_Ham_hnc",
+    "coordinate": [
+      2128,
+      377.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "East_India": {
+    "id": "East_India",
+    "coordinate": [
+      1980,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "East_Putney": {
+    "id": "East_Putney",
+    "coordinate": [
+      882,
+      1043.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Eastcote_metropolitan": {
+    "id": "Eastcote_metropolitan",
+    "coordinate": [
+      260,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stmetropolitan2"
+      }
+    ]
+  },
+  "Eastcote_piccadilly": {
+    "id": "Eastcote_piccadilly",
+    "coordinate": [
+      260,
+      299
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Edgware": {
+    "id": "Edgware",
+    "coordinate": [
+      706,
+      124.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#termnorthern"
+      }
+    ]
+  },
+  "Edgware_Road_bakerloo": {
+    "id": "Edgware_Road_bakerloo",
+    "coordinate": [
+      970,
+      545.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Edgware_Road_circle": {
+    "id": "Edgware_Road_circle",
+    "coordinate": [
+      981,
+      559
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Edmonton_Green": {
+    "id": "Edmonton_Green",
+    "coordinate": [
+      1403,
+      8.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Elephant_And_Castle": {
+    "id": "Elephant_And_Castle",
+    "coordinate": [
+      1479,
+      768
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Elm_Park": {
+    "id": "Elm_Park",
+    "coordinate": [
+      2311,
+      246.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Elverson_Road": {
+    "id": "Elverson_Road",
+    "coordinate": [
+      1880,
+      900
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Embankment": {
+    "id": "Embankment",
+    "coordinate": [
+      1302.32,
+      691.26
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Emerson_Park": {
+    "id": "Emerson_Park",
+    "coordinate": [
+      2330.25,
+      149
+    ],
+    "lines": [
+      "romford-upminster"
+    ],
+    "sources": [
+      {
+        "group": "Liberty_line_station",
+        "type": "line",
+        "href": "#stliberty"
+      }
+    ]
+  },
+  "Enfield_Town": {
+    "id": "Enfield_Town",
+    "coordinate": [
+      1403,
+      -61.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#termweaver"
+      }
+    ]
+  },
+  "Epping": {
+    "id": "Epping",
+    "coordinate": [
+      1926,
+      -104
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#termcentral"
+      }
+    ]
+  },
+  "Euston_Northern_Victoria": {
+    "id": "Euston_Northern_Victoria",
+    "coordinate": [
+      1212,
+      376.85
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Euston_Overground_NR": {
+    "id": "Euston_Overground_NR",
+    "coordinate": [
+      1172.932,
+      364.85
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Euston_Square_circle": {
+    "id": "Euston_Square_circle",
+    "coordinate": [
+      1201.92,
+      403.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Fairlop": {
+    "id": "Fairlop",
+    "coordinate": [
+      2111,
+      66
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Farringdon_circle_base": {
+    "id": "Farringdon_circle_base",
+    "coordinate": [
+      1386,
+      459.625
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnrbase"
+      }
+    ]
+  },
+  "Farringdon_circle_top": {
+    "id": "Farringdon_circle_top",
+    "coordinate": [
+      1386,
+      459.625
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnrtop"
+      }
+    ]
+  },
+  "Farringdon_elizabeth_base": {
+    "id": "Farringdon_elizabeth_base",
+    "coordinate": [
+      1386,
+      493
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intbase"
+      }
+    ]
+  },
+  "Farringdon_elizabeth_top": {
+    "id": "Farringdon_elizabeth_top",
+    "coordinate": [
+      1386,
+      493
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#inttop"
+      }
+    ]
+  },
+  "Finchley_Central": {
+    "id": "Finchley_Central",
+    "coordinate": [
+      984,
+      102
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Finchley_Road": {
+    "id": "Finchley_Road",
+    "coordinate": [
+      935,
+      381
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Finchley_Road_and_Frognal": {
+    "id": "Finchley_Road_and_Frognal",
+    "coordinate": [
+      946,
+      337
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Finsbury_Park": {
+    "id": "Finsbury_Park",
+    "coordinate": [
+      1387.5,
+      183
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Forest_Gate": {
+    "id": "Forest_Gate",
+    "coordinate": [
+      2041,
+      280
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Forest_Hill": {
+    "id": "Forest_Hill",
+    "coordinate": [
+      1644,
+      949
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Fulham_Broadway": {
+    "id": "Fulham_Broadway",
+    "coordinate": [
+      831,
+      960
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Gallions_Reach": {
+    "id": "Gallions_Reach",
+    "coordinate": [
+      2390,
+      543
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Gants_Hill": {
+    "id": "Gants_Hill",
+    "coordinate": [
+      2036,
+      120
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Gidea_Park": {
+    "id": "Gidea_Park",
+    "coordinate": [
+      2287,
+      95.5
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Gloucester_Road": {
+    "id": "Gloucester_Road",
+    "coordinate": [
+      1020.3,
+      869.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Golders_Green": {
+    "id": "Golders_Green",
+    "coordinate": [
+      858,
+      238.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Goldhawk_Road_circle": {
+    "id": "Goldhawk_Road_circle",
+    "coordinate": [
+      639.5,
+      802.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Goldhawk_Road_hnc": {
+    "id": "Goldhawk_Road_hnc",
+    "coordinate": [
+      634.5,
+      802.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Goodge_Street": {
+    "id": "Goodge_Street",
+    "coordinate": [
+      1163,
+      450
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Goodmayes": {
+    "id": "Goodmayes",
+    "coordinate": [
+      2197,
+      163
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Gospel_Oak": {
+    "id": "Gospel_Oak",
+    "coordinate": [
+      1030,
+      221
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "Grange_Hill": {
+    "id": "Grange_Hill",
+    "coordinate": [
+      2076,
+      10
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Great_Portland_Street_circle": {
+    "id": "Great_Portland_Street_circle",
+    "coordinate": [
+      1114,
+      465.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Great_Portland_Street_hnc": {
+    "id": "Great_Portland_Street_hnc",
+    "coordinate": [
+      1111,
+      461.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Great_Portland_Street_metropolitan": {
+    "id": "Great_Portland_Street_metropolitan",
+    "coordinate": [
+      1117,
+      469.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Green_Park": {
+    "id": "Green_Park",
+    "coordinate": [
+      1153,
+      672
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Greenford": {
+    "id": "Greenford",
+    "coordinate": [
+      224,
+      509.4
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Greenwich": {
+    "id": "Greenwich",
+    "coordinate": [
+      1880,
+      840
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Gunnersbury": {
+    "id": "Gunnersbury",
+    "coordinate": [
+      449,
+      836.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Hackney_Central": {
+    "id": "Hackney_Central",
+    "coordinate": [
+      1660.17,
+      295
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Hackney_Downs": {
+    "id": "Hackney_Downs",
+    "coordinate": [
+      1637.5,
+      278
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Hackney_Wick": {
+    "id": "Hackney_Wick",
+    "coordinate": [
+      1840,
+      295
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Haggerston": {
+    "id": "Haggerston",
+    "coordinate": [
+      1588.625,
+      369
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Hainault": {
+    "id": "Hainault",
+    "coordinate": [
+      2111,
+      42
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Hammersmith_circle": {
+    "id": "Hammersmith_circle",
+    "coordinate": [
+      637,
+      835
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Hammersmith_district": {
+    "id": "Hammersmith_district",
+    "coordinate": [
+      637,
+      869.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "Hampstead": {
+    "id": "Hampstead",
+    "coordinate": [
+      888,
+      261
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Hampstead_Heath": {
+    "id": "Hampstead_Heath",
+    "coordinate": [
+      979.5,
+      270
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Hanger_Lane": {
+    "id": "Hanger_Lane",
+    "coordinate": [
+      372,
+      620.4
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Hanwell": {
+    "id": "Hanwell",
+    "coordinate": [
+      240,
+      723.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Harlesden_bakerloo": {
+    "id": "Harlesden_bakerloo",
+    "coordinate": [
+      659,
+      441
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Harlesden_overground": {
+    "id": "Harlesden_overground",
+    "coordinate": [
+      662,
+      437
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Harold_Wood": {
+    "id": "Harold_Wood",
+    "coordinate": [
+      2317,
+      73
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Harringay_Green_Lanes": {
+    "id": "Harringay_Green_Lanes",
+    "coordinate": [
+      1326,
+      138
+    ],
+    "lines": [
+      "gospel-oak-barking"
+    ],
+    "sources": [
+      {
+        "group": "Suffragette_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Harrow_and_Wealdstone": {
+    "id": "Harrow_and_Wealdstone",
+    "coordinate": [
+      531.5,
+      239
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Harrow_on_the_Hill": {
+    "id": "Harrow_on_the_Hill",
+    "coordinate": [
+      440,
+      294
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Hatch_End": {
+    "id": "Hatch_End",
+    "coordinate": [
+      534,
+      167
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Hatton_Cross": {
+    "id": "Hatton_Cross",
+    "coordinate": [
+      160,
+      947.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Hayes_and_Harlington": {
+    "id": "Hayes_and_Harlington",
+    "coordinate": [
+      160,
+      723.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Headstone_Lane": {
+    "id": "Headstone_Lane",
+    "coordinate": [
+      534,
+      203
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Heathrow_23": {
+    "id": "Heathrow_23",
+    "coordinate": [
+      93,
+      956.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Heathrow_4_elizabeth": {
+    "id": "Heathrow_4_elizabeth",
+    "coordinate": [
+      105,
+      1002
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#termelizabeth"
+      }
+    ]
+  },
+  "Heathrow_4_piccadilly": {
+    "id": "Heathrow_4_piccadilly",
+    "coordinate": [
+      111,
+      984.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Heathrow_5_elizabeth": {
+    "id": "Heathrow_5_elizabeth",
+    "coordinate": [
+      30,
+      966.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#termelizabeth"
+      }
+    ]
+  },
+  "Heathrow_5_Piccadilly": {
+    "id": "Heathrow_5_Piccadilly",
+    "coordinate": [
+      30,
+      956.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#termpiccadilly"
+      }
+    ]
+  },
+  "Heathrow_Central": {
+    "id": "Heathrow_Central",
+    "coordinate": [
+      105,
+      936.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Hendon_Central": {
+    "id": "Hendon_Central",
+    "coordinate": [
+      798,
+      193.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Heron_Quays": {
+    "id": "Heron_Quays",
+    "coordinate": [
+      1880,
+      661
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "High_Barnet": {
+    "id": "High_Barnet",
+    "coordinate": [
+      854,
+      4.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#termnorthern"
+      }
+    ]
+  },
+  "High_Street_Kensington_circle": {
+    "id": "High_Street_Kensington_circle",
+    "coordinate": [
+      907.9,
+      808.2
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "High_Street_Kensington_district": {
+    "id": "High_Street_Kensington_district",
+    "coordinate": [
+      903.9,
+      811.2
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Highams_Park": {
+    "id": "Highams_Park",
+    "coordinate": [
+      1682,
+      53
+    ],
+    "lines": [
+      "chingford"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Highbury_and_Islington": {
+    "id": "Highbury_and_Islington",
+    "coordinate": [
+      1420,
+      300
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Highgate": {
+    "id": "Highgate",
+    "coordinate": [
+      1044,
+      147
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Hillingdon_metropolitan": {
+    "id": "Hillingdon_metropolitan",
+    "coordinate": [
+      60,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Hillingdon_piccadilly": {
+    "id": "Hillingdon_piccadilly",
+    "coordinate": [
+      60,
+      299
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stpiccadilly2"
+      }
+    ]
+  },
+  "Holborn": {
+    "id": "Holborn",
+    "coordinate": [
+      1290,
+      520
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Holland_Park": {
+    "id": "Holland_Park",
+    "coordinate": [
+      806,
+      723.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Holloway_Road": {
+    "id": "Holloway_Road",
+    "coordinate": [
+      1336,
+      237.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Homerton": {
+    "id": "Homerton",
+    "coordinate": [
+      1760,
+      295
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Honor_Oak_Park": {
+    "id": "Honor_Oak_Park",
+    "coordinate": [
+      1684,
+      919
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Hornchurch": {
+    "id": "Hornchurch",
+    "coordinate": [
+      2341,
+      224
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Hounslow_Central": {
+    "id": "Hounslow_Central",
+    "coordinate": [
+      220,
+      902.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Hounslow_East": {
+    "id": "Hounslow_East",
+    "coordinate": [
+      250,
+      880
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Hounslow_West": {
+    "id": "Hounslow_West",
+    "coordinate": [
+      190,
+      925
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Hoxton": {
+    "id": "Hoxton",
+    "coordinate": [
+      1606.625,
+      393
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Hyde_Park_Corner": {
+    "id": "Hyde_Park_Corner",
+    "coordinate": [
+      1114.6,
+      726
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Ickenham": {
+    "id": "Ickenham",
+    "coordinate": [
+      116.67,
+      296.5
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Ilford": {
+    "id": "Ilford",
+    "coordinate": [
+      2137,
+      208
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Imperial_Wharf": {
+    "id": "Imperial_Wharf",
+    "coordinate": [
+      910,
+      981
+    ],
+    "lines": [
+      "west-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Island_Gardens": {
+    "id": "Island_Gardens",
+    "coordinate": [
+      1880,
+      780
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Iver": {
+    "id": "Iver",
+    "coordinate": [
+      0,
+      690
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Kennington": {
+    "id": "Kennington",
+    "coordinate": [
+      1362.5,
+      866
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "Kensal_Green_bakerloo": {
+    "id": "Kensal_Green_bakerloo",
+    "coordinate": [
+      725,
+      490.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Kensal_Green_overground": {
+    "id": "Kensal_Green_overground",
+    "coordinate": [
+      728,
+      486.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Kensal_Rise": {
+    "id": "Kensal_Rise",
+    "coordinate": [
+      748.5,
+      427
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Kensington_Olympia": {
+    "id": "Kensington_Olympia",
+    "coordinate": [
+      828.5,
+      819
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Kentish_Town": {
+    "id": "Kentish_Town",
+    "coordinate": [
+      1128,
+      210
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Kentish_Town_West": {
+    "id": "Kentish_Town_West",
+    "coordinate": [
+      1106.67,
+      226
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Kenton": {
+    "id": "Kenton",
+    "coordinate": [
+      531.5,
+      274
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Kew_Gardens_district": {
+    "id": "Kew_Gardens_district",
+    "coordinate": [
+      401,
+      875.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Kew_Gardens_overground": {
+    "id": "Kew_Gardens_overground",
+    "coordinate": [
+      398,
+      871.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "Kilburn": {
+    "id": "Kilburn",
+    "coordinate": [
+      861,
+      309
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Kilburn_High_Road": {
+    "id": "Kilburn_High_Road",
+    "coordinate": [
+      862,
+      501.5
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Kilburn_Park": {
+    "id": "Kilburn_Park",
+    "coordinate": [
+      789,
+      538.5
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "King_George_V": {
+    "id": "King_George_V",
+    "coordinate": [
+      2212,
+      695
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Kings_Cross_St_Pancras": {
+    "id": "Kings_Cross_St_Pancras",
+    "coordinate": [
+      1290,
+      397
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap3nr"
+      }
+    ]
+  },
+  "Kingsbury": {
+    "id": "Kingsbury",
+    "coordinate": [
+      651,
+      252
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Knightsbridge": {
+    "id": "Knightsbridge",
+    "coordinate": [
+      1114.6,
+      766
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Ladbroke_Grove_circle": {
+    "id": "Ladbroke_Grove_circle",
+    "coordinate": [
+      689.5,
+      672
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Ladbroke_Grove_hnc": {
+    "id": "Ladbroke_Grove_hnc",
+    "coordinate": [
+      686.5,
+      668
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Lambeth_North": {
+    "id": "Lambeth_North",
+    "coordinate": [
+      1420,
+      768
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Lancaster_Gate": {
+    "id": "Lancaster_Gate",
+    "coordinate": [
+      996,
+      691
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Langdon_Park": {
+    "id": "Langdon_Park",
+    "coordinate": [
+      1900,
+      514
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Langley": {
+    "id": "Langley",
+    "coordinate": [
+      0,
+      660
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Latimer_Road_circle": {
+    "id": "Latimer_Road_circle",
+    "coordinate": [
+      655.5,
+      697.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Latimer_Road_hnc": {
+    "id": "Latimer_Road_hnc",
+    "coordinate": [
+      652.5,
+      693.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Leicester_Square": {
+    "id": "Leicester_Square",
+    "coordinate": [
+      1255.5,
+      595
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Lewisham": {
+    "id": "Lewisham",
+    "coordinate": [
+      1880,
+      930
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Leyton": {
+    "id": "Leyton",
+    "coordinate": [
+      1947,
+      214
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Leyton_Midland_Road": {
+    "id": "Leyton_Midland_Road",
+    "coordinate": [
+      1860,
+      138
+    ],
+    "lines": [
+      "gospel-oak-barking"
+    ],
+    "sources": [
+      {
+        "group": "Suffragette_line_stations",
+        "type": "line",
+        "href": "#stsuffragette"
+      }
+    ]
+  },
+  "Leytonstone": {
+    "id": "Leytonstone",
+    "coordinate": [
+      1926,
+      148
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Leytonstone_High_Road": {
+    "id": "Leytonstone_High_Road",
+    "coordinate": [
+      1940,
+      186
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Limehouse": {
+    "id": "Limehouse",
+    "coordinate": [
+      1747,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Liverpool_Street_circle_base": {
+    "id": "Liverpool_Street_circle_base",
+    "coordinate": [
+      1564,
+      500
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intbase"
+      }
+    ]
+  },
+  "Liverpool_Street_circle_top": {
+    "id": "Liverpool_Street_circle_top",
+    "coordinate": [
+      1564,
+      500
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#inttop"
+      }
+    ]
+  },
+  "Liverpool_Street_elizabeth_base": {
+    "id": "Liverpool_Street_elizabeth_base",
+    "coordinate": [
+      1521.5,
+      516
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intbase"
+      }
+    ]
+  },
+  "Liverpool_Street_elizabeth_top": {
+    "id": "Liverpool_Street_elizabeth_top",
+    "coordinate": [
+      1521.5,
+      516
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#inttop"
+      }
+    ]
+  },
+  "Liverpool_Street_nr": {
+    "id": "Liverpool_Street_nr",
+    "coordinate": [
+      1564,
+      480
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "London_Bridge": {
+    "id": "London_Bridge",
+    "coordinate": [
+      1479,
+      675
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "London_City_Airport": {
+    "id": "London_City_Airport",
+    "coordinate": [
+      2172,
+      665
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "London_Fields": {
+    "id": "London_Fields",
+    "coordinate": [
+      1633,
+      355
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Loughton": {
+    "id": "Loughton",
+    "coordinate": [
+      1926,
+      -14
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Maida_Vale": {
+    "id": "Maida_Vale",
+    "coordinate": [
+      815,
+      558
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Maidenhead": {
+    "id": "Maidenhead",
+    "coordinate": [
+      0,
+      540
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Manor_House": {
+    "id": "Manor_House",
+    "coordinate": [
+      1382.5,
+      159
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Manor_Park": {
+    "id": "Manor_Park",
+    "coordinate": [
+      2090,
+      243.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Mansion_House_circle": {
+    "id": "Mansion_House_circle",
+    "coordinate": [
+      1400,
+      615
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Mansion_House_district": {
+    "id": "Mansion_House_district",
+    "coordinate": [
+      1403,
+      619
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Marble_Arch": {
+    "id": "Marble_Arch",
+    "coordinate": [
+      1048,
+      652
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Maryland": {
+    "id": "Maryland",
+    "coordinate": [
+      2013,
+      301
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Marylebone": {
+    "id": "Marylebone",
+    "coordinate": [
+      1001,
+      522
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Mile_End": {
+    "id": "Mile_End",
+    "coordinate": [
+      1812.5,
+      445
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Mill_Hill_East": {
+    "id": "Mill_Hill_East",
+    "coordinate": [
+      913,
+      90
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#termnorthern"
+      }
+    ]
+  },
+  "Moor_Park": {
+    "id": "Moor_Park",
+    "coordinate": [
+      240,
+      165
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Moorgate_base": {
+    "id": "Moorgate_base",
+    "coordinate": [
+      1479,
+      500
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnrbase"
+      }
+    ]
+  },
+  "Moorgate_mid": {
+    "id": "Moorgate_mid",
+    "coordinate": [
+      1479,
+      500
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnrtop"
+      }
+    ]
+  },
+  "Moorgate_top": {
+    "id": "Moorgate_top",
+    "coordinate": [
+      1479,
+      500
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#nr"
+      }
+    ]
+  },
+  "Morden": {
+    "id": "Morden",
+    "coordinate": [
+      1000.5,
+      1144
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#termnorthern"
+      }
+    ]
+  },
+  "Mornington_Crescent": {
+    "id": "Mornington_Crescent",
+    "coordinate": [
+      1202,
+      332
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Mudchute": {
+    "id": "Mudchute",
+    "coordinate": [
+      1880,
+      750
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Neasden": {
+    "id": "Neasden",
+    "coordinate": [
+      681,
+      309
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "New_Cross": {
+    "id": "New_Cross",
+    "coordinate": [
+      1744.67,
+      818.5
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "New_Cross_Gate": {
+    "id": "New_Cross_Gate",
+    "coordinate": [
+      1700,
+      852
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Newbury_Park": {
+    "id": "Newbury_Park",
+    "coordinate": [
+      2076,
+      120
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Nine_Elms": {
+    "id": "Nine_Elms",
+    "coordinate": [
+      1201.5,
+      902
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "North_Acton": {
+    "id": "North_Acton",
+    "coordinate": [
+      483,
+      703.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "North_Ealing": {
+    "id": "North_Ealing",
+    "coordinate": [
+      384,
+      670
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "North_Greenwich": {
+    "id": "North_Greenwich",
+    "coordinate": [
+      2000,
+      648
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "North_Harrow": {
+    "id": "North_Harrow",
+    "coordinate": [
+      360,
+      255
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "North_Wembley_bakerloo": {
+    "id": "North_Wembley_bakerloo",
+    "coordinate": [
+      575,
+      378
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "North_Wembley_overground": {
+    "id": "North_Wembley_overground",
+    "coordinate": [
+      578,
+      374
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Northfields": {
+    "id": "Northfields",
+    "coordinate": [
+      340,
+      812.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Northolt": {
+    "id": "Northolt",
+    "coordinate": [
+      158,
+      459.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Northwick_Park": {
+    "id": "Northwick_Park",
+    "coordinate": [
+      516.5,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Northwood": {
+    "id": "Northwood",
+    "coordinate": [
+      270,
+      187.5
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Northwood_Hills": {
+    "id": "Northwood_Hills",
+    "coordinate": [
+      300,
+      210
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Norwood_Junction": {
+    "id": "Norwood_Junction",
+    "coordinate": [
+      1444,
+      1099
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Notting_Hill_Gate": {
+    "id": "Notting_Hill_Gate",
+    "coordinate": [
+      877.3,
+      723.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Oakwood": {
+    "id": "Oakwood",
+    "coordinate": [
+      1185,
+      -38.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Old_Oak_Common": {
+    "id": "Old_Oak_Common",
+    "coordinate": [
+      610,
+      638.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnrx"
+      }
+    ]
+  },
+  "Old_Street": {
+    "id": "Old_Street",
+    "coordinate": [
+      1466.942,
+      424.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Osterley": {
+    "id": "Osterley",
+    "coordinate": [
+      280,
+      857.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Oval": {
+    "id": "Oval",
+    "coordinate": [
+      1328.5,
+      898
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Oxford_Circus": {
+    "id": "Oxford_Circus",
+    "coordinate": [
+      1153,
+      573
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Paddington_deep": {
+    "id": "Paddington_deep",
+    "coordinate": [
+      932.434,
+      608.174
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#inttop"
+      }
+    ]
+  },
+  "Paddington_deep_base": {
+    "id": "Paddington_deep_base",
+    "coordinate": [
+      932.434,
+      608.174
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intbase"
+      }
+    ]
+  },
+  "Paddington_elizabeth": {
+    "id": "Paddington_elizabeth",
+    "coordinate": [
+      902.238,
+      596
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#inttop"
+      }
+    ]
+  },
+  "Paddington_elizabeth_base": {
+    "id": "Paddington_elizabeth_base",
+    "coordinate": [
+      902.238,
+      596
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intbase"
+      }
+    ]
+  },
+  "Paddington_nr": {
+    "id": "Paddington_nr",
+    "coordinate": [
+      921,
+      588
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#nr"
+      }
+    ]
+  },
+  "Paddington_osi": {
+    "id": "Paddington_osi",
+    "coordinate": [
+      0,
+      0
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#Paddington_osi_base"
+      }
+    ]
+  },
+  "Paddington_surface": {
+    "id": "Paddington_surface",
+    "coordinate": [
+      921,
+      574
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Park_Royal": {
+    "id": "Park_Royal",
+    "coordinate": [
+      384,
+      643
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Parsons_Green": {
+    "id": "Parsons_Green",
+    "coordinate": [
+      840,
+      987.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Peckham_Rye": {
+    "id": "Peckham_Rye",
+    "coordinate": [
+      1524,
+      917
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Penge_West": {
+    "id": "Penge_West",
+    "coordinate": [
+      1524,
+      1039
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Perivale": {
+    "id": "Perivale",
+    "coordinate": [
+      304,
+      569.4
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Piccadilly_Circus": {
+    "id": "Piccadilly_Circus",
+    "coordinate": [
+      1200.5,
+      636.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Pimlico": {
+    "id": "Pimlico",
+    "coordinate": [
+      1206,
+      826
+    ],
+    "lines": [
+      "victoria"
+    ],
+    "sources": [
+      {
+        "group": "Victoria_line_stations",
+        "type": "line",
+        "href": "#stvictoria"
+      }
+    ]
+  },
+  "Pinner": {
+    "id": "Pinner",
+    "coordinate": [
+      330,
+      232.5
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Plaistow_district": {
+    "id": "Plaistow_district",
+    "coordinate": [
+      2071,
+      426.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Plaistow_hnc": {
+    "id": "Plaistow_hnc",
+    "coordinate": [
+      2068,
+      422.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Pontoon_Dock": {
+    "id": "Pontoon_Dock",
+    "coordinate": [
+      2132,
+      635
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Poplar": {
+    "id": "Poplar",
+    "coordinate": [
+      1893.5,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Preston_Road": {
+    "id": "Preston_Road",
+    "coordinate": [
+      590,
+      294
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Prince_Regent": {
+    "id": "Prince_Regent",
+    "coordinate": [
+      2225,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Pudding_Mill_Lane": {
+    "id": "Pudding_Mill_Lane",
+    "coordinate": [
+      1940,
+      368
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Putney_Bridge": {
+    "id": "Putney_Bridge",
+    "coordinate": [
+      861,
+      1015.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Queens_Park": {
+    "id": "Queens_Park",
+    "coordinate": [
+      760.5,
+      514
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Queens_Road_Peckham": {
+    "id": "Queens_Road_Peckham",
+    "coordinate": [
+      1584,
+      872
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Queensbury": {
+    "id": "Queensbury",
+    "coordinate": [
+      651,
+      222
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Queensway": {
+    "id": "Queensway",
+    "coordinate": [
+      930,
+      723.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Ravenscourt_Park": {
+    "id": "Ravenscourt_Park",
+    "coordinate": [
+      587,
+      869.4
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Rayners_Lane": {
+    "id": "Rayners_Lane",
+    "coordinate": [
+      300,
+      296.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Reading": {
+    "id": "Reading",
+    "coordinate": [
+      0,
+      480
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Rectory_Road": {
+    "id": "Rectory_Road",
+    "coordinate": [
+      1587,
+      234
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Redbridge": {
+    "id": "Redbridge",
+    "coordinate": [
+      1996,
+      120
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Regents_Park": {
+    "id": "Regents_Park",
+    "coordinate": [
+      1091,
+      517
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Richmond": {
+    "id": "Richmond",
+    "coordinate": [
+      360.5,
+      903.4
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Rickmansworth": {
+    "id": "Rickmansworth",
+    "coordinate": [
+      200,
+      135
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Roding_Valley": {
+    "id": "Roding_Valley",
+    "coordinate": [
+      1961,
+      10
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Romford": {
+    "id": "Romford",
+    "coordinate": [
+      2257,
+      118
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Rotherhithe": {
+    "id": "Rotherhithe",
+    "coordinate": [
+      1700,
+      652.5
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Royal_Albert": {
+    "id": "Royal_Albert",
+    "coordinate": [
+      2270,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Royal_Oak_circle": {
+    "id": "Royal_Oak_circle",
+    "coordinate": [
+      800,
+      620
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Royal_Oak_hnc": {
+    "id": "Royal_Oak_hnc",
+    "coordinate": [
+      800,
+      615
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Royal_Victoria": {
+    "id": "Royal_Victoria",
+    "coordinate": [
+      2135,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Ruislip_Gardens": {
+    "id": "Ruislip_Gardens",
+    "coordinate": [
+      142,
+      344
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Ruislip_Manor_metropolitan": {
+    "id": "Ruislip_Manor_metropolitan",
+    "coordinate": [
+      220,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "Ruislip_Manor_piccadilly": {
+    "id": "Ruislip_Manor_piccadilly",
+    "coordinate": [
+      220,
+      299
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stpiccadilly2"
+      }
+    ]
+  },
+  "Ruislip_metropolitan": {
+    "id": "Ruislip_metropolitan",
+    "coordinate": [
+      180,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stmetropolitan2"
+      }
+    ]
+  },
+  "Ruislip_piccadilly": {
+    "id": "Ruislip_piccadilly",
+    "coordinate": [
+      180,
+      299
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Russell_Square": {
+    "id": "Russell_Square",
+    "coordinate": [
+      1290,
+      450
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Seven_Kings": {
+    "id": "Seven_Kings",
+    "coordinate": [
+      2167,
+      185.5
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Seven_Sisters": {
+    "id": "Seven_Sisters",
+    "coordinate": [
+      1426.67,
+      113
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Shadwell": {
+    "id": "Shadwell",
+    "coordinate": [
+      1700,
+      585
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Shenfield": {
+    "id": "Shenfield",
+    "coordinate": [
+      2377,
+      28
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Shepherds_Bush_Market_circle": {
+    "id": "Shepherds_Bush_Market_circle",
+    "coordinate": [
+      639.5,
+      772.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Shepherds_Bush_Market_hnc": {
+    "id": "Shepherds_Bush_Market_hnc",
+    "coordinate": [
+      634.5,
+      772.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Shepherds_Bush_nr": {
+    "id": "Shepherds_Bush_nr",
+    "coordinate": [
+      706,
+      708.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Shepherds_Bush_tube": {
+    "id": "Shepherds_Bush_tube",
+    "coordinate": [
+      696,
+      723.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Shoreditch_High_Street": {
+    "id": "Shoreditch_High_Street",
+    "coordinate": [
+      1624.625,
+      417
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Silver_Street": {
+    "id": "Silver_Street",
+    "coordinate": [
+      1403,
+      31
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Sloane_Square_circle": {
+    "id": "Sloane_Square_circle",
+    "coordinate": [
+      1133,
+      815
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Sloane_Square_district": {
+    "id": "Sloane_Square_district",
+    "coordinate": [
+      1136,
+      819
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Slough": {
+    "id": "Slough",
+    "coordinate": [
+      0,
+      630
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Snaresbrook": {
+    "id": "Snaresbrook",
+    "coordinate": [
+      1926,
+      106
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "South_Acton": {
+    "id": "South_Acton",
+    "coordinate": [
+      510.5,
+      786.5
+    ],
+    "lines": [
+      "north-london"
+    ],
+    "sources": [
+      {
+        "group": "Mildmay_line_stations",
+        "type": "line",
+        "href": "#stmildmay"
+      }
+    ]
+  },
+  "South_Ealing": {
+    "id": "South_Ealing",
+    "coordinate": [
+      370,
+      790
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "South_Hampstead": {
+    "id": "South_Hampstead",
+    "coordinate": [
+      924,
+      455
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "South_Harrow": {
+    "id": "South_Harrow",
+    "coordinate": [
+      384,
+      370
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "South_Kensington": {
+    "id": "South_Kensington",
+    "coordinate": [
+      1083.059,
+      854.087
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2"
+      }
+    ]
+  },
+  "South_Kenton_bakerloo": {
+    "id": "South_Kenton_bakerloo",
+    "coordinate": [
+      547,
+      357
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "South_Kenton_overground": {
+    "id": "South_Kenton_overground",
+    "coordinate": [
+      550,
+      353
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "South_Quay": {
+    "id": "South_Quay",
+    "coordinate": [
+      1880,
+      690
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "South_Ruislip": {
+    "id": "South_Ruislip",
+    "coordinate": [
+      142,
+      394
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "South_Tottenham": {
+    "id": "South_Tottenham",
+    "coordinate": [
+      1426.67,
+      138
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "South_Wimbledon": {
+    "id": "South_Wimbledon",
+    "coordinate": [
+      1030.5,
+      1121.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "South_Woodford": {
+    "id": "South_Woodford",
+    "coordinate": [
+      1926,
+      76
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Southall": {
+    "id": "Southall",
+    "coordinate": [
+      200,
+      723.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Southbury": {
+    "id": "Southbury",
+    "coordinate": [
+      1419,
+      -23.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Southfields": {
+    "id": "Southfields",
+    "coordinate": [
+      900,
+      1067.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Southgate": {
+    "id": "Southgate",
+    "coordinate": [
+      1215,
+      -16
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Southwark": {
+    "id": "Southwark",
+    "coordinate": [
+      1380.2,
+      699.6
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "St_James_Street": {
+    "id": "St_James_Street",
+    "coordinate": [
+      1682,
+      170
+    ],
+    "lines": [
+      "chingford"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "St_Jamess_Park_circle": {
+    "id": "St_Jamess_Park_circle",
+    "coordinate": [
+      1207,
+      759.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "St_Jamess_Park_district": {
+    "id": "St_Jamess_Park_district",
+    "coordinate": [
+      1210,
+      763.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "St_Johns_Wood": {
+    "id": "St_Johns_Wood",
+    "coordinate": [
+      995,
+      461
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "St_Pauls": {
+    "id": "St_Pauls",
+    "coordinate": [
+      1410,
+      540
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Stamford_Brook": {
+    "id": "Stamford_Brook",
+    "coordinate": [
+      545,
+      853
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Stamford_Hill": {
+    "id": "Stamford_Hill",
+    "coordinate": [
+      1527,
+      189
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Stanmore": {
+    "id": "Stanmore",
+    "coordinate": [
+      651,
+      162
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#termjubilee"
+      }
+    ]
+  },
+  "Star_Lane": {
+    "id": "Star_Lane",
+    "coordinate": [
+      2036,
+      510
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Stepney_Green_district": {
+    "id": "Stepney_Green_district",
+    "coordinate": [
+      1755.5,
+      494
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Stepney_Green_hnc": {
+    "id": "Stepney_Green_hnc",
+    "coordinate": [
+      1752.5,
+      490
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Stockwell": {
+    "id": "Stockwell",
+    "coordinate": [
+      1284.5,
+      931
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Stoke_Newington": {
+    "id": "Stoke_Newington",
+    "coordinate": [
+      1557,
+      211.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Stonebridge_Park_bakerloo": {
+    "id": "Stonebridge_Park_bakerloo",
+    "coordinate": [
+      631,
+      420
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Stonebridge_Park_overground": {
+    "id": "Stonebridge_Park_overground",
+    "coordinate": [
+      634,
+      416
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Bakerloo_Lioness_shared_stations",
+        "type": "shared",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Stratford": {
+    "id": "Stratford",
+    "coordinate": [
+      1978.375,
+      318.25
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2nr"
+      }
+    ]
+  },
+  "Stratford_High_Street": {
+    "id": "Stratford_High_Street",
+    "coordinate": [
+      2017.5,
+      362
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Stratford_International": {
+    "id": "Stratford_International",
+    "coordinate": [
+      1950,
+      272
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Sudbury_Hill": {
+    "id": "Sudbury_Hill",
+    "coordinate": [
+      384,
+      430
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Sudbury_Town": {
+    "id": "Sudbury_Town",
+    "coordinate": [
+      384,
+      490
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Surrey_Canal": {
+    "id": "Surrey_Canal",
+    "coordinate": [
+      1644,
+      827
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrushx"
+      }
+    ]
+  },
+  "Surrey_Quays": {
+    "id": "Surrey_Quays",
+    "coordinate": [
+      1700,
+      730
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Swiss_Cottage": {
+    "id": "Swiss_Cottage",
+    "coordinate": [
+      957.5,
+      411
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Sydenham": {
+    "id": "Sydenham",
+    "coordinate": [
+      1604,
+      979
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Taplow": {
+    "id": "Taplow",
+    "coordinate": [
+      0,
+      570
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "Temple_circle": {
+    "id": "Temple_circle",
+    "coordinate": [
+      1336,
+      663
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Temple_district": {
+    "id": "Temple_district",
+    "coordinate": [
+      1339,
+      667
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Theobalds_Grove": {
+    "id": "Theobalds_Grove",
+    "coordinate": [
+      1479,
+      -68.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Theydon_Bois": {
+    "id": "Theydon_Bois",
+    "coordinate": [
+      1926,
+      -74
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Tooting_Bec": {
+    "id": "Tooting_Bec",
+    "coordinate": [
+      1120.5,
+      1054
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Tooting_Broadway": {
+    "id": "Tooting_Broadway",
+    "coordinate": [
+      1090.5,
+      1076.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Tottenham_Court_Road": {
+    "id": "Tottenham_Court_Road",
+    "coordinate": [
+      1208,
+      531.75
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#cap2l"
+      }
+    ]
+  },
+  "Tottenham_Hale": {
+    "id": "Tottenham_Hale",
+    "coordinate": [
+      1530,
+      113
+    ],
+    "lines": [
+      "victoria"
+    ],
+    "sources": [
+      {
+        "group": "Victoria_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Totteridge_And_Whetstone": {
+    "id": "Totteridge_And_Whetstone",
+    "coordinate": [
+      884,
+      27
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Tower_Gateway": {
+    "id": "Tower_Gateway",
+    "coordinate": [
+      1601.5,
+      585
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Tower_Hill": {
+    "id": "Tower_Hill",
+    "coordinate": [
+      1563,
+      585
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Tufnell_Park": {
+    "id": "Tufnell_Park",
+    "coordinate": [
+      1108,
+      195
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Turkey_Street": {
+    "id": "Turkey_Street",
+    "coordinate": [
+      1449,
+      -46
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Turnham_Green_district": {
+    "id": "Turnham_Green_district",
+    "coordinate": [
+      521,
+      835
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Turnham_Green_piccadilly": {
+    "id": "Turnham_Green_piccadilly",
+    "coordinate": [
+      530,
+      823
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadillye"
+      }
+    ]
+  },
+  "Turnpike_Lane": {
+    "id": "Turnpike_Lane",
+    "coordinate": [
+      1335,
+      74
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Twyford": {
+    "id": "Twyford",
+    "coordinate": [
+      0,
+      510
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Upminster": {
+    "id": "Upminster",
+    "coordinate": [
+      2401,
+      179
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Upminster_Bridge": {
+    "id": "Upminster_Bridge",
+    "coordinate": [
+      2371,
+      201.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Upney": {
+    "id": "Upney",
+    "coordinate": [
+      2191,
+      336.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Upper_Holloway": {
+    "id": "Upper_Holloway",
+    "coordinate": [
+      1107,
+      169.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Upton_Park_district": {
+    "id": "Upton_Park_district",
+    "coordinate": [
+      2101,
+      404
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Upton_Park_hnc": {
+    "id": "Upton_Park_hnc",
+    "coordinate": [
+      2098,
+      400
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Uxbridge_metropolitan": {
+    "id": "Uxbridge_metropolitan",
+    "coordinate": [
+      20,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#termmetropolitan2"
+      }
+    ]
+  },
+  "Uxbridge_piccadilly": {
+    "id": "Uxbridge_piccadilly",
+    "coordinate": [
+      20,
+      299
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Metropolitan_Piccadilly_stations_shared",
+        "type": "shared",
+        "href": "#termpiccadilly"
+      }
+    ]
+  },
+  "Vauxhall": {
+    "id": "Vauxhall",
+    "coordinate": [
+      1236,
+      866
+    ],
+    "lines": [
+      "victoria"
+    ],
+    "sources": [
+      {
+        "group": "Victoria_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Victoria": {
+    "id": "Victoria",
+    "coordinate": [
+      1176,
+      786
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Victoria_Coach_Station": {
+    "id": "Victoria_Coach_Station",
+    "coordinate": [
+      1164,
+      810
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#bus"
+      }
+    ]
+  },
+  "Walthamstow_Central": {
+    "id": "Walthamstow_Central",
+    "coordinate": [
+      1682,
+      113
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Walthamstow_Queens_Road": {
+    "id": "Walthamstow_Queens_Road",
+    "coordinate": [
+      1700.75,
+      138
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Wandsworth_Road": {
+    "id": "Wandsworth_Road",
+    "coordinate": [
+      1180,
+      946
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Wanstead": {
+    "id": "Wanstead",
+    "coordinate": [
+      1956,
+      120
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "Wanstead_Park": {
+    "id": "Wanstead_Park",
+    "coordinate": [
+      2041,
+      258
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Wapping": {
+    "id": "Wapping",
+    "coordinate": [
+      1700,
+      622.5
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#stwindrush"
+      }
+    ]
+  },
+  "Warren_Street": {
+    "id": "Warren_Street",
+    "coordinate": [
+      1159.5,
+      403.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Warwick_Avenue": {
+    "id": "Warwick_Avenue",
+    "coordinate": [
+      841,
+      577.5
+    ],
+    "lines": [
+      "bakerloo"
+    ],
+    "sources": [
+      {
+        "group": "Bakerloo_line_stations",
+        "type": "line",
+        "href": "#stbakerloo"
+      }
+    ]
+  },
+  "Waterloo": {
+    "id": "Waterloo",
+    "coordinate": [
+      1334.36,
+      733.98
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Watford": {
+    "id": "Watford",
+    "coordinate": [
+      223,
+      80
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#termmetropolitan"
+      }
+    ]
+  },
+  "Watford_High_Street": {
+    "id": "Watford_High_Street",
+    "coordinate": [
+      534,
+      50
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#stlioness"
+      }
+    ]
+  },
+  "Watford_Junction": {
+    "id": "Watford_Junction",
+    "coordinate": [
+      534,
+      20
+    ],
+    "lines": [
+      "watford-dc"
+    ],
+    "sources": [
+      {
+        "group": "Lioness_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Wembley_Central": {
+    "id": "Wembley_Central",
+    "coordinate": [
+      606.5,
+      398.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Wembley_Park": {
+    "id": "Wembley_Park",
+    "coordinate": [
+      651,
+      294
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "West_Acton": {
+    "id": "West_Acton",
+    "coordinate": [
+      407,
+      694.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#stcentral"
+      }
+    ]
+  },
+  "West_Brompton": {
+    "id": "West_Brompton",
+    "coordinate": [
+      828.5,
+      920
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Croydon": {
+    "id": "West_Croydon",
+    "coordinate": [
+      1404,
+      1129
+    ],
+    "lines": [
+      "east-london"
+    ],
+    "sources": [
+      {
+        "group": "Windrush_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Drayton": {
+    "id": "West_Drayton",
+    "coordinate": [
+      86,
+      723.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#stelizabeth"
+      }
+    ]
+  },
+  "West_Ealing": {
+    "id": "West_Ealing",
+    "coordinate": [
+      294.667,
+      723.9
+    ],
+    "lines": [
+      "elizabeth"
+    ],
+    "sources": [
+      {
+        "group": "Elizabeth_Line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Finchley": {
+    "id": "West_Finchley",
+    "coordinate": [
+      944,
+      72
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "West_Ham": {
+    "id": "West_Ham",
+    "coordinate": [
+      2031,
+      434
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Hampstead": {
+    "id": "West_Hampstead",
+    "coordinate": [
+      912.5,
+      351
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Harrow": {
+    "id": "West_Harrow",
+    "coordinate": [
+      380,
+      294
+    ],
+    "lines": [
+      "metropolitan"
+    ],
+    "sources": [
+      {
+        "group": "Metropolitan_line_stations",
+        "type": "line",
+        "href": "#stmetropolitan"
+      }
+    ]
+  },
+  "West_India_Quay": {
+    "id": "West_India_Quay",
+    "coordinate": [
+      1880,
+      608.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "West_Kensington": {
+    "id": "West_Kensington",
+    "coordinate": [
+      780,
+      869.4
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "West_Ruislip": {
+    "id": "West_Ruislip",
+    "coordinate": [
+      142,
+      277.5
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "West_Silvertown": {
+    "id": "West_Silvertown",
+    "coordinate": [
+      2092,
+      605
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Westbourne_Park_circle": {
+    "id": "Westbourne_Park_circle",
+    "coordinate": [
+      725.5,
+      645
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#stcircle"
+      }
+    ]
+  },
+  "Westbourne_Park_hnc": {
+    "id": "Westbourne_Park_hnc",
+    "coordinate": [
+      722.5,
+      641
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Circle_line_stations",
+        "type": "line",
+        "href": "#sthnc"
+      }
+    ]
+  },
+  "Westferry": {
+    "id": "Westferry",
+    "coordinate": [
+      1800,
+      585
+    ],
+    "lines": [
+      "dlr"
+    ],
+    "sources": [
+      {
+        "group": "Docklands_Light_Railway_stations",
+        "type": "line",
+        "href": "#stdlr"
+      }
+    ]
+  },
+  "Westminster": {
+    "id": "Westminster",
+    "coordinate": [
+      1236,
+      741
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "White_City": {
+    "id": "White_City",
+    "coordinate": [
+      624,
+      723.9
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "White_Hart_Lane": {
+    "id": "White_Hart_Lane",
+    "coordinate": [
+      1403,
+      53.5
+    ],
+    "lines": [
+      "seven-sisters"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Whitechapel": {
+    "id": "Whitechapel",
+    "coordinate": [
+      1700,
+      532.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Willesden_Green": {
+    "id": "Willesden_Green",
+    "coordinate": [
+      801,
+      309
+    ],
+    "lines": [
+      "jubilee"
+    ],
+    "sources": [
+      {
+        "group": "Jubilee_line_stations",
+        "type": "line",
+        "href": "#stjubilee"
+      }
+    ]
+  },
+  "Willesden_Junction": {
+    "id": "Willesden_Junction",
+    "coordinate": [
+      696.5,
+      466
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Wimbledon": {
+    "id": "Wimbledon",
+    "coordinate": [
+      939,
+      1119.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#intnr"
+      }
+    ]
+  },
+  "Wimbledon_Park": {
+    "id": "Wimbledon_Park",
+    "coordinate": [
+      918,
+      1091.5
+    ],
+    "lines": [
+      "district",
+      "hammersmith-city"
+    ],
+    "sources": [
+      {
+        "group": "District_line_stations",
+        "type": "line",
+        "href": "#stdistrict"
+      }
+    ]
+  },
+  "Wood_Green": {
+    "id": "Wood_Green",
+    "coordinate": [
+      1305,
+      51.5
+    ],
+    "lines": [
+      "piccadilly"
+    ],
+    "sources": [
+      {
+        "group": "Piccadilly_line_stations",
+        "type": "line",
+        "href": "#stpiccadilly"
+      }
+    ]
+  },
+  "Wood_Lane": {
+    "id": "Wood_Lane",
+    "coordinate": [
+      637,
+      742.9
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Wood_Street": {
+    "id": "Wood_Street",
+    "coordinate": [
+      1682,
+      83
+    ],
+    "lines": [
+      "chingford"
+    ],
+    "sources": [
+      {
+        "group": "Weaver_line_stations",
+        "type": "line",
+        "href": "#stweaver"
+      }
+    ]
+  },
+  "Woodford": {
+    "id": "Woodford",
+    "coordinate": [
+      1928.5,
+      46
+    ],
+    "lines": [
+      "central"
+    ],
+    "sources": [
+      {
+        "group": "Central_line_stations",
+        "type": "line",
+        "href": "#int"
+      }
+    ]
+  },
+  "Woodgrange_Park": {
+    "id": "Woodgrange_Park",
+    "coordinate": [
+      2090,
+      266.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Woodside_Park": {
+    "id": "Woodside_Park",
+    "coordinate": [
+      914,
+      49.5
+    ],
+    "lines": [
+      "northern"
+    ],
+    "sources": [
+      {
+        "group": "Northern_line_stations",
+        "type": "line",
+        "href": "#stnorthern"
+      }
+    ]
+  },
+  "Woolwich": {
+    "id": "Woolwich",
+    "coordinate": [
+      2320.67,
+      679.5
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#int"
+      }
+    ]
+  },
+  "Woolwich_Arsenal": {
+    "id": "Woolwich_Arsenal",
+    "coordinate": [
+      2288,
+      704
+    ],
+    "lines": [],
+    "sources": [
+      {
+        "group": "Multiple_interchanges_group",
+        "type": "interchange",
+        "href": "#intnr"
+      }
+    ]
+  }
+}

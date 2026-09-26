@@ -1,0 +1,16 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+pandas==2.2.2
+openpyxl==3.1.5
+numpy>=1.26.0
+tensorflow>=2.15.0
+deap>=1.4.1
+scipy>=1.12.0
+scikit-learn>=1.4.0
+TA-Lib>=0.4.28
+tqdm>=4.66.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+websockets==12.0
+ollama==0.6.2
+pytest==7.4.0

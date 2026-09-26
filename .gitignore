@@ -1,0 +1,40 @@
+# Python
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+**/build/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Logs / temporary files
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / generated datasets and runtime state
+backend/data/algoseek.csv
+backend/data/algoseek.h5
+backend/data/algoseek.parquet
+backend/data/algoseek.pkl
+backend/data/algoseek_preprocessed.pkl
+backend/data/chat_history.pkl*

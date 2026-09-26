@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <!-- Top bar + upper half of the \ diagonal, ending at the gap -->
+  <path d="M56 8 H8 L22 22"
+        fill="none" stroke="#0B0B0B" stroke-width="7"
+        stroke-linecap="butt" stroke-linejoin="miter"
+        stroke-miterlimit="10"/>
+
+  <!-- Lower half of the \ diagonal, resuming after the gap,
+       then the bottom bar -->
+  <path d="M42 42 L56 56 H8"
+        fill="none" stroke="#0B0B0B" stroke-width="7"
+        stroke-linecap="butt" stroke-linejoin="miter"
+        stroke-miterlimit="10"/>
+
+  <!-- / diagonal, drawn last so it crosses the gap -->
+  <path d="M56 8 L8 56"
+        fill="none" stroke="#0B0B0B" stroke-width="7"
+        stroke-linecap="butt" stroke-linejoin="miter"
+        stroke-miterlimit="10"/>
+</svg>
