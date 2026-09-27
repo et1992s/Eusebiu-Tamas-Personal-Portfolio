@@ -592,23 +592,6 @@ class ZebioAgent:
         tool_name = decision.tool
         arguments = decision.arguments
 
-        argument_error = self._validate_tool_arguments(
-            tool_name,
-            arguments,
-        )
-
-        if argument_error is not None:
-            return {
-                "error": "InvalidToolArguments",
-                "message": argument_error,
-            }
-
-        if tool_name not in self.tool_registry.registry:
-            return {
-                "error": "UnknownTool",
-                "message": f"Unknown tool '{tool_name}'.",
-            }
-
         task_step = self.task_manager.create_step(
             task_id=task_id,
             tool_name=tool_name,
@@ -1719,6 +1702,7 @@ class ZebioAgent:
 
             loop_state.repeated_call_count = 0
             loop_state.previous_signature = None
+            context.pending_action = None
 
             self._append_tool_result(
                 context.messages,
@@ -1737,10 +1721,13 @@ class ZebioAgent:
             tool_call_id=tool_call_id,
         )
 
-        if (
-            isinstance(result, dict)
-            and result.get("error") == "ApprovalRequired"
-        ):
+        error_type = (
+            result.get("error")
+            if isinstance(result, dict)
+            else None
+        )
+
+        if error_type == "ApprovalRequired":
             self.task_manager.set_current_step(
                 task.task_id,
                 f"Awaiting approval: {tool_name}",
@@ -1755,17 +1742,26 @@ class ZebioAgent:
                 True,
             )
 
-        if not self._is_tool_failure(result):
-            context.loop_state.completed_actions.append(
-                tool_name
+        if error_type in {
+            "InvalidToolArguments",
+            "UnknownTool",
+        }:
+            terminal_response = self._handle_invalid_action(
+                context,
+                result["message"],
+            )
+        else:
+            if not self._is_tool_failure(result):
+                loop_state.completed_actions.append(
+                    tool_name
+                )
+
+            terminal_response = self._handle_tool_execution_result(
+                context,
+                result,
             )
 
         context.pending_action = None
-
-        terminal_response = self._handle_tool_execution_result(
-            context,
-            result,
-        )
 
         self._append_tool_result(
             context.messages,
