@@ -5,20 +5,36 @@ import {
   useState,
 } from 'react';
 
-import { taskApi } from '../../services/api';
 import ZebioNeuralCore from '../NeuralCore/ZebioNeuralCore';
+import ReactMarkdown from 'react-markdown';
 
 const QUICK_PROMPTS = [
-  'Tell me about Eusebiu and his background.',
-  'What are Eusebiu\'s strongest projects?',
-  'What technologies and skills does Eusebiu work with?',
-  'Tell me about the Zebio project.',
+  'Explain the Zebio agent architecture.',
+  'Analyse the Zebio memory system.',
+  'Explain the trading pipeline.',
+  'Explain the live prediction system.',
+  'Explain the approval system.',
+  'Explain the public and private Zebio architecture.',
+  'How would you improve Zebio?',
+  'Propose an engineering change to Zebio.',
 ];
 
 function createId() {
   return crypto.randomUUID
     ? crypto.randomUUID()
     : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function createPublicTaskState(overrides = {}) {
+  return {
+    status: 'idle',
+    current_thought: '',
+    current_output: '',
+    current_step: null,
+    steps: [],
+    final_response: '',
+    ...overrides,
+  };
 }
 
 export default function AIChat() {
@@ -30,14 +46,13 @@ export default function AIChat() {
   const [chatLoading, setChatLoading] = useState(false);
   const [chatError, setChatError] = useState('');
 
-  const [activeTaskId, setActiveTaskId] = useState(null);
-  const [taskState, setTaskState] = useState(null);
-  const [taskError, setTaskError] = useState('');
+  const [taskState, setTaskState] = useState(
+    createPublicTaskState()
+  );
 
   const [backendOnline, setBackendOnline] = useState(false);
-  const [lastResponseTime, setLastResponseTime] = useState(null);
-
-  const [sessionId] = useState(() => createId());
+  const [lastResponseTime, setLastResponseTime] =
+    useState(null);
 
   const modelName = useMemo(() => {
     const assistantMessage = [...messages]
@@ -66,16 +81,6 @@ export default function AIChat() {
   );
 
   /*
-   * Keep the conversation anchored to the newest message.
-   */
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-    });
-  }, [messages, chatLoading]);
-
-  /*
    * Backend health check.
    */
   useEffect(() => {
@@ -97,7 +102,9 @@ export default function AIChat() {
 
         setBackendOnline(true);
         setLastResponseTime(
-          Math.round(performance.now() - startedAt)
+          Math.round(
+            performance.now() - startedAt
+          )
         );
       } catch {
         if (!mounted) {
@@ -120,271 +127,6 @@ export default function AIChat() {
       window.clearInterval(interval);
     };
   }, []);
-
-  /*
-   * Stream engineering-task updates through SSE.
-   */
-  useEffect(() => {
-    if (!activeTaskId) {
-      return undefined;
-    }
-
-    let closed = false;
-    let source = null;
-
-    const streamUrl =
-      `/api/v1/ai/tasks/${activeTaskId}/stream`;
-
-    source = new EventSource(streamUrl);
-
-    const applySnapshot = (snapshot) => {
-      setTaskState(snapshot);
-      setTaskError('');
-    };
-
-    const handleSnapshot = (event) => {
-      if (closed) {
-        return;
-      }
-
-      try {
-        applySnapshot(
-          JSON.parse(event.data)
-        );
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad snapshot',
-          error
-        );
-      }
-    };
-
-    const handleThought = (event) => {
-      if (closed) {
-        return;
-      }
-
-      try {
-        const { thought } =
-          JSON.parse(event.data);
-
-        setTaskState((previous) =>
-          previous
-            ? {
-                ...previous,
-                current_thought: thought,
-              }
-            : {
-                current_thought: thought,
-              }
-        );
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad thought',
-          error
-        );
-      }
-    };
-
-    const handleStep = (event) => {
-      if (closed) {
-        return;
-      }
-
-      try {
-        const incoming =
-          JSON.parse(event.data);
-
-        setTaskState((previous) => {
-          const base =
-            previous || { steps: [] };
-
-          const steps = base.steps
-            ? [...base.steps]
-            : [];
-
-          const index = steps.findIndex(
-            (step) =>
-              step.step_id ===
-              incoming.step_id
-          );
-
-          if (index >= 0) {
-            steps[index] = {
-              ...steps[index],
-              ...incoming,
-            };
-          } else {
-            steps.push(incoming);
-          }
-
-          return {
-            ...base,
-            steps,
-          };
-        });
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad step',
-          error
-        );
-      }
-    };
-
-    const handleStatus = (event) => {
-      if (closed) {
-        return;
-      }
-
-      try {
-        const data =
-          JSON.parse(event.data);
-
-        setTaskState((previous) =>
-          previous
-            ? {
-                ...previous,
-                ...data,
-              }
-            : previous
-        );
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad status',
-          error
-        );
-      }
-    };
-
-    const handleFinalResponse = (event) => {
-      if (closed) {
-        return;
-      }
-
-      try {
-        const {
-          final_response: finalResponse,
-        } = JSON.parse(event.data);
-
-        setTaskState((previous) =>
-          previous
-            ? {
-                ...previous,
-                final_response:
-                  finalResponse,
-              }
-            : previous
-        );
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad final response',
-          error
-        );
-      }
-    };
-
-    const handleDone = (event) => {
-      if (closed) {
-        return;
-      }
-
-      let snapshot = null;
-
-      try {
-        snapshot = JSON.parse(event.data);
-        applySnapshot(snapshot);
-      } catch (error) {
-        console.warn(
-          '[ZEBIO SSE] bad done snapshot',
-          error
-        );
-      }
-
-      closed = true;
-
-      if (source) {
-        source.close();
-      }
-
-      if (snapshot?.final_response) {
-        setMessages((current) => {
-          const last =
-            current[current.length - 1];
-
-          if (
-            last?.role === 'assistant' &&
-            last.content ===
-              snapshot.final_response
-          ) {
-            return current;
-          }
-
-          return [
-            ...current,
-            {
-              id: createId(),
-              role: 'assistant',
-              content:
-                snapshot.final_response,
-              timestamp: new Date(),
-            },
-          ];
-        });
-      }
-
-      setChatLoading(false);
-      setActiveTaskId(null);
-    };
-
-    source.addEventListener(
-      'snapshot',
-      handleSnapshot
-    );
-
-    source.addEventListener(
-      'thought',
-      handleThought
-    );
-
-    source.addEventListener(
-      'step',
-      handleStep
-    );
-
-    source.addEventListener(
-      'status',
-      handleStatus
-    );
-
-    source.addEventListener(
-      'final_response',
-      handleFinalResponse
-    );
-
-    source.addEventListener(
-      'done',
-      handleDone
-    );
-
-    source.onerror = (error) => {
-      if (closed) {
-        return;
-      }
-
-      console.warn(
-        '[ZEBIO SSE] connection error',
-        error
-      );
-    };
-
-    return () => {
-      closed = true;
-
-      if (source) {
-        source.close();
-      }
-    };
-  }, [activeTaskId]);
 
   /*
    * Ctrl/Cmd + K focuses the composer.
@@ -414,7 +156,8 @@ export default function AIChat() {
   }, []);
 
   /*
-   * Send a message to Zebio.
+   * Send a message to the public, read-only Zebio
+   * interface and consume its SSE token stream.
    */
   async function sendMessage(
     messageOverride = null
@@ -427,20 +170,42 @@ export default function AIChat() {
       return;
     }
 
-    const startedAt =
-      performance.now();
+    const startedAt = performance.now();
 
     setChatLoading(true);
     setChatError('');
 
+    setTaskState(
+      createPublicTaskState({
+        status: 'running',
+        current_thought:
+          'Analysing the published Zebio architecture.',
+        current_step:
+          'Evaluating the request',
+      })
+    );
+
+    const userMessage = {
+      id: createId(),
+      role: 'user',
+      content: message,
+      timestamp: new Date(),
+    };
+
+    const assistantId = createId();
+
+    const assistantMessage = {
+      id: assistantId,
+      role: 'assistant',
+      content: '',
+      model: 'qwen2.5-coder:14b',
+      timestamp: new Date(),
+    };
+
     setMessages((current) => [
       ...current,
-      {
-        id: createId(),
-        role: 'user',
-        content: message,
-        timestamp: new Date(),
-      },
+      userMessage,
+      assistantMessage,
     ]);
 
     if (!messageOverride) {
@@ -449,7 +214,7 @@ export default function AIChat() {
 
     try {
       const response = await fetch(
-        '/api/v1/ai/chat',
+        '/api/v1/ai/zebio/stream',
         {
           method: 'POST',
           headers: {
@@ -458,31 +223,183 @@ export default function AIChat() {
           },
           body: JSON.stringify({
             message,
-            session_id: sessionId,
           }),
         }
       );
 
-      const rawText =
-        await response.text();
+      if (!response.ok) {
+        let detail =
+          `Zebio request failed with HTTP ${response.status}`;
 
-      let result = {};
+        try {
+          const errorBody =
+            await response.json();
 
-      try {
-        result = rawText
-          ? JSON.parse(rawText)
-          : {};
-      } catch {
+          detail =
+            errorBody.detail ||
+            errorBody.message ||
+            detail;
+        } catch {
+          // Keep the HTTP status message.
+        }
+
+        throw new Error(detail);
+      }
+
+      if (!response.body) {
         throw new Error(
-          'Zebio returned an invalid JSON response.'
+          'Zebio returned an empty response stream.'
         );
       }
 
-      if (!response.ok) {
+      setBackendOnline(true);
+
+      const reader =
+        response.body.getReader();
+
+      const decoder =
+        new TextDecoder();
+
+      let buffer = '';
+      let completeResponse = '';
+      let streamFinished = false;
+
+      const processEvent = (eventBlock) => {
+        const lines =
+          eventBlock.split(/\r?\n/);
+
+        let eventName = 'message';
+        let data = '';
+
+        for (const line of lines) {
+          if (line.startsWith('event:')) {
+            eventName =
+              line.slice(6).trim();
+          } else if (
+            line.startsWith('data:')
+          ) {
+            data += line
+              .slice(5)
+              .trim();
+          }
+        }
+
+        if (!data) {
+          return;
+        }
+
+        let payload;
+
+        try {
+          payload = JSON.parse(data);
+        } catch {
+          return;
+        }
+
+        if (eventName === 'token') {
+          const token =
+            payload.content || '';
+
+          if (!token) {
+            return;
+          }
+
+          completeResponse += token;
+
+          setMessages((current) =>
+            current.map((item) =>
+              item.id === assistantId
+                ? {
+                    ...item,
+                    content:
+                      completeResponse,
+                  }
+                : item
+            )
+          );
+
+          setTaskState((previous) => ({
+            ...previous,
+            status: 'running',
+            current_thought:
+              'Generating the response.',
+            current_output:
+              completeResponse,
+            current_step:
+              'Producing the analysis',
+          }));
+
+          return;
+        }
+
+        if (eventName === 'done') {
+          streamFinished = true;
+
+          setTaskState((previous) => ({
+            ...previous,
+            status: 'completed',
+            current_thought:
+              'Analysis complete.',
+            current_output:
+              completeResponse,
+            final_response:
+              completeResponse,
+            current_step:
+              'Response complete',
+          }));
+
+          return;
+        }
+
+        if (eventName === 'error') {
+          throw new Error(
+            payload.error ||
+              'The public Zebio stream failed.'
+          );
+        }
+      };
+
+      while (!streamFinished) {
+        const { value, done } =
+          await reader.read();
+
+        if (done) {
+          buffer += decoder.decode();
+        } else {
+          buffer += decoder.decode(
+            value,
+            { stream: true }
+          );
+        }
+
+        const blocks =
+          buffer.split(/\r?\n\r?\n/);
+
+        buffer =
+          blocks.pop() || '';
+
+        for (const block of blocks) {
+          if (block.trim()) {
+            processEvent(block);
+          }
+
+          if (streamFinished) {
+            break;
+          }
+        }
+
+        if (done) {
+          break;
+        }
+      }
+
+      if (buffer.trim() && !streamFinished) {
+        processEvent(buffer);
+      }
+
+      if (!completeResponse) {
         throw new Error(
-          result.detail ||
-            result.message ||
-            `Zebio request failed with HTTP ${response.status}`
+          'Zebio completed without returning a response.'
         );
       }
 
@@ -492,106 +409,35 @@ export default function AIChat() {
 
       setLastResponseTime(elapsed);
       setBackendOnline(true);
-
-      if (result.task_id) {
-        setActiveTaskId(
-          result.task_id
-        );
-        setTaskState(null);
-        setTaskError('');
-        return;
-      }
-
-      if (result.response) {
-        setMessages((current) => [
-          ...current,
-          {
-            id: createId(),
-            role: 'assistant',
-            content: result.response,
-            model: result.model,
-            timestamp: new Date(),
-          },
-        ]);
-      }
     } catch (error) {
       setBackendOnline(false);
+
+      setMessages((current) =>
+        current.filter(
+          (item) => item.id !== assistantId
+        )
+      );
+
+      setTaskState(
+        createPublicTaskState({
+          status: 'failed',
+          current_thought:
+            'Unable to complete the public analysis.',
+        })
+      );
 
       setChatError(
         error.message ||
           'Unable to reach Zebio.'
       );
-
-      setChatLoading(false);
     } finally {
+      setChatLoading(false);
+
       requestAnimationFrame(() => {
-        textareaRef.current?.focus();
+        textareaRef.current?.focus({
+          preventScroll: true,
+        });
       });
-    }
-  }
-
-  /*
-   * Approve a pending engineering action.
-   */
-  async function handleApprove(
-    approvalId
-  ) {
-    if (!approvalId) {
-      return;
-    }
-
-    try {
-      setTaskError('');
-
-      const result =
-        await taskApi.approveApproval(
-          approvalId
-        );
-
-      if (result?.response) {
-        setMessages(
-          (currentMessages) => [
-            ...currentMessages,
-            {
-              id: createId(),
-              role: 'assistant',
-              content: result.response,
-              timestamp: new Date(),
-            },
-          ]
-        );
-      }
-    } catch (error) {
-      setTaskError(
-        error.response?.data?.detail ||
-          error.message ||
-          'Unable to approve this action.'
-      );
-    }
-  }
-
-  /*
-   * Reject a pending engineering action.
-   */
-  async function handleReject(
-    approvalId
-  ) {
-    if (!approvalId) {
-      return;
-    }
-
-    try {
-      setTaskError('');
-
-      await taskApi.rejectApproval(
-        approvalId
-      );
-    } catch (error) {
-      setTaskError(
-        error.response?.data?.detail ||
-          error.message ||
-          'Unable to reject this action.'
-      );
     }
   }
 
@@ -612,8 +458,9 @@ export default function AIChat() {
   function clearConversation() {
     setMessages([]);
     setChatError('');
-    setTaskError('');
-    setTaskState(null);
+    setTaskState(
+      createPublicTaskState()
+    );
     setLastResponseTime(null);
   }
 
@@ -625,64 +472,30 @@ export default function AIChat() {
       <div className="portfolio-ai-header">
         <div>
           <span className="eyebrow">
-            PRIVATE LOCAL AI
-          </span>
-
-          <h2 id="ai-heading">
-            Ask Zebio about Eusebiu.
-          </h2>
-
-          <p>
-            A local AI assistant that can
-            answer questions about my
-            background, projects,
-            experience and technical work.
-          </p>
-        </div>
-
-        <div className="ai-status">
-          <span
-            className={
-              backendOnline
-                ? 'status-dot online'
-                : 'status-dot'
-            }
-          />
-
-          <span>
-            {backendOnline
-              ? 'ONLINE'
-              : 'OFFLINE'}
-          </span>
-
-          <span className="ai-model">
-            {modelName}
+            PUBLIC AI ENGINEERING INTERFACE
           </span>
         </div>
       </div>
 
       <ZebioNeuralCore
         taskState={taskState}
-        taskError={taskError}
-        onApprove={handleApprove}
-        onReject={handleReject}
+        taskError={chatError}
       />
 
       <div className="portfolio-ai-body">
         {!messages.length &&
         !chatLoading ? (
           <div className="ai-welcome">
-            <div className="ai-welcome-mark">
-              Z
-            </div>
 
             <h3>
-              Curious about my work?
+              Explore the system.
             </h3>
 
             <p>
-              Ask a question directly, or
-              start with one of these.
+              Ask a technical question,
+              investigate a subsystem, or
+              challenge the architecture
+              with your own engineering idea.
             </p>
 
             <div className="ai-prompts">
@@ -697,6 +510,7 @@ export default function AIChat() {
                     disabled={chatLoading}
                   >
                     {prompt}
+
                     <span aria-hidden="true">
                       ↗
                     </span>
@@ -724,7 +538,7 @@ export default function AIChat() {
                       <strong>
                         {message.role ===
                         'user'
-                          ? 'Eusebiu'
+                          ? 'You'
                           : 'Zebio'}
                       </strong>
 
@@ -740,7 +554,7 @@ export default function AIChat() {
                     </div>
 
                     <div className="ai-message-text">
-                      {message.content}
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
 
                     {message.model && (
@@ -766,7 +580,7 @@ export default function AIChat() {
                     </strong>
 
                     <span>
-                      thinking
+                      analysing
                     </span>
                   </div>
 
@@ -774,8 +588,10 @@ export default function AIChat() {
                     <span />
                     <span />
                     <span />
+
                     <em>
-                      Running local inference...
+                      Analysing the published
+                      architecture...
                     </em>
                   </div>
                 </div>
@@ -803,48 +619,31 @@ export default function AIChat() {
         <textarea
           ref={textareaRef}
           value={chatMessage}
-          onChange={(event) =>
-            setChatMessage(
-              event.target.value
-            )
-          }
+          onChange={(event) => setChatMessage(event.target.value)}
           onKeyDown={handleChatKeyDown}
-          placeholder="Ask about my projects, experience or skills..."
-          rows={2}
+          placeholder="Ask Zebio..."
+          rows={1}
           disabled={chatLoading}
-          aria-label="Ask Zebio a question"
+          aria-label="Ask Zebio"
         />
 
-        <div className="ai-composer-footer">
-          <span>
-            Local inference
-            {lastResponseTime !== null
-              ? ` · ${lastResponseTime} ms`
-              : ''}
-          </span>
-
-          <span>
-            Enter to send · Shift + Enter
-            for newline
-          </span>
+        <div className="ai-composer-actions">
+          <span>Ask Zebio</span>
 
           <button
             type="button"
-            onClick={() =>
-              sendMessage()
-            }
-            disabled={
-              chatLoading ||
-              !chatMessage.trim()
-            }
-            aria-label={
-              chatLoading
-                ? 'Sending'
-                : 'Send message'
-            }
+            className={`ai-send-button${chatLoading ? ' loading' : ''}`}
+            onClick={() => sendMessage()}
+            disabled={chatLoading || !chatMessage.trim()}
+            aria-label={chatLoading ? 'Zebio is responding' : 'Send message'}
           >
             {chatLoading ? (
-              <span className="send-spinner" />
+              <span
+                className="send-spinner"
+                aria-hidden="true"
+              >
+                ●
+              </span>
             ) : (
               '↑'
             )}
@@ -852,16 +651,12 @@ export default function AIChat() {
         </div>
       </div>
 
-      {(messages.length > 0 ||
-        chatError) && (
+      {(messages.length > 0 || chatError) && (
         <button
           type="button"
           className="ai-clear"
           onClick={clearConversation}
-          disabled={
-            !messages.length &&
-            !chatError
-          }
+          disabled={!messages.length && !chatError}
         >
           Clear conversation
         </button>

@@ -16,6 +16,8 @@ from app.ai.memory import MemoryStore
 from app.ai.prompts import (
     PORTFOLIO_ABOUT_CONTEXT,
     PORTFOLIO_ABOUT_SYSTEM_PROMPT,
+    PUBLIC_ZEBIO_CONTEXT,
+    PUBLIC_ZEBIO_SYSTEM_PROMPT,
     ZEBIO_SYSTEM_PROMPT,
 )
 from app.ai.project_context import ProjectContext
@@ -738,6 +740,73 @@ async def stream_portfolio_about(request: PortfolioAboutRequest):
         except Exception as exc:
             print(
                 "[ZEBIO API] Portfolio stream failed: "
+                f"{type(exc).__name__}: {exc}"
+            )
+
+            yield (
+                "event: error\n"
+                f"data: {json.dumps({'error': str(exc)})}\n\n"
+            )
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+class PublicZebioRequest(BaseModel):
+    message: str
+
+
+@router.post("/zebio/stream")
+async def stream_public_zebio(request: PublicZebioRequest):
+    """
+    Stream a public, read-only Zebio architecture response.
+
+    This endpoint intentionally bypasses the private engineering agent,
+    task manager, approval manager and developer tools.
+
+    The model receives only the published Zebio architecture context.
+    """
+
+    if not request.message.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Message cannot be empty.",
+        )
+
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                f"{PUBLIC_ZEBIO_SYSTEM_PROMPT}\n\n"
+                "AUTHORITATIVE PUBLIC ZEBIO CONTEXT:\n"
+                f"{PUBLIC_ZEBIO_CONTEXT}"
+            ),
+        },
+        {
+            "role": "user",
+            "content": request.message.strip(),
+        },
+    ]
+
+    async def event_generator():
+        try:
+            for chunk in agent.ollama_client.chat_stream(messages):
+                yield (
+                    "event: token\n"
+                    f"data: {json.dumps({'content': chunk})}\n\n"
+                )
+
+            yield "event: done\ndata: {}\n\n"
+
+        except Exception as exc:
+            print(
+                "[ZEBIO API] Public Zebio stream failed: "
                 f"{type(exc).__name__}: {exc}"
             )
 

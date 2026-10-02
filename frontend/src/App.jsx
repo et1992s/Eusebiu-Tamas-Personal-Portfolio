@@ -5,6 +5,7 @@ import PortfolioLayout from './layouts/PortfolioLayout';
 import HomePage from './pages/HomePage';
 
 import AppShell from './layouts/AppShell';
+import AIChat from './components/AI/AIChat';
 import ZebioPage from './pages/ZebioPage';
 import TradingProjectPage from './pages/TradingProjectPage';
 import TubeProjectPage from './pages/TubeProjectPage';
@@ -34,15 +35,35 @@ function App() {
           <Route path="/" element={<HomePage />} />
         </Route>
 
-        {/* Project applications */}
+        {/* Public project applications */}
         <Route element={<AppShell />}>
-          <Route path="/projects/zebio" element={<ZebioPage />} />
-          <Route path="/projects/trading" element={<TradingProjectPage />} />
-          <Route path="/projects/tube" element={<TubeProjectPage />} />
+          <Route
+            path="/projects/zebio"
+            element={<AIChat />}
+          />
+
+          <Route
+            path="/projects/trading"
+            element={<TradingProjectPage />}
+          />
+
+          <Route
+            path="/projects/tube"
+            element={<TubeProjectPage />}
+          />
+
+          {/* Private/local Zebio engineering workspace */}
+          <Route
+            path="/projects/zebio/engineer"
+            element={<ZebioPage />}
+          />
         </Route>
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
       </Routes>
     </>
   );

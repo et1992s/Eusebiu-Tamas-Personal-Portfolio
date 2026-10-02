@@ -1653,3 +1653,125 @@ html {
     transform: none;
   }
 }
+
+/* =========================================================
+   ZEBIO CHAT COMPOSER
+========================================================= */
+
+.ai-composer {
+  max-width: 850px;
+  margin: 32px auto 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px 14px 14px 18px;
+  border: 1px solid var(--z-border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.ai-composer:focus-within {
+  border-color: rgba(156, 255, 87, 0.3);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22),
+    0 0 0 3px rgba(156, 255, 87, 0.05);
+}
+
+.ai-composer textarea {
+  flex: 1;
+  min-width: 0;
+  resize: none;
+  border: 0;
+  outline: 0;
+  padding: 4px 0;
+  background: transparent;
+  color: var(--z-text);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ai-composer textarea::placeholder {
+  color: var(--z-muted);
+}
+
+.ai-composer-actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.ai-composer-actions span {
+  display: none;
+}
+
+.ai-send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(156, 255, 87, 0.18);
+  border-radius: 10px;
+  background: rgba(156, 255, 87, 0.08);
+  color: var(--z-accent);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+.ai-send-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: rgba(156, 255, 87, 0.14);
+  border-color: rgba(156, 255, 87, 0.32);
+  box-shadow:
+    0 6px 18px rgba(156, 255, 87, 0.12);
+}
+
+.ai-send-button:disabled:not(.loading) {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.ai-send-button.loading {
+  opacity: 1;
+  background: rgba(156, 255, 87, 0.12);
+  border-color: rgba(156, 255, 87, 0.38);
+  box-shadow:
+    0 0 14px rgba(156, 255, 87, 0.1);
+  cursor: wait;
+}
+
+.ai-send-button.loading:hover {
+  transform: none;
+}
+
+.send-spinner {
+  display: block;
+  width: 13px;
+  height: 13px;
+  box-sizing: border-box;
+  border: 1.5px solid rgba(156, 255, 87, 0.2);
+  border-top-color: var(--z-accent);
+  border-right-color: var(--z-accent);
+  border-radius: 50%;
+  animation: public-zebio-spin 0.7s linear infinite;
+}
+
+@keyframes public-zebio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

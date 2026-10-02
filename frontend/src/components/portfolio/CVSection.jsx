@@ -52,7 +52,7 @@ function CVSection() {
           eusebiutamas@outlook.com
         </ScrollReveal>
 
-        <ScrollReveal as="a" delay={180}>
+        <ScrollReveal as="span" delay={180}>
           <a
             href="https://www.linkedin.com/in/eusebiu-tamas/"
             target="_blank"
@@ -62,7 +62,7 @@ function CVSection() {
           </a>
         </ScrollReveal>
 
-        <ScrollReveal as="a" delay={240}>
+        <ScrollReveal as="span" delay={240}>
           <a
             href="https://github.com/et1992s"
             target="_blank"
