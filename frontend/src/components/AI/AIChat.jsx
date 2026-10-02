@@ -8,6 +8,12 @@ import {
 import ZebioNeuralCore from '../NeuralCore/ZebioNeuralCore';
 import ReactMarkdown from 'react-markdown';
 
+const API_BASE_URL =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
+    ? ''
+    : 'https://api.eusebiutamas.com';
+
 const QUICK_PROMPTS = [
   'Explain the Zebio agent architecture.',
   'Analyse the Zebio memory system.',
@@ -90,7 +96,7 @@ export default function AIChat() {
       const startedAt = performance.now();
 
       try {
-        const response = await fetch('/health');
+        const response = await fetch(`${API_BASE_URL}/health`);
 
         if (!response.ok) {
           throw new Error('Backend unavailable');
@@ -214,7 +220,7 @@ export default function AIChat() {
 
     try {
       const response = await fetch(
-        '/api/v1/ai/zebio/stream',
+        `${API_BASE_URL}/api/v1/ai/zebio/stream`,
         {
           method: 'POST',
           headers: {
