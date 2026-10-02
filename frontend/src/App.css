@@ -776,7 +776,7 @@ button {
 
 .page-content {
   width: min(1650px, calc(100% - 20px));
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .workspace {
@@ -792,8 +792,6 @@ button {
 
   margin: 0 auto;
 
-  padding:
-    52px 0 35px;
 }
 
 /* =========================================================
@@ -1022,11 +1020,13 @@ button {
 
 .panel-header h2 {
   margin:
-    0 0 3px;
+    0px 0px 3px 0px;
 
   font-size: 15px;
 
   letter-spacing: -0.01em;
+
+  text-align-last: left;
 }
 
 .panel-header p {
@@ -1050,13 +1050,11 @@ button {
   padding:
     7px 10px;
 
-  background: transparent;
-
-  color: var(--z-muted);
+  background: #66ff2517;
 
   cursor: pointer;
 
-  font-size: 10px;
+  font-size: 11px;
 
   transition:
     0.2s ease;
@@ -1069,11 +1067,11 @@ button {
     var(--z-border-bright);
 
   background:
-    rgba(255, 255, 255, 0.035);
+    rgba(25, 255, 25, 0.295);
 }
 
 .ghost-button:disabled {
-  opacity: 0.35;
+  opacity: 0.85;
 
   cursor: default;
 }
@@ -1083,7 +1081,7 @@ button {
 ========================================================= */
 
 .chat-area {
-  min-height: 560px;
+  min-height: 290px;
 
   max-height: 670px;
 
@@ -1091,10 +1089,10 @@ button {
 }
 
 .empty-chat {
-  min-height: 560px;
+  min-height: 290px;
 
   padding:
-    48px 42px;
+    0px 25px;
 
   display: flex;
 
@@ -1105,442 +1103,6 @@ button {
   justify-content: center;
 
   text-align: center;
-}
-
-/* =========================================================
-   ZEBIOS INTELLIGENCE CORE
-========================================================= */
-
-.zebios-core {
-  position: relative;
-
-  width: 220px;
-  height: 220px;
-
-  margin-bottom: 28px;
-
-  display: grid;
-  place-items: center;
-
-  isolation: isolate;
-}
-
-
-.zebios-logo {
-  width: 100%;
-  height: 100%;
-
-  overflow: visible;
-
-  filter:
-    drop-shadow(
-      0 12px 30px
-      rgba(20, 30, 45, 0.10)
-    );
-}
-
-
-/* =========================================================
-   MAIN Z
-========================================================= */
-
-.zebios-z {
-  transform-origin: 120px 120px;
-
-  fill: url(#zebiosZGradient);
-
-  stroke:
-    rgba(105, 215, 255, 0.42);
-
-  stroke-width: 0.8;
-
-  filter:
-    drop-shadow(
-      0 0 7px
-      rgba(80, 200, 255, 0.16)
-    );
-
-  animation:
-    zebios-z-breathe
-    5s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   OUTER INTELLIGENCE FIELD
-========================================================= */
-
-.zebios-field {
-  transform-origin: 120px 120px;
-}
-
-
-.zebios-field-one {
-  animation:
-    zebios-field-rotate-one
-    18s
-    linear
-    infinite;
-}
-
-
-.zebios-field-two {
-  animation:
-    zebios-field-rotate-two
-    26s
-    linear
-    infinite;
-}
-
-
-.zebios-field-three {
-  animation:
-    zebios-field-rotate-one
-    34s
-    linear
-    infinite;
-}
-
-
-/* =========================================================
-   TECHNICAL CROSS LINES
-========================================================= */
-
-.zebios-tech-line {
-  stroke:
-    rgba(95, 210, 255, 0.18);
-
-  stroke-width: 0.7;
-
-  stroke-dasharray:
-    2 8;
-
-  animation:
-    zebios-tech-pulse
-    4s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   SYSTEM NODES
-========================================================= */
-
-.zebios-node {
-  fill: #68ddff;
-
-  filter:
-    drop-shadow(
-      0 0 5px
-      rgba(90, 210, 255, 0.75)
-    );
-}
-
-
-.zebios-node-one {
-  animation:
-    zebios-node-pulse
-    3.7s
-    ease-in-out
-    infinite;
-}
-
-
-.zebios-node-two {
-  animation:
-    zebios-node-pulse
-    4.5s
-    ease-in-out
-    infinite;
-}
-
-
-.zebios-node-three {
-  animation:
-    zebios-node-pulse
-    3.2s
-    ease-in-out
-    infinite;
-}
-
-
-.zebios-node-four {
-  animation:
-    zebios-node-pulse
-    5s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   PRIMARY ENERGY THROUGH Z
-========================================================= */
-
-.zebios-energy-path {
-  animation:
-    zebios-energy-travel
-    4.5s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   INTERNAL Z ENERGY TRACES
-========================================================= */
-
-.zebios-z-trace {
-  opacity: 0.45;
-
-  filter:
-    drop-shadow(
-      0 0 4px
-      rgba(80, 210, 255, 0.5)
-    );
-}
-
-
-.zebios-z-trace-one {
-  animation:
-    zebios-trace-one
-    3.8s
-    linear
-    infinite;
-}
-
-
-.zebios-z-trace-two {
-  animation:
-    zebios-trace-two
-    5.2s
-    linear
-    infinite;
-}
-
-
-.zebios-z-trace-three {
-  animation:
-    zebios-trace-three
-    4.4s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   CENTRAL INTELLIGENCE CORE
-========================================================= */
-
-.zebios-core-glow {
-  opacity: 0.65;
-
-  animation:
-    zebios-core-glow-pulse
-    3s
-    ease-in-out
-    infinite;
-}
-
-
-.zebios-core-point {
-  animation:
-    zebios-core-point-pulse
-    3s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes zebios-z-breathe {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.018);
-  }
-}
-
-
-@keyframes zebios-field-rotate-one {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-@keyframes zebios-field-rotate-two {
-
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-
-@keyframes zebios-tech-pulse {
-
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.75;
-  }
-}
-
-
-@keyframes zebios-node-pulse {
-
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scale(0.7);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.35);
-  }
-}
-
-
-@keyframes zebios-energy-travel {
-
-  0% {
-    stroke-dasharray: 0 310;
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 1;
-  }
-
-  42% {
-    stroke-dasharray: 90 220;
-    opacity: 1;
-  }
-
-  68% {
-    stroke-dasharray: 210 100;
-    opacity: 0.8;
-  }
-
-  86% {
-    stroke-dasharray: 310 0;
-    opacity: 0.25;
-  }
-
-  100% {
-    stroke-dasharray: 310 0;
-    opacity: 0;
-  }
-}
-
-
-@keyframes zebios-trace-one {
-
-  0% {
-    stroke-dashoffset: 120;
-    opacity: 0.15;
-  }
-
-  35% {
-    opacity: 0.9;
-  }
-
-  70% {
-    opacity: 0.45;
-  }
-
-  100% {
-    stroke-dashoffset: -120;
-    opacity: 0.15;
-  }
-}
-
-
-@keyframes zebios-trace-two {
-
-  0% {
-    stroke-dashoffset: -100;
-    opacity: 0.15;
-  }
-
-  40% {
-    opacity: 0.75;
-  }
-
-  75% {
-    opacity: 0.35;
-  }
-
-  100% {
-    stroke-dashoffset: 100;
-    opacity: 0.15;
-  }
-}
-
-
-@keyframes zebios-trace-three {
-
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-
-  50% {
-    opacity: 0.75;
-  }
-}
-
-
-@keyframes zebios-core-glow-pulse {
-
-  0%,
-  100% {
-    r: 5;
-    opacity: 0.35;
-  }
-
-  50% {
-    r: 11;
-    opacity: 0.9;
-  }
-}
-
-
-@keyframes zebios-core-point-pulse {
-
-  0%,
-  100% {
-    r: 2;
-    opacity: 0.6;
-  }
-
-  50% {
-    r: 4;
-    opacity: 1;
-  }
 }
 
 /* =========================================================
@@ -1719,7 +1281,7 @@ button {
 }
 
 .message-meta span {
-  color: var(--z-dim);
+  color: #a4b6a5;
 
   font:
     400 9px
@@ -1728,7 +1290,7 @@ button {
 }
 
 .message-content {
-  color: #cbd1dc;
+  color: var(--z-text);
 
   font-size: 12px;
 
@@ -1748,7 +1310,7 @@ button {
 
   font-size: 8px;
 
-  color: var(--z-dim);
+  color: #a4b6a5;
 }
 
 /* =========================================================
@@ -1888,7 +1450,7 @@ button {
 ========================================================= */
 
 .composer {
-  margin: 0px 14px 14px;
+  margin: 20px 20px 20px 20px;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -2272,6 +1834,321 @@ button {
 }
 
 /* =========================================================
+   ML PREDICTION PANEL
+========================================================= */
+
+.prediction-panel {
+  margin:
+    12px 14px 0;
+
+  border:
+    1px solid
+    var(--z-border);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008)
+    );
+
+  overflow: hidden;
+}
+
+.prediction-panel-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding:
+    12px 14px;
+
+  border-bottom:
+    1px solid
+    var(--z-border);
+}
+
+.prediction-kicker {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--z-dim);
+
+  font:
+    500 8px/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.12em;
+}
+
+.prediction-panel-header h3 {
+  margin: 0;
+
+  color: var(--z-text);
+
+  font:
+    600 13px/1.2
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.02em;
+}
+
+.prediction-status {
+  flex:
+    0 0 auto;
+
+  padding:
+    4px 7px;
+
+  border:
+    1px solid
+    rgba(156, 255, 87, 0.16);
+
+  border-radius: 5px;
+
+  color: var(--z-accent);
+
+  background:
+    rgba(156, 255, 87, 0.035);
+
+  font:
+    600 7px/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+.prediction-status-error {
+  color: #ffabb3;
+
+  border-color:
+    rgba(255, 111, 124, 0.16);
+
+  background:
+    rgba(255, 111, 124, 0.04);
+}
+
+/* ---------------------------------------------------------
+   MAIN PREDICTION
+--------------------------------------------------------- */
+
+.prediction-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 18px;
+
+  padding:
+    16px 14px;
+}
+
+.prediction-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--z-dim);
+
+  font:
+    500 8px/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.1em;
+}
+
+.prediction-main > div:first-child > strong {
+  display: block;
+
+  font:
+    500 clamp(25px, 3vw, 34px)/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: -0.04em;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.prediction-positive {
+  color: var(--z-accent);
+}
+
+.prediction-negative {
+  color: #ffabb3;
+}
+
+.prediction-target {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--z-muted);
+
+  font:
+    500 8px/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------------
+   PREDICTION METADATA
+--------------------------------------------------------- */
+
+.prediction-meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  align-content: center;
+}
+
+.prediction-meta > div {
+  min-width: 0;
+
+  padding:
+    7px 9px;
+
+  border-left:
+    1px solid
+    var(--z-border);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+}
+
+.prediction-meta span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--z-dim);
+
+  font:
+    500 7px/1
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.08em;
+}
+
+.prediction-meta strong {
+  display: block;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  color: var(--z-muted);
+
+  font:
+    500 9px/1.25
+    "DM Mono",
+    monospace;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   STATES
+--------------------------------------------------------- */
+
+.prediction-loading {
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  color: var(--z-muted);
+
+  font:
+    500 9px
+    "DM Mono",
+    monospace;
+}
+
+.prediction-loading .loader-ring {
+  flex:
+    0 0 auto;
+}
+
+.prediction-error,
+.prediction-empty {
+  padding:
+    16px 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: var(--z-muted);
+
+  font:
+    500 9px/1.4
+    "DM Mono",
+    monospace;
+}
+
+.prediction-error strong {
+  color: #ffabb3;
+
+  font-size: 9px;
+}
+
+.prediction-error span {
+  color: var(--z-muted);
+
+  font-size: 8px;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .prediction-main {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .prediction-meta {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
    CHART
 ========================================================= */
 
@@ -2338,10 +2215,12 @@ button {
 ========================================================= */
 
 .market-footer {
-  min-height: 38px;
+  min-height: 40px;
 
   padding:
-    0 14px;
+    20px 14px 0px 14px;
+
+  padding-bottom: 20px;
 
   display: flex;
 
@@ -2350,10 +2229,10 @@ button {
   justify-content: space-between;
 
   border-top:
-    1px solid
+    2px solid
     var(--z-border);
 
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .pipeline-state {
@@ -2381,25 +2260,20 @@ button {
 
   margin: 0 auto;
 
-  min-height: 60px;
-
-  padding:
-    22px 0;
+  min-height: 30px;
 
   display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
 
   color: #3f4755;
 
   font:
-    500 10px
+    500 8px
     "DM Mono",
     monospace;
 
   letter-spacing: 0.08em;
+
+  flex-direction: column;
 }
 
 /* =========================================================
@@ -2760,7 +2634,7 @@ button {
 @media (max-width: 760px) {
 
   .mobile-menu-button {
-    display: flex;
+    display: none;
   }
 
   .composer textarea,
@@ -3522,3 +3396,437 @@ tube-route-header {
     gap: 10px;
   }
 }
+
+/* ============================================================
+   ZEBIO NEURAL CORE · RADIAL BURST
+   ============================================================ */
+
+.zebio-neural-core {
+  --core-accent: #7aaec4;
+  --core-glow: rgba(105, 215, 255, 0.20);
+  --core-dim: 0.78;
+
+  position: relative;
+  width: 100%;
+  padding: 18px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.zebio-neural-core-idle         { --core-accent: #7aaec4; --core-glow: rgba(122, 174, 196, 0.18); }
+.zebio-neural-core-initialising { --core-accent: #8fd8ff; --core-glow: rgba(64, 200, 255, 0.32); }
+.zebio-neural-core-processing   { --core-accent: #8fd8ff; --core-glow: rgba(64, 200, 255, 0.32); }
+.zebio-neural-core-waiting      { --core-accent: #b088e0; --core-glow: rgba(128, 64, 192, 0.30); }
+.zebio-neural-core-complete     { --core-accent: #b0e878; --core-glow: rgba(136, 204, 64, 0.28); }
+.zebio-neural-core-failed       { --core-accent: #f09090; --core-glow: rgba(192, 64, 80, 0.28); }
+.zebio-neural-core-cancelled    { --core-accent: #708090; --core-glow: rgba(64, 72, 80, 0.28); }
+
+/* --- Thought line --------------------------------------------- */
+
+.zebio-thought {
+  position: relative;
+  z-index: 20;
+  width: min(720px, 100%);
+  min-height: 34px;
+  margin-bottom: 2px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  font-family: 'DM Mono', 'Roboto Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.zebio-thought-dots {
+  display: inline-flex;
+  gap: 3px;
+  flex: 0 0 auto;
+}
+
+.zebio-thought-dots i {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--core-accent);
+  opacity: 0.4;
+  animation: zebio-thought-dot 1.2s ease-in-out infinite;
+  transition: background 400ms ease;
+}
+
+.zebio-thought-dots i:nth-child(2) { animation-delay: 0.15s; }
+.zebio-thought-dots i:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes zebio-thought-dot {
+  0%, 80%, 100% { transform: translateY(0);     opacity: 0.35; }
+  40%           { transform: translateY(-3px);  opacity: 1; }
+}
+
+.zebio-thought-text {
+  min-width: 0;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.zebio-thought-head {
+  color: var(--z-text);
+  font-weight: 500;
+  text-shadow: 0 0 12px var(--core-glow);
+}
+
+.zebio-thought-tail {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+  color: var(--z-muted);
+  -webkit-mask-image: linear-gradient(
+    90deg, #000 0%, #000 30%,
+    rgba(0,0,0,0.45) 62%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg, #000 0%, #000 30%,
+    rgba(0,0,0,0.45) 62%, transparent 100%
+  );
+}
+
+/* --- 3D stage ------------------------------------------------- */
+
+.zebio-neural-stage {
+  position: relative;
+  width: min(1024px, 100%);
+  aspect-ratio: 2 / 1;
+  max-height: 510px;
+  margin-top: 4px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Deep blue backdrop glow behind the canvas */
+.zebio-neural-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 45% 60% at 50% 50%,
+      var(--core-glow) 0%,
+      rgba(10, 40, 70, 0.10) 40%,
+      transparent 72%
+    );
+  filter: blur(18px);
+  opacity: 0.95;
+  transition: background 500ms ease, opacity 500ms ease;
+}
+
+.zebio-neural-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.zebio-neural-canvas-wrap > div,
+.zebio-neural-canvas-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.zebio-neural-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 60% 70% at 50% 50%,
+      transparent 55%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: light) {
+  .zebio-neural-vignette {
+    background:
+      radial-gradient(
+        ellipse 60% 70% at 50% 50%,
+        transparent 55%,
+        rgba(15, 23, 42, 0) 100%
+      );
+    mix-blend-mode: normal;
+  }
+  .zebio-neural-glow {
+    opacity: 0.55;
+  }
+}
+
+/* --- Approval / error ---------------------------------------- */
+
+.zebio-neural-task {
+  position: relative;
+  z-index: 20;
+  width: min(680px, 100%);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.zebio-neural-approval {
+  width: min(430px, 100%);
+  margin: 18px auto 0;
+  padding: 13px 15px;
+  border: 1px solid rgba(166, 108, 255, 0.24);
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(166, 108, 255, 0.055),
+      rgba(105, 215, 255, 0.025)
+    );
+  box-shadow:
+    0 12px 30px rgba(20, 30, 45, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.zebio-neural-approval-tool {
+  margin-bottom: 10px;
+  color: var(--z-text);
+  font-family: 'DM Mono', 'Roboto Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.zebio-neural-approval-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.zebio-neural-approval-actions button {
+  min-width: 90px;
+  padding: 7px 13px;
+  border: 1px solid rgba(105, 215, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(105, 215, 255, 0.06);
+  color: var(--z-text);
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.zebio-neural-approval-actions button:hover {
+  background: rgba(105, 215, 255, 0.12);
+  border-color: rgba(105, 215, 255, 0.45);
+  box-shadow: 0 0 15px rgba(105, 215, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.zebio-neural-approval-actions button:last-child {
+  border-color: rgba(255, 130, 130, 0.2);
+}
+
+.zebio-neural-approval-actions button:last-child:hover {
+  border-color: rgba(255, 130, 130, 0.42);
+  background: rgba(255, 130, 130, 0.07);
+}
+
+.zebio-neural-error {
+  width: min(620px, 100%);
+  margin: 14px auto 0;
+  padding: 9px 12px;
+  border-left: 2px solid rgba(255, 120, 120, 0.65);
+  color: var(--z-muted);
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: left;
+  background: rgba(255, 120, 120, 0.035);
+}
+
+/* --- Responsive ---------------------------------------------- */
+
+@media (max-width: 700px) {
+  .zebio-neural-core {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .zebio-thought {
+    font-size: 10px;
+  }
+  .zebio-neural-stage {
+    aspect-ratio: 16 / 10;
+    max-height: 340px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zebio-thought-dots i { animation: none !important; }
+  .zebio-neural-glow   { transition: none; }
+}
+
+.strategy-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid var(--z-border);
+}
+
+.strategy-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.strategy-slider-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--z-muted);
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.strategy-slider-label em {
+  color: var(--z-accent);
+  font-style: normal;
+}
+
+.strategy-slider input[type="range"] {
+  width: 100%;
+  accent-color: var(--z-accent);
+}
+
+.strategy-overlay {
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: rgba(8, 12, 18, 0.55);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.strategy-overlay-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.strategy-overlay-kicker {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  color: #22c55e;
+  text-transform: uppercase;
+}
+
+.strategy-overlay-model {
+  font-size: 9px;
+  color: var(--z-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.strategy-overlay-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.strategy-overlay-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+}
+
+.strategy-overlay-label {
+  color: var(--z-muted);
+  letter-spacing: 0.04em;
+}
+
+.strategy-overlay-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.strategy-overlay-value em {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--z-muted);
+}
+
+.strategy-positive {
+  color: #22c55e !important;
+}
+
+.strategy-negative {
+  color: #ef4444 !important;
+}
+
+.strategy-overlay-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  font-size: 10px;
+}
+
+.strategy-overlay-footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.strategy-overlay-footer span {
+  color: var(--z-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 8px;
+}
+
+.strategy-overlay-footer strong {
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.strategy-overlay-idle {
+  border-color: rgba(148, 163, 184, 0.25);
+  background: rgba(15, 20, 30, 0.4);
+}
+
+.strategy-overlay-kicker-idle {
+  color: var(--z-muted);
+}
+
+.strategy-overlay-buy {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.strategy-overlay-sell {
+  border-color: rgba(239, 68, 68, 0.35);
+}
+

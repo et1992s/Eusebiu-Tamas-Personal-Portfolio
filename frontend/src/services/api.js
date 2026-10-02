@@ -21,6 +21,31 @@ export const tradingApi = {
     return response.data;
   },
 
+  getLiveChart: async (
+    ticker,
+    timeframe = '1m',
+    limit = 100,
+  ) => {
+    const response = await api.get(
+      `/trading/live/chart/${encodeURIComponent(ticker)}`,
+      {
+        params: {
+          timeframe,
+          limit,
+        },
+      },
+    );
+
+    return response.data;
+  },
+
+  predict: async (ticker, limit = 500) => {
+    const response = await api.get(
+      `/trading/predict/${ticker}?limit=${limit}`
+    );
+    return response.data;
+  },
+
   getStatus: async () => {
     const response = await api.get('/trading/status');
     return response.data;
@@ -71,6 +96,12 @@ export const taskApi = {
     );
     return response.data;
   },
+
+runBacktest: async (body) => {
+  const response = await api.post('/trading/backtest', body);
+  return response.data;
+},
+
 };
 
 export default api;

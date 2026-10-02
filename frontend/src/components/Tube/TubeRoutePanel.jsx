@@ -349,7 +349,7 @@ const TubeRoutePanel = () => {
           </div>
           <div className="tube-route-stats">
             <div><span>Stops</span><strong>{route.route.length - 1}</strong></div>
-            <div><span>Metric</span><strong>{route.total_cost}</strong></div>
+            <div><span>Minutes</span><strong>{route.total_cost}</strong></div>
             <div>
               <span>Optimised by</span>
               <strong>{route.optimization === 'time' ? 'Journey time' : 'Stops'}</strong>

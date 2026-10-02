@@ -47,40 +47,85 @@ class TradingEngine:
         return self.tickers
     
     def get_bars(self, ticker: str, limit: int = 100) -> Optional[List[Dict[str, Any]]]:
-        """Get OHLCV bars - INSTANT"""
+        """Get the last N OHLCV bars without Pandas scalar datetime access."""
         if not self._loaded:
             self.load_data()
-        
+
         if ticker not in self.ticker_data:
             logger.warning(f"Ticker '{ticker}' not found")
             return None
-        
+
         ticker_df = self.ticker_data[ticker]
-        
-        # Get the last N rows directly (no year filter for now)
-        if len(ticker_df) > limit:
-            bars_df = ticker_df.iloc[-limit:]
-        else:
-            bars_df = ticker_df
-        
+
+        if limit <= 0:
+            return []
+
+        # Work with positional rows and the raw int64 datetime representation.
+        # This avoids Pandas scalar Timestamp access, which can hang in this
+        # runtime when iterating over the DatetimeIndex.
+        start_position = max(0, len(ticker_df) - limit)
+        positions = range(start_position, len(ticker_df))
+
+        raw_index = ticker_df.index.asi8
+
+        # Select only the required rows and expose values without the index.
+        bars_df = ticker_df.iloc[start_position:]
+        rows = bars_df.itertuples(index=False, name=None)
+
         result = []
-        for idx, row in bars_df.iterrows():
-            # Convert timestamp to string
-            if isinstance(idx, pd.Timestamp):
-                timestamp_str = idx.strftime('%Y-%m-%dT%H:%M:%SZ')
-            else:
-                timestamp_str = str(idx)
-            
+
+        for position, row in zip(positions, rows):
+            timestamp_ns = int(raw_index[position])
+
+            timestamp_str = datetime.datetime.fromtimestamp(
+                timestamp_ns / 1_000_000_000,
+                datetime.timezone.utc
+            ).strftime('%Y-%m-%dT%H:%M:%SZ')
+
             result.append({
                 'timestamp': timestamp_str,
-                'open': float(row['first']),
-                'high': float(row['high']),
-                'low': float(row['low']),
-                'close': float(row['last']),
-                'volume': int(row['volume'])
+                'open': float(row[0]),
+                'high': float(row[1]),
+                'low': float(row[2]),
+                'close': float(row[3]),
+                'volume': int(row[4])
             })
-        
+
         return result
+
+    def get_bars_dataframe(
+        self,
+        ticker: str,
+        limit: int = 100,
+    ) -> Optional[pd.DataFrame]:
+        """Get the latest OHLCV bars as a DataFrame for internal consumers."""
+
+        if not self._loaded:
+            self.load_data()
+
+        if ticker not in self.ticker_data:
+            logger.warning(f"Ticker '{ticker}' not found")
+            return None
+
+        if limit <= 0:
+            return pd.DataFrame(
+                columns=[
+                    "first",
+                    "high",
+                    "low",
+                    "last",
+                    "volume",
+                ]
+            )
+
+        ticker_df = self.ticker_data[ticker]
+
+        start_position = max(
+            0,
+            len(ticker_df) - limit,
+        )
+
+        return ticker_df.iloc[start_position:].copy()
     
     def get_bars_2015(self, ticker: str, limit: int = 100) -> List[Dict[str, Any]]:
         if not self._loaded:

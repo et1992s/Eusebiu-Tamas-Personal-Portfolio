@@ -78,21 +78,12 @@ function AppShell({ children }) {
             <span />
           </button>
 
-          {/* ZEBIO brand / desktop-tablet menu trigger */}
-          <button
-            type="button"
+          {/* Home navigation */}
+          <NavLink
+            to="/"
             className="brand brand-menu-trigger"
-            aria-label={
-              sidebarOpen
-                ? 'Close navigation menu'
-                : 'Open navigation menu'
-            }
-            aria-expanded={sidebarOpen}
-            onClick={() =>
-              setSidebarOpen((open) => !open)
-            }
+            aria-label="Go to home"
           >
-
             <div
               className="brand-mark"
               aria-hidden="true"
@@ -104,15 +95,14 @@ function AppShell({ children }) {
 
             <div>
               <div className="brand-name">
-                ZEBIO
+                ET
               </div>
 
               <div className="brand-subtitle">
-                LOCAL AI ENGINEERING STUDIO
+                PORTFOLIO
               </div>
             </div>
-
-          </button>
+          </NavLink>
 
         </div>
 

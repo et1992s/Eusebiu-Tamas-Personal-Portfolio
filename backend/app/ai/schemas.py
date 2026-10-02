@@ -47,3 +47,9 @@ class Observation(BaseModel):
     tool: str
     arguments: dict[str, object] = Field(default_factory=dict)
     result: object
+
+class ParsedAgentResponse(BaseModel):
+    decisions: list[ActionDecision | FinalDecision] = []
+    tool_call_ids: list[str | None] = Field(default_factory=list)
+    parse_error: str | None = None
+    thought_only: str | None = None
