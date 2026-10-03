@@ -1,6 +1,12 @@
 import { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
+const API_BASE_URL =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
+    ? ''
+    : 'https://api.eusebiutamas.com';
+
 function AboutChat() {
   const textareaRef = useRef(null);
 
@@ -38,7 +44,7 @@ function AboutChat() {
 
     try {
       const responseStream = await fetch(
-        '/api/v1/ai/about/stream',
+        `${API_BASE_URL}/api/v1/ai/about/stream`,
         {
           method: 'POST',
           headers: {
