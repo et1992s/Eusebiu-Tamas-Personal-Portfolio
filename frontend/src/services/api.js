@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api/v1';
+const API_BASE_URL =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
+    ? '/api/v1'
+    : 'https://api.eusebiutamas.com/api/v1';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -41,7 +45,7 @@ export const tradingApi = {
 
   predict: async (ticker, limit = 500) => {
     const response = await api.get(
-      `/trading/predict/${ticker}?limit=${limit}`
+      `/trading/predict/${ticker}?limit=${limit}`,
     );
     return response.data;
   },
@@ -85,23 +89,22 @@ export const taskApi = {
 
   approveApproval: async (approvalId) => {
     const response = await api.post(
-      `/ai/approvals/${approvalId}/approve`
+      `/ai/approvals/${approvalId}/approve`,
     );
     return response.data;
   },
 
   rejectApproval: async (approvalId) => {
     const response = await api.post(
-      `/ai/approvals/${approvalId}/reject`
+      `/ai/approvals/${approvalId}/reject`,
     );
     return response.data;
   },
 
-runBacktest: async (body) => {
-  const response = await api.post('/trading/backtest', body);
-  return response.data;
-},
-
+  runBacktest: async (body) => {
+    const response = await api.post('/trading/backtest', body);
+    return response.data;
+  },
 };
 
 export default api;
