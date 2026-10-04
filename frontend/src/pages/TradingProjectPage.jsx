@@ -3,6 +3,7 @@ import { useTradingData, useTickers } from '../hooks/useTradingData';
 import { useTradingPrediction } from '../hooks/useTradingPrediction';
 import { useLiveTradingChart } from '../hooks/useLiveTradingChart';
 import { usePaperPortfolio } from '../hooks/usePaperPortfolio';
+import { taskApi } from '../services/api';
 import { useLiveTradingPrediction } from '../hooks/useLiveTradingPrediction';
 import CandlestickChart from '../components/Chart/CandlestickChart';
 import PredictionPanel from '../components/Trading/PredictionPanel';
@@ -1060,46 +1061,12 @@ function TradingProjectPage() {
         setBacktestError('');
 
         try {
-          const response =
-            await fetch(
-              '/api/v1/trading/backtest',
-              {
-                method: 'POST',
-                headers: {
-                  'Content-Type':
-                    'application/json',
-                },
-                body: JSON.stringify({
-                  ticker:
-                    selectedTicker,
-                  limit: barLimit,
-                  ...strategyParams,
-                }),
-              },
-            );
-
-          const raw =
-            await response.text();
-
-          let json = {};
-
-          try {
-            json = raw
-              ? JSON.parse(raw)
-              : {};
-          } catch {
-            throw new Error(
-              'Backtest returned an invalid JSON response.',
-            );
-          }
-
-          if (!response.ok) {
-            throw new Error(
-              json.detail ||
-                json.message ||
-                `Backtest failed with HTTP ${response.status}`,
-            );
-          }
+          const json =
+            await taskApi.runBacktest({
+              ticker: selectedTicker,
+              limit: barLimit,
+              ...strategyParams,
+            });
 
           setBacktestResult(json);
         } catch (error) {
