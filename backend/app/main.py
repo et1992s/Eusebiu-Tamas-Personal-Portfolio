@@ -30,9 +30,13 @@ from app.api.contact import router as contact_router
 from app.services.trading.live.alpaca import AlpacaMarketDataProvider
 from app.services.trading.live.chart import LiveChartService
 from app.services.trading.live.prediction import LivePredictionService
+from app.services.trading.live.market_data import MarketDataService
+from app.services.trading.live.market_store import MarketDataStore
 from app.services.trading.live.stream import LivePredictionStream
 from app.services.trading.ml.inference import inference_service
 from app.services.trading.simulation.engine import TradingEngine
+from app.services.trading.paper.api import router as paper_router
+from app.services.trading.paper.bootstrap import ensure_portfolio
 from app.services.tube import tube_engine
 
 
@@ -59,13 +63,22 @@ trading_engine = TradingEngine(
 
 live_market_provider = AlpacaMarketDataProvider()
 
-live_chart_service = LiveChartService(
+market_data_store = MarketDataStore(
+    path="data/market_data.db",
+)
+
+market_data_service = MarketDataService(
     provider=live_market_provider,
+    store=market_data_store,
+)
+
+live_chart_service = LiveChartService(
+    provider=market_data_service,
     default_limit=100,
 )
 
 live_prediction_service = LivePredictionService(
-    provider=live_market_provider,
+    provider=market_data_service,
     bars_limit=100,
 )
 
@@ -104,6 +117,13 @@ async def lifespan(app: FastAPI):
     )
 
     logger.info("Tube data status: %s", tube_status)
+
+    # ── Paper trading bootstrap ─────────────────────────────
+    try:
+        ensure_portfolio()
+    except Exception:
+        logger.exception("Paper portfolio bootstrap failed")
+
     logger.info("Zebio Studio Engine ready")
 
     yield
@@ -128,6 +148,7 @@ app = FastAPI(
 
 app.include_router(ai_router)
 app.include_router(contact_router)
+app.include_router(paper_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -495,45 +516,68 @@ async def get_live_chart(
     asset_class: str = Query("stocks"),
 ):
     """
-    Return live market candles for the requested chart timeframe.
-    Supports stocks, ETFs, and crypto (crypto uses BTC-USD style paths).
+    Return market candles for the requested chart timeframe.
+
+    Supports stocks, ETFs, and crypto.
+
+    The response source identifies whether the data came directly
+    from Alpaca or from the persistent historical market-data cache.
     """
     if not ticker:
-        raise HTTPException(status_code=400, detail="Ticker must not be empty.")
+        raise HTTPException(
+            status_code=400,
+            detail="Ticker must not be empty.",
+        )
 
-    # Denormalize: BTC-USD → BTC/USD for Alpaca
+    # Denormalize: BTC-USD -> BTC/USD for Alpaca.
     alpaca_ticker = denormalize_ticker(ticker)
 
     try:
-        normalized_timeframe = live_chart_service.normalize_timeframe(timeframe)
+        normalized_timeframe = (
+            live_chart_service.normalize_timeframe(
+                timeframe
+            )
+        )
 
-        bars = live_chart_service.get_bars(
+        chart_result = live_chart_service.get_bars(
             ticker=alpaca_ticker,
             timeframe=normalized_timeframe,
             limit=limit,
             asset_class=asset_class,
         )
 
+        bars = chart_result.bars
+
         if bars.empty:
             raise HTTPException(
                 status_code=404,
-                detail=f"No live market data available for '{alpaca_ticker}'.",
+                detail=(
+                    "No market data available for "
+                    f"'{alpaca_ticker}'."
+                ),
             )
 
         data = []
+
         for timestamp, row in bars.iterrows():
-            data.append({
-                "timestamp": timestamp.tz_convert("UTC").isoformat(),
-                "open": float(row["first"]),
-                "high": float(row["high"]),
-                "low": float(row["low"]),
-                "close": float(row["last"]),
-                "volume": int(row["volume"]),
-            })
+            data.append(
+                {
+                    "timestamp": (
+                        timestamp
+                        .tz_convert("UTC")
+                        .isoformat()
+                    ),
+                    "open": float(row["first"]),
+                    "high": float(row["high"]),
+                    "low": float(row["low"]),
+                    "close": float(row["last"]),
+                    "volume": int(row["volume"]),
+                }
+            )
 
         return {
             "status": "success",
-            "source": "live",
+            "source": chart_result.source,
             "ticker": alpaca_ticker,
             "timeframe": normalized_timeframe,
             "bars": len(data),
@@ -542,13 +586,25 @@ async def get_live_chart(
 
     except HTTPException:
         raise
+
     except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc))
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        )
+
     except Exception:
-        logger.exception("Live chart request failed for %s", alpaca_ticker)
+        logger.exception(
+            "Live chart request failed for %s",
+            alpaca_ticker,
+        )
+
         raise HTTPException(
             status_code=502,
-            detail=f"Live market-data request failed for '{alpaca_ticker}'.",
+            detail=(
+                "Market-data request failed for "
+                f"'{alpaca_ticker}'."
+            ),
         )
 
 # ---------------------------------------------------------------------------

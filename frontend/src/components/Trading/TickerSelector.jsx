@@ -52,11 +52,15 @@ const TickerSelector = ({ tickers, selectedTicker, onSelect, loading }) => {
         }}
         onChange={(e) => setSearch(e.target.value)}
         style={{
-          borderColor: 'var(--border)',
-          background: 'var(--bg)',
-          color: 'var(--text-h)',
+          borderColor: 'var(--z-border)',
+          background: 'var(--z-panel-solid)',
+          color: 'var(--z-text)',
           padding: '6px 10px',
           width: '100%',
+          borderRadius: 8,
+          height: 35,
+          outline: 'none',
+          font: 'inherit',
         }}
       />
 
@@ -67,13 +71,15 @@ const TickerSelector = ({ tickers, selectedTicker, onSelect, loading }) => {
             top: '100%',
             left: 0,
             right: 0,
+            marginTop: 4,
             maxHeight: 280,
             overflowY: 'auto',
-            background: 'var(--bg)',
-            border: '1px solid var(--border)',
-            borderRadius: 4,
+            background: 'var(--z-panel-solid)',
+            border: '1px solid var(--z-border)',
+            borderRadius: 8,
             zIndex: 100,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.35)',
+            boxShadow: '0 12px 32px rgba(0, 0, 0, 0.55)',
+            backdropFilter: 'blur(18px)',
           }}
         >
           {loading && (
@@ -103,12 +109,11 @@ const TickerSelector = ({ tickers, selectedTicker, onSelect, loading }) => {
                     setSearch('');
                   }}
                   style={{
-                    padding: '7px 10px',
+                    padding: '8px 12px',
                     cursor: 'pointer',
-                    borderBottom: '1px solid var(--border)',
-                    background: isSelected
-                      ? 'var(--code-bg)'
-                      : 'transparent',
+                    borderBottom: '1px solid var(--z-border)',
+                    background: isSelected ? 'rgba(156, 255, 87, 0.055)' : 'transparent',
+                    color: 'var(--z-text)',
                   }}
                   onMouseEnter={(e) => {
                     if (!isSelected) e.currentTarget.style.background = 'var(--code-bg)';

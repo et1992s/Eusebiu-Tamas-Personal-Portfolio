@@ -1,5 +1,21 @@
 ﻿import React from 'react';
 
+const TARGET_LABELS = {
+  forward_1min_return:   { label: '1-minute horizon',   hint: 'Next 1-minute return' },
+  forward_5min_return:   { label: '5-minute horizon',   hint: 'Next 5-minute return' },
+  forward_15min_return:  { label: '15-minute horizon',  hint: 'Next 15-minute return' },
+  forward_1h_return:     { label: '1-hour horizon',     hint: 'Next 1-hour return' },
+};
+
+function formatTarget(target) {
+  if (!target) return { label: 'Forward return', hint: null };
+  const entry = TARGET_LABELS[target];
+  if (entry) return entry;
+  // Fallback: turn forward_1min_return → "forward 1min return"
+  const pretty = target.replace(/_/g, ' ');
+  return { label: pretty, hint: null };
+}
+
 function formatPrediction(value) {
   const numericValue = Number(value);
 
@@ -150,9 +166,19 @@ function PredictionPanel({
             {formatPrediction(predictedReturn)}
           </strong>
 
-          <span className="prediction-target">
-            {activePrediction.target || 'forward return'}
-          </span>
+          {(() => {
+            const targetInfo = formatTarget(activePrediction.target);
+            return (
+              <div className="prediction-target-block">
+                <span className="prediction-target-label">
+                  {targetInfo.hint || targetInfo.label}
+                </span>
+                <span className="prediction-target-code">
+                  {activePrediction.target}
+                </span>
+              </div>
+            );
+          })()}
         </div>
 
         <div className="prediction-meta">

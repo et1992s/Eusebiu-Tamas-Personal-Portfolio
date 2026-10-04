@@ -22,6 +22,7 @@ export function useLiveTradingChart(
   const [connected, setConnected] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [source, setSource] = useState(null);
   const wsRef = useRef(null);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export function useLiveTradingChart(
       setConnected(false);
       setLoading(false);
       setError('');
+      setSource(null);
       return undefined;
     }
 
@@ -39,6 +41,7 @@ export function useLiveTradingChart(
     setBars([]);
     setConnected(false);
     setError('');
+    setSource(null);
 
     const safeTicker = encodeTicker(ticker);
 
@@ -56,6 +59,7 @@ export function useLiveTradingChart(
 
         if (active) {
           setBars(data.data || []);
+          setSource(data.source || null);
         }
       } catch (err) {
         if (active) {
@@ -183,5 +187,6 @@ export function useLiveTradingChart(
     connected,
     loading,
     error,
+    source,
   };
 }

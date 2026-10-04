@@ -1823,6 +1823,201 @@ button {
 }
 
 /* =========================================================
+   TRADING LAB — MARKET HEADER
+========================================================= */
+
+.market-header {
+  padding: 18px 20px 16px;
+  border: 1px solid var(--z-border);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 24, 34, 0.96),
+      rgba(8, 12, 18, 0.96)
+    );
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.market-header-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.market-identity {
+  min-width: 0;
+}
+
+.market-symbol-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.market-symbol-row h1 {
+  margin: 0;
+  color: var(--z-text);
+  font:
+    700 24px/1
+    "DM Mono",
+    monospace;
+  letter-spacing: -0.04em;
+}
+
+.market-company {
+  display: block;
+  margin-top: 7px;
+  color: var(--z-muted);
+  font:
+    500 10px/1.2
+    "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.market-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 22px;
+  padding: 0 8px;
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  color: var(--z-muted);
+  background: rgba(148, 163, 184, 0.06);
+  font:
+    700 8px/1
+    "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+
+.market-status-live {
+  border-color: rgba(57, 255, 20, 0.28);
+  color: var(--z-accent);
+  background: rgba(57, 255, 20, 0.06);
+}
+
+.market-status-loading {
+  border-color: rgba(251, 191, 36, 0.28);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.06);
+}
+
+.market-status-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.market-status-live .market-status-dot {
+  box-shadow: 0 0 7px currentColor;
+}
+
+.market-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.market-price strong {
+  color: var(--z-text);
+  font:
+    700 28px/1
+    "DM Mono",
+    monospace;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-change {
+  color: var(--z-muted);
+  font:
+    600 11px/1
+    "DM Mono",
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-change-positive {
+  color: #22c55e;
+}
+
+.market-change-negative {
+  color: #ef4444;
+}
+
+.market-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 18px;
+  overflow: hidden;
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+  border-radius: 7px;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.market-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px 12px;
+  background: rgba(8, 12, 18, 0.72);
+}
+
+.market-metric span {
+  color: var(--z-muted);
+  font:
+    600 8px/1
+    "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+
+.market-metric strong {
+  overflow: hidden;
+  color: var(--z-text);
+  font:
+    600 11px/1.2
+    "DM Mono",
+    monospace;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .market-header-main {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .market-price {
+    justify-content: flex-start;
+  }
+
+  .market-metrics {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
    PRICE PANEL
 ========================================================= */
 
@@ -1992,19 +2187,31 @@ button {
   color: #ffabb3;
 }
 
-.prediction-target {
-  display: block;
-
+.prediction-target-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   margin-top: 8px;
+}
 
+.prediction-target-label {
+  display: block;
   color: var(--z-muted);
-
-  font:
-    500 8px/1
-    "DM Mono",
-    monospace;
-
+  font: 500 9px "DM Mono", monospace;
   letter-spacing: 0.04em;
+}
+
+.prediction-target-code {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 6px;
+  border: 1px solid var(--z-border);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.022);
+  color: var(--z-dim);
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 /* ---------------------------------------------------------
@@ -4583,5 +4790,693 @@ tube-route-header {
     min-height: 34px;
     max-height: 88px;
     font-size: 16px;
+  }
+}
+
+/* =========================================================
+   TRADING LAB — INSTITUTIONAL TERMINAL
+   ========================================================= */
+
+.trading-terminal {
+  width: min(100%, 1500px);
+  margin: 0 auto;
+  padding: 12px 0 42px;
+}
+
+.trading-terminal-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding: 0 2px 18px;
+  border-bottom: 1px solid var(--z-border);
+}
+
+.trading-terminal-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--z-accent);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.16em;
+}
+
+.trading-terminal-header h1 {
+  margin: 0;
+  color: var(--z-text);
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.trading-terminal-header p {
+  max-width: 620px;
+  margin: 8px 0 0;
+  color: var(--z-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.trading-terminal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid var(--z-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.018);
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.terminal-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--z-dim);
+}
+
+.terminal-status-dot.terminal-status-live {
+  background: var(--z-accent);
+  box-shadow: 0 0 8px rgba(156, 255, 87, 0.55);
+}
+
+.market-section,
+.chart-section,
+.trading-intelligence-section,
+.strategy-section,
+.research-section {
+  margin-bottom: 14px;
+}
+
+.market-section > .market-header {
+  margin-bottom: 8px;
+}
+
+.trading-terminal .market-header {
+  position: relative;
+  top: auto;
+  margin-bottom: 0;
+}
+
+.trading-terminal .market-controls {
+  grid-template-columns: minmax(240px, 1fr) 150px;
+  align-items: end;
+  gap: 10px;
+  padding: 10px 0 0;
+  border-bottom: 0;
+}
+
+.market-control-primary {
+  min-width: 0;
+}
+
+.trading-terminal .market-controls select,
+.trading-terminal .bars-control select {
+  background: var(--z-panel-solid);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 4px 2px 10px;
+}
+
+.section-heading > div {
+  min-width: 0;
+}
+
+.section-heading > div > span,
+.section-heading-model {
+  display: block;
+  color: var(--z-dim);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 4px 0 0;
+  color: var(--z-text);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.section-heading-model {
+  flex: 0 0 auto;
+  color: var(--z-muted);
+}
+
+.chart-section,
+.trading-intelligence-section,
+.strategy-section,
+.research-section {
+  padding: 14px;
+  border: 1px solid var(--z-border);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 24, 34, 0.88),
+      rgba(8, 12, 18, 0.92)
+    );
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.018);
+}
+
+.trading-terminal .chart-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 10px 0;
+  border-top: 1px solid var(--z-border);
+  border-bottom: 1px solid var(--z-border);
+}
+
+.trading-terminal .chart-toolbar .bars-control {
+  width: 120px;
+  flex: 0 0 120px;
+}
+
+.trading-terminal .chart-toolbar .bars-control select {
+  height: 32px;
+}
+
+.indicator-control {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 230px;
+  flex: 1 1 230px;
+}
+
+.indicator-control-label {
+  color: var(--z-dim);
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.indicator-options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.indicator-option {
+  height: 32px;
+  padding: 0 9px;
+  border: 1px solid var(--z-border);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.018);
+  color: var(--z-muted);
+  font: 500 8px "DM Mono", monospace;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.indicator-option:hover {
+  color: var(--z-text);
+  border-color: var(--z-border-bright);
+}
+
+.indicator-option-active {
+  border-color: rgba(156, 255, 87, 0.28);
+  background: rgba(156, 255, 87, 0.075);
+  color: var(--z-accent);
+}
+
+.chart-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--z-border);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.018);
+  color: var(--z-muted);
+  font: 500 8px "DM Mono", monospace;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chart-toggle input {
+  margin: 0;
+  accent-color: var(--z-accent);
+}
+
+.chart-toggle:has(input:checked) {
+  border-color: rgba(156, 255, 87, 0.22);
+  color: var(--z-text);
+}
+
+.trading-terminal .chart-wrap {
+  min-height: 520px;
+  margin: 8px 0 0;
+  border-radius: 9px;
+}
+
+.trading-terminal .chart-placeholder {
+  min-height: 520px;
+}
+
+.chart-live-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.chart-live-state i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--z-dim);
+}
+
+.chart-live-state i.is-live {
+  background: var(--z-accent);
+  box-shadow: 0 0 7px rgba(156, 255, 87, 0.5);
+}
+
+.trading-terminal .market-footer {
+  margin-top: 4px;
+  padding: 10px 2px 2px;
+  min-height: 0;
+  border-top: 1px solid var(--z-border);
+}
+
+.trading-terminal .prediction-panel {
+  margin: 0;
+}
+
+.trading-terminal .strategy-overlay {
+  margin: 0;
+}
+
+.strategy-empty-state {
+  padding: 20px;
+  border: 1px solid var(--z-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.012);
+  text-align: center;
+}
+
+.strategy-empty-state > span {
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+}
+
+.strategy-empty-state p {
+  margin: 7px 0 0;
+  color: var(--z-dim);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.trading-terminal .strategy-controls {
+  padding: 12px 0 0;
+  border-bottom: 0;
+}
+
+.strategy-configuration {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--z-border);
+}
+
+.strategy-configuration-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.strategy-configuration-heading span {
+  color: var(--z-muted);
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.strategy-configuration-heading strong {
+  color: var(--text-h);
+  font: 600 11px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.research-controls {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  align-items: end;
+  padding: 2px 0 12px;
+}
+
+.research-description {
+  min-width: 0;
+  padding: 0 2px;
+}
+
+.research-description > span {
+  display: block;
+  color: var(--z-dim);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.1em;
+}
+
+.research-description strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--z-text);
+  font: 600 11px "DM Mono", monospace;
+}
+
+.research-description p {
+  max-width: 650px;
+  margin: 4px 0 0;
+  color: var(--z-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.research-results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--z-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.research-results > div {
+  min-width: 0;
+  padding: 12px;
+  border-right: 1px solid var(--z-border);
+}
+
+.research-results > div:last-child {
+  border-right: 0;
+}
+
+.research-results span {
+  display: block;
+  color: var(--z-dim);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.research-results strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--z-text);
+  font: 600 12px "DM Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.research-state {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 52px;
+  margin-top: 12px;
+  padding: 0 12px;
+  border: 1px solid var(--z-border);
+  border-radius: 8px;
+  color: var(--z-muted);
+  font: 500 9px "DM Mono", monospace;
+}
+
+.research-state .loader-ring {
+  width: 14px;
+  height: 14px;
+}
+
+.trading-terminal .market-error {
+  margin: 10px 0 0;
+}
+
+@media (max-width: 800px) {
+  .trading-terminal-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .trading-terminal-status {
+    align-self: flex-start;
+  }
+
+  .trading-terminal .market-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trading-terminal .chart-toolbar {
+    align-items: stretch;
+  }
+
+  .trading-terminal .chart-toolbar .bars-control {
+    flex: 1 1 120px;
+  }
+
+  .indicator-control {
+    flex-basis: 100%;
+  }
+
+  .research-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .trading-terminal {
+    padding-top: 6px;
+  }
+
+  .chart-section,
+  .trading-intelligence-section,
+  .strategy-section,
+  .research-section {
+    padding: 10px;
+    border-radius: 9px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .section-heading-model {
+    align-self: flex-start;
+  }
+
+  .trading-terminal .chart-wrap,
+  .trading-terminal .chart-placeholder {
+    min-height: 390px;
+  }
+
+  .trading-terminal .chart-wrap {
+    height: 390px;
+  }
+
+  .research-results {
+    grid-template-columns: 1fr;
+  }
+
+  .research-results > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--z-border);
+  }
+
+  .research-results > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* =========================================================
+   PAPER PORTFOLIO
+   ========================================================= */
+
+.paper-section {
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid var(--z-border);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 24, 34, 0.88),
+      rgba(8, 12, 18, 0.92)
+    );
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.018);
+}
+
+.paper-portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paper-portfolio-loading,
+.paper-portfolio-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 90px;
+  justify-content: center;
+  color: var(--z-muted);
+  font: 500 10px "DM Mono", monospace;
+}
+
+.paper-portfolio-error {
+  flex-direction: column;
+  color: #ffabb3;
+}
+
+.paper-portfolio-headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.paper-portfolio-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+}
+
+.paper-portfolio-equity {
+  display: block;
+  font: 700 28px "DM Mono", monospace;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.paper-portfolio-change {
+  display: block;
+  margin-top: 5px;
+  font: 600 11px "DM Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.paper-portfolio-meta {
+  display: flex;
+  gap: 22px;
+  flex: 0 0 auto;
+}
+
+.paper-portfolio-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.paper-portfolio-meta span {
+  color: var(--z-dim);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.1em;
+}
+
+.paper-portfolio-meta strong {
+  color: var(--z-text);
+  font: 600 11px "DM Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.paper-portfolio-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--z-border);
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.paper-portfolio-metrics > div {
+  min-width: 0;
+  padding: 11px 12px;
+  background: rgba(8, 12, 18, 0.72);
+}
+
+.paper-portfolio-metrics span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.1em;
+}
+
+.paper-portfolio-metrics strong {
+  display: block;
+  overflow: hidden;
+  color: var(--z-text);
+  font: 600 12px "DM Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paper-portfolio-empty {
+  padding: 16px;
+  border: 1px dashed var(--z-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.012);
+  text-align: center;
+}
+
+.paper-portfolio-empty > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--z-muted);
+  font: 600 8px "DM Mono", monospace;
+  letter-spacing: 0.14em;
+}
+
+.paper-portfolio-empty p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--z-dim);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.paper-portfolio-footer {
+  color: var(--z-dim);
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .paper-portfolio-headline {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .paper-portfolio-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

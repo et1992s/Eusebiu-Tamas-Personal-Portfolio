@@ -1,7 +1,7 @@
 """
 chart.py - Live market-chart data aggregation for Zebio.
 
-This module sits between the canonical live market-data provider and
+This module sits between the market-data orchestration layer and
 the frontend charting layer.
 
 Architecture:
@@ -10,12 +10,19 @@ Architecture:
             |
             | canonical 1-minute OHLCV
             v
+    MarketDataService
+            |
+            | MarketDataResult
+            | bars + source
+            v
     LiveChartService
             |
             | regular-session filtering
             | session-anchored aggregation
             v
-    aggregated OHLCV
+    ChartResult
+            |
+            | bars + source
 
 The chart timeframe is deliberately independent from the ML inference
 timeframe. The production ML model remains fixed at 1-minute resolution.
@@ -24,10 +31,11 @@ timeframe. The production ML model remains fixed at 1-minute resolution.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Protocol
 
 import pandas as pd
 
-from app.services.trading.live.provider import MarketDataProvider
+from app.services.trading.live.market_data import MarketDataResult
 
 
 @dataclass(frozen=True)
@@ -39,6 +47,55 @@ class ChartTimeframe:
     code: str
     pandas_rule: str
     source_bars_per_candle: int
+
+
+@dataclass(frozen=True)
+class ChartResult:
+    """
+    Result returned by LiveChartService.
+
+    bars:
+        Aggregated chart OHLCV data.
+
+    source:
+        "alpaca" when the underlying market data was retrieved live.
+
+        "historical_cache" when the underlying market data was retrieved
+        from persistent storage.
+    """
+
+    bars: pd.DataFrame
+    source: str
+
+    @property
+    def is_live(self) -> bool:
+        """
+        Whether the chart data ultimately came from Alpaca.
+        """
+
+        return self.source == "alpaca"
+
+
+class MarketDataSource(Protocol):
+    """
+    Provenance-aware market-data interface required by the chart layer.
+
+    MarketDataService implements this interface.
+
+    This keeps LiveChartService independent from the concrete
+    MarketDataService implementation while preserving data provenance.
+    """
+
+    def get_bars(
+        self,
+        ticker: str,
+        limit: int = 100,
+        asset_class: str = "stocks",
+    ) -> MarketDataResult:
+        """
+        Return canonical market bars together with their source.
+        """
+        ...
 
 
 TIMEFRAMES: dict[str, ChartTimeframe] = {
@@ -101,14 +158,17 @@ class LiveChartService:
         - create synthetic OHLCV observations;
         - mix live data into historical datasets.
 
-    The provider remains responsible for obtaining raw market data.
+    The market-data source remains responsible for obtaining or
+    retrieving canonical market data.
 
     This service is responsible for:
 
-        - validating provider data;
+        - validating market-data output;
         - restricting equity charts to regular US market hours;
-        - anchoring candles to the regular-session open;
-        - aggregating 1-minute observations into display candles.
+        - preserving 24/7 crypto data;
+        - anchoring candles to the regular-session open for equities;
+        - aggregating 1-minute observations into display candles;
+        - preserving market-data provenance.
     """
 
     MARKET_TIMEZONE = "America/New_York"
@@ -116,13 +176,11 @@ class LiveChartService:
     REGULAR_SESSION_START = "09:30"
     REGULAR_SESSION_END = "16:00"
 
-    # The provider currently uses Alpaca's `limit` parameter. A bounded
-    # source request prevents accidental requests of unreasonable size.
     MAX_SOURCE_BARS = 10_000
 
     def __init__(
         self,
-        provider: MarketDataProvider,
+        provider: MarketDataSource,
         default_limit: int = 100,
     ) -> None:
         if default_limit <= 0:
@@ -139,12 +197,6 @@ class LiveChartService:
     ) -> str:
         """
         Validate and normalize a public chart timeframe.
-
-        Examples:
-
-            "5m"  -> "5m"
-            "15M" -> "15m"
-            "1d"  -> "1D"
         """
 
         if not isinstance(timeframe, str):
@@ -185,6 +237,44 @@ class LiveChartService:
         return normalized
 
     @staticmethod
+    def _normalize_asset_class(
+        asset_class: str,
+    ) -> str:
+        """
+        Validate and normalize the public asset-class identifier.
+        """
+
+        if not isinstance(asset_class, str):
+            raise ValueError(
+                "Asset class must be a string."
+            )
+
+        normalized = asset_class.strip().lower()
+
+        if not normalized:
+            raise ValueError(
+                "Asset class must not be empty."
+            )
+
+        supported = {
+            "stocks",
+            "etf",
+            "crypto",
+        }
+
+        if normalized not in supported:
+            supported_values = ", ".join(
+                sorted(supported)
+            )
+
+            raise ValueError(
+                f"Unsupported asset class '{asset_class}'. "
+                f"Supported asset classes: {supported_values}."
+            )
+
+        return normalized
+
+    @staticmethod
     def _empty_bars() -> pd.DataFrame:
         """
         Return an empty canonical OHLCV DataFrame.
@@ -204,9 +294,6 @@ class LiveChartService:
     ) -> pd.DataFrame:
         """
         Validate and normalize provider output.
-
-        The provider contract requires a DatetimeIndex and the canonical
-        OHLCV columns.
         """
 
         if bars is None:
@@ -269,16 +356,6 @@ class LiveChartService:
     ) -> int:
         """
         Calculate a bounded source-bar request.
-
-        The provider returns raw 1-minute bars, so higher chart
-        timeframes require more source observations.
-
-        Extra observations are requested because Alpaca may return
-        extended-hours observations and because source data can contain
-        missing minutes.
-
-        The result is bounded by MAX_SOURCE_BARS because the current
-        provider contract uses a single bounded `limit` request.
         """
 
         if requested_candles <= 0:
@@ -290,10 +367,6 @@ class LiveChartService:
             timeframe.source_bars_per_candle
         )
 
-        # At least two additional candle widths are requested.
-        # For 1-minute charts this also deliberately overfetches so
-        # that pre-market observations can be removed without reducing
-        # the requested regular-session chart history.
         buffer = max(
             bars_per_candle * 2,
             30,
@@ -316,16 +389,6 @@ class LiveChartService:
     ) -> pd.DataFrame:
         """
         Keep only regular US equity-session observations.
-
-        Provider timestamps are UTC. They are converted to
-        America/New_York solely for session filtering so daylight
-        saving time is handled correctly.
-
-        Regular session:
-
-            09:30 <= timestamp < 16:00
-
-        The returned index remains UTC.
         """
 
         if bars.empty:
@@ -359,10 +422,6 @@ class LiveChartService:
     ) -> pd.Series:
         """
         Return a regular-market-session key for each timestamp.
-
-        Sessions are identified using the local New York calendar date,
-        rather than UTC date. This is important around daylight-saving
-        transitions and makes the session boundary explicit.
         """
 
         local_index = index.tz_convert(
@@ -419,24 +478,6 @@ class LiveChartService:
     ) -> pd.DataFrame:
         """
         Aggregate one regular market session.
-
-        Candle boundaries are anchored to 09:30 America/New_York.
-
-        Examples:
-
-            5m:
-                09:30, 09:35, 09:40, ...
-
-            1h:
-                09:30, 10:30, 11:30, ...
-
-            4h:
-                09:30, 13:30, ...
-
-        The final candle may be shorter than the nominal timeframe
-        because the regular session closes at 16:00.
-
-        Only actual source observations contribute to a candle.
         """
 
         if session_bars.empty:
@@ -582,23 +623,10 @@ class LiveChartService:
         ticker: str,
         timeframe: str = "1m",
         limit: int | None = None,
-        asset_class: str = "stocks",   # <-- MUST accept this
-    ) -> pd.DataFrame:
+        asset_class: str = "stocks",
+    ) -> ChartResult:
         """
-        Return live chart bars for a ticker and display timeframe.
-
-        The provider always supplies 1-minute source bars.
-
-        Higher chart timeframes are derived locally.
-
-        The chart layer represents regular US equity market hours
-        only.
-
-        Note:
-            The current provider contract uses one bounded historical
-            request. Very long daily lookbacks may therefore return
-            fewer candles than requested until the provider supports
-            paginated/date-range retrieval.
+        Return chart candles together with their market-data source.
         """
 
         normalized_ticker = ticker.upper().strip()
@@ -611,6 +639,12 @@ class LiveChartService:
         normalized_timeframe = (
             self.normalize_timeframe(
                 timeframe,
+            )
+        )
+
+        normalized_asset_class = (
+            self._normalize_asset_class(
+                asset_class,
             )
         )
 
@@ -634,26 +668,52 @@ class LiveChartService:
             requested_limit,
         )
 
-        source_bars = self.provider.get_recent_bars(
-            normalized_ticker,
+        market_result = self.provider.get_bars(
+            ticker=normalized_ticker,
             limit=source_limit,
+            asset_class=normalized_asset_class,
         )
 
-        source_bars = self._validate_bars(source_bars)
+        source_bars = self._validate_bars(
+            market_result.bars
+        )
+
         if source_bars.empty:
-            return source_bars
+            return ChartResult(
+                bars=source_bars,
+                source=market_result.source,
+            )
 
-        # BYPASS regular session filtering for crypto
-        if asset_class != "crypto":
-            source_bars = self._filter_regular_session(source_bars)
+        if normalized_asset_class != "crypto":
+            source_bars = self._filter_regular_session(
+                source_bars
+            )
+
             if source_bars.empty:
-                return source_bars
+                return ChartResult(
+                    bars=source_bars,
+                    source=market_result.source,
+                )
 
-        chart_bars = self._aggregate(source_bars, chart_timeframe)
+        chart_bars = self._aggregate(
+            source_bars,
+            chart_timeframe,
+        )
 
         if chart_bars.empty:
-            return chart_bars
-        return chart_bars
+            return ChartResult(
+                bars=chart_bars,
+                source=market_result.source,
+            )
+
+        chart_bars = chart_bars.tail(
+            requested_limit
+        )
+
+        return ChartResult(
+            bars=chart_bars,
+            source=market_result.source,
+        )
 
     @staticmethod
     def supported_timeframes() -> list[str]:

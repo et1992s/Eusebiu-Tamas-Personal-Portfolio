@@ -12,8 +12,8 @@ class MarketDataProvider(ABC):
     Abstract interface for live market-data providers.
 
     Providers must return Zebio's canonical OHLCV schema so that
-    downstream feature engineering and ML inference remain provider-
-    independent.
+    downstream feature engineering and ML inference remain
+    provider-independent.
     """
 
     @abstractmethod
@@ -21,9 +21,10 @@ class MarketDataProvider(ABC):
         self,
         ticker: str,
         limit: int = 100,
+        asset_class: str = "stocks",
     ) -> pd.DataFrame:
         """
-        Return the most recent bars for a ticker.
+        Return the most recent bars for a ticker and asset class.
 
         The returned DataFrame must contain:
 
@@ -34,5 +35,11 @@ class MarketDataProvider(ABC):
             volume
 
         and must use a DatetimeIndex.
+
+        Supported asset classes currently include:
+
+            stocks
+            etf
+            crypto
         """
         raise NotImplementedError

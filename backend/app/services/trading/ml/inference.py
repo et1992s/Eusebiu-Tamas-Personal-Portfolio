@@ -8,7 +8,7 @@ Responsibilities
 - Load matching feature/target scalers and metadata.
 - Build the latest valid 30-row feature sequence.
 - Apply the training-time input scaler.
-- Predict forward_1min_return.
+- Predict 1-minute forward return.
 - Inverse-transform the model output.
 
 This module does NOT:

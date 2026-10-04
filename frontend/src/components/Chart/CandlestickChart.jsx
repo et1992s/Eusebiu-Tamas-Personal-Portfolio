@@ -10,7 +10,7 @@ const {
   ColorType,
   PriceScaleMode,
   LineStyle,
-  createSeriesMarkers, // <-- 1. Import the new function
+  createSeriesMarkers,
 } = LWC;
 
 // ─────────────────────────────────────────────────────────────
@@ -117,7 +117,7 @@ function LiveBadge({ timestamp }) {
           boxShadow: '0 0 7px rgba(57, 255, 20, 0.65)',
         }}
       />
-      LIVE ALPACA
+      LIVE
       {formatted && (
         <span
           style={{
@@ -153,7 +153,7 @@ const CandlestickChart = ({
   const volumeSeriesRef = useRef(null);
   const indicatorSeriesRef = useRef([]);
   const priceLinesRef = useRef([]);
-  const seriesMarkersRef = useRef(null); // <-- 2. Add a ref for the markers primitive
+  const seriesMarkersRef = useRef(null);
 
   const [chartVersion, setChartVersion] = useState(0);
 
@@ -172,11 +172,7 @@ const CandlestickChart = ({
       layout: {
         background: { type: ColorType.Solid, color: 'transparent' },
         textColor: '#94a3b8',
-        panes: {
-          separatorColor: 'rgba(148, 163, 184, 0.15)',
-          separatorHoverColor: 'rgba(148, 163, 184, 0.30)',
-          enableResize: true,
-        },
+        // No panes config — we're staying single-pane.
       },
       grid: {
         vertLines: { color: 'rgba(148, 163, 184, 0.07)' },
@@ -224,7 +220,7 @@ const CandlestickChart = ({
       volumeSeriesRef.current = null;
       indicatorSeriesRef.current = [];
       priceLinesRef.current = [];
-      seriesMarkersRef.current = null; // <-- 3. Clean up the markers ref
+      seriesMarkersRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [height]);
@@ -247,7 +243,11 @@ const CandlestickChart = ({
     if (!chart) return;
 
     if (seriesRef.current) {
-      chart.removeSeries(seriesRef.current);
+      try {
+        chart.removeSeries(seriesRef.current);
+      } catch {
+        /* already gone */
+      }
       seriesRef.current = null;
     }
 
@@ -284,64 +284,88 @@ const CandlestickChart = ({
       mainSeries.setData(liveBars);
     }
 
-    // 4. Removed the setMarkers call from here. It's now handled in its own effect.
-    
     if (liveBars.length > 0) chart.timeScale().fitContent();
-  }, [data, chartType, chartVersion]); // <-- Removed markers from dependencies here
+  }, [data, chartType, chartVersion]);
 
-  // ── Effect 2b: markers (v5 API) ───────────────────────────
+  // ── Effect 2b: markers ────────────────────────────────────
   useEffect(() => {
     const series = seriesRef.current;
     if (!series) return;
 
-    // 5. Create the markers primitive if it doesn't exist
     if (!seriesMarkersRef.current) {
       seriesMarkersRef.current = createSeriesMarkers(series, markers);
     } else {
-      // 6. Otherwise, just update the existing primitive
       seriesMarkersRef.current.setMarkers(markers);
     }
-  }, [markers, chartVersion]); // <-- This effect depends on markers and the chart version
+  }, [markers, chartVersion]);
 
-  // ── Effect 3: volume histogram (pane 1) ───────────────────
+  // ── Effect 2c: price scale margin (leaves room for volume) ─
+  useEffect(() => {
+    const main = seriesRef.current;
+    if (!main) return;
+
+    const liveBars = formatLiveBars(data);
+    const hasVolume =
+      showVolume && liveBars.some((b) => b.volume > 0);
+
+    try {
+      main.priceScale().applyOptions({
+        scaleMargins: {
+          top: 0.05,
+          bottom: hasVolume ? 0.25 : 0.05,
+        },
+      });
+    } catch {
+      /* noop */
+    }
+  }, [showVolume, data, chartVersion]);
+
+  // ── Effect 3: volume histogram (SAME pane, overlay scale) ─
+  //
+  // Uses `priceScaleId: ''` so the volume gets its own independent
+  // overlay price scale that we squeeze into the bottom 25% of
+  // the pane via scaleMargins. No panes involved, no pane index
+  // tracking, no reordering bugs possible.
+  // ─────────────────────────────────────────────────────────
   useEffect(() => {
     const chart = chartRef.current;
     if (!chart) return;
 
     const liveBars = formatLiveBars(data);
-    const hasVolume = showVolume && liveBars.some((b) => b.volume > 0);
+    const hasVolume =
+      showVolume && liveBars.some((b) => b.volume > 0);
 
-    if (!hasVolume) {
-      if (volumeSeriesRef.current) {
-        try {
-          chart.removeSeries(volumeSeriesRef.current);
-        } catch {
-          /* already gone */
-        }
-        volumeSeriesRef.current = null;
-      }
-      return;
-    }
-
+    // Create the volume series once per chart instance.
     if (!volumeSeriesRef.current) {
-      volumeSeriesRef.current = chart.addSeries(
-        HistogramSeries,
-        {
+      try {
+        volumeSeriesRef.current = chart.addSeries(HistogramSeries, {
           priceFormat: { type: 'volume' },
           priceLineVisible: false,
           lastValueVisible: false,
-        },
-        1,
-      );
-
-      const panes = chart.panes();
-      if (panes.length >= 2) {
-        panes[0].setStretchFactor(3);
-        panes[1].setStretchFactor(1);
+          priceScaleId: '', // <-- independent overlay scale
+        });
+      } catch (err) {
+        console.warn('[chart] volume series create failed:', err);
+        return;
       }
     }
 
-    volumeSeriesRef.current.setData(formatVolumeData(liveBars));
+    // Squeeze the volume's scale into the bottom of the pane.
+    try {
+      volumeSeriesRef.current.priceScale().applyOptions({
+        scaleMargins: {
+          top: hasVolume ? 0.75 : 1,
+          bottom: 0,
+        },
+      });
+    } catch (err) {
+      console.warn('[chart] volume scale margin failed:', err);
+    }
+
+    // Toggle by data swap — the series always exists.
+    volumeSeriesRef.current.setData(
+      hasVolume ? formatVolumeData(liveBars) : [],
+    );
   }, [data, showVolume, chartVersion]);
 
   // ── Effect 4: indicator overlays ──────────────────────────
@@ -369,7 +393,7 @@ const CandlestickChart = ({
     });
   }, [indicators, chartVersion]);
 
-  // ── Effect 5: strategy price lines (entry / SL / TP×2) ────
+  // ── Effect 5: strategy price lines ────────────────────────
   useEffect(() => {
     const chart = chartRef.current;
     const series = seriesRef.current;
@@ -385,12 +409,8 @@ const CandlestickChart = ({
     priceLinesRef.current = [];
 
     if (!strategyLines) return;
-
-    // Only draw the envelope when there's an active signal
     if (strategyLines.signal === 'NONE') return;
 
-    // Backward-compat: fall back to a single takeProfit if the caller
-    // hasn't yet been updated to pass takeProfitModel / takeProfitUser.
     const tpModel =
       strategyLines.takeProfitModel ?? strategyLines.takeProfit;
     const tpUser =
@@ -400,14 +420,14 @@ const CandlestickChart = ({
       strategyLines.entry != null &&
         Number.isFinite(strategyLines.entry) && {
           price: strategyLines.entry,
-          color: '#fbbf24',           // amber — reference line
+          color: '#fbbf24',
           lineStyle: LineStyle.Solid,
           title: 'ENTRY',
         },
       tpModel != null &&
         Number.isFinite(tpModel) && {
           price: tpModel,
-          color: '#22c55e',           // bright green — ML target
+          color: '#22c55e',
           lineStyle: LineStyle.Solid,
           title: 'TP (ML)',
         },
@@ -415,7 +435,7 @@ const CandlestickChart = ({
         Number.isFinite(tpUser) &&
         Math.abs(tpUser - tpModel) > 0.01 && {
           price: tpUser,
-          color: '#16a34a',           // muted green — user's slider
+          color: '#16a34a',
           lineStyle: LineStyle.Dashed,
           title: 'TP',
         },
@@ -443,7 +463,7 @@ const CandlestickChart = ({
     try {
       series.priceScale().applyOptions({ autoScale: true });
     } catch {
-      /* handled internally by the library in some versions */
+      /* noop */
     }
   }, [strategyLines, chartType, chartVersion]);
 
