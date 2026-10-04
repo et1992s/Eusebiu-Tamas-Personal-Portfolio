@@ -13,6 +13,7 @@ function AboutChat() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [waitingForResponse, setWaitingForResponse] = useState(false);
   const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
@@ -27,6 +28,7 @@ function AboutChat() {
     setMessage('');
     setError('');
     setLoading(true);
+    setWaitingForResponse(true);
 
     const assistantMessageIndex = messages.length + 1;
 
@@ -105,6 +107,7 @@ function AboutChat() {
           }
 
           if (eventType === 'token') {
+            setWaitingForResponse(false);
             const parsed = JSON.parse(data);
             const content = parsed.content || '';
 
@@ -150,6 +153,7 @@ function AboutChat() {
       );
     } finally {
       setLoading(false);
+      setWaitingForResponse(false);
 
       window.setTimeout(() => {
         textareaRef.current?.focus();
@@ -219,6 +223,17 @@ function AboutChat() {
           role="alert"
         >
           {error}
+        </div>
+      )}
+
+      {waitingForResponse && (
+        <div
+          className="portfolio-about-chat-thinking"
+          aria-label="Zebio is thinking"
+        >
+          <span />
+          <span />
+          <span />
         </div>
       )}
 
