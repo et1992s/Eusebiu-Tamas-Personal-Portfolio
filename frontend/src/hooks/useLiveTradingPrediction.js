@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { encodeTicker } from '../utils/ticker';
 
-const WS_BASE_URL = import.meta.env.VITE_WS_BASE_URL || 'ws://localhost:8000';
+const WS_BASE_URL =
+  import.meta.env.VITE_WS_BASE_URL ||
+  (window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
+    ? 'ws://localhost:8000'
+    : 'wss://api.eusebiutamas.com');
 
 export function useLiveTradingPrediction(ticker, assetClass = 'stocks') {
   const [prediction, setPrediction] = useState(null);
@@ -11,32 +16,50 @@ export function useLiveTradingPrediction(ticker, assetClass = 'stocks') {
 
   useEffect(() => {
     if (!ticker) {
-      setPrediction(null); setBars([]); setConnected(false); setError('');
+      setPrediction(null);
+      setBars([]);
+      setConnected(false);
+      setError('');
       return undefined;
     }
 
     let active = true;
     let websocket = null;
-    setPrediction(null); setBars([]); setConnected(false); setError('');
+
+    setPrediction(null);
+    setBars([]);
+    setConnected(false);
+    setError('');
 
     const safeTicker = encodeTicker(ticker);
 
     websocket = new WebSocket(
-      `${WS_BASE_URL}/api/v1/trading/live/stream/${safeTicker}`
+      `${WS_BASE_URL}/api/v1/trading/live/stream/${safeTicker}`,
     );
 
-    websocket.onopen = () => { if (active) { setConnected(true); setError(''); } };
+    websocket.onopen = () => {
+      if (active) {
+        setConnected(true);
+        setError('');
+      }
+    };
+
     websocket.onmessage = (event) => {
       if (!active) return;
+
       try {
         const payload = JSON.parse(event.data);
+
         if (payload?.status === 'success') {
           const liveData = payload.prediction ?? null;
+
           setBars(liveData?.bars ?? []);
           setPrediction(liveData?.prediction ?? null);
-          setConnected(true); setError('');
+          setConnected(true);
+          setError('');
           return;
         }
+
         if (payload?.status === 'error') {
           setConnected(false);
           setError(payload.error || 'Live prediction failed.');
@@ -45,12 +68,28 @@ export function useLiveTradingPrediction(ticker, assetClass = 'stocks') {
         setError('Invalid live prediction response.');
       }
     };
-    websocket.onerror = () => { if (active) { setConnected(false); setError('Live prediction connection failed.'); } };
-    websocket.onclose = () => { if (active) setConnected(false); };
+
+    websocket.onerror = () => {
+      if (active) {
+        setConnected(false);
+        setError('Live prediction connection failed.');
+      }
+    };
+
+    websocket.onclose = () => {
+      if (active) {
+        setConnected(false);
+      }
+    };
 
     return () => {
       active = false;
-      if (websocket && (websocket.readyState === WebSocket.OPEN || websocket.readyState === WebSocket.CONNECTING)) {
+
+      if (
+        websocket &&
+        (websocket.readyState === WebSocket.OPEN ||
+          websocket.readyState === WebSocket.CONNECTING)
+      ) {
         websocket.close();
       }
     };
