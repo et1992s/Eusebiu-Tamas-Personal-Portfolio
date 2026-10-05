@@ -246,7 +246,7 @@ function AboutChat() {
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask about my background, projects or skills..."
+          placeholder="Ask anything"
           rows={1}
           disabled={loading}
           aria-label="Ask Zebio a question about Eusebiu"
