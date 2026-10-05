@@ -283,7 +283,7 @@ function CVPage() {
         <div className="portfolio-cv-skills">
           <div>
             <h3>Programming</h3>
-            <p>Python · SQL · C++ · Java · R · PostgreSQL</p>
+            <p>· Python · SQL · C++ · Java · R · PostgreSQL</p>
           </div>
 
           <div>

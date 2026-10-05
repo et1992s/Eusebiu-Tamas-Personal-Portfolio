@@ -50,7 +50,7 @@ function HomePage() {
           </ScrollReveal>
         </header>
 
-        <div className="portfolio-about-intro">
+        <div className="portfolio-about-layout">
           <ScrollReveal
             className="portfolio-about-image"
             delay={80}
@@ -61,33 +61,59 @@ function HomePage() {
             />
           </ScrollReveal>
 
-          <div className="portfolio-about-intro-text">
-            <ScrollReveal as="p" delay={160}>
-              I am a Computer Science graduate with a strong interest 
-              in artificial intelligence, machine learning, software engineering 
-              and data-driven systems. During my degree, 
-              I developed a particular interest in applying these areas 
-              to practical problems, from machine learning and algorithmic systems 
-              to software architecture and intelligent applications.
-            </ScrollReveal>  
-
-            <ScrollReveal as="p" delay={240}>
-              My academic and independent work has given me experience 
-              building projects across Python, machine learning, backend development 
-              and data analysis. I enjoy understanding how complex systems work beneath 
-              the surface and turning that understanding into practical, well-structured 
-              software. I am currently continuing to develop these skills through Zebio, 
-              my local AI software engineering platform, while exploring opportunities 
-              to apply them professionally.
+          <div className="portfolio-about-content">
+            <ScrollReveal
+              as="div"
+              className="portfolio-about-card"
+              delay={160}
+            >
+              <p>
+                I am a Computer Science graduate with a strong interest
+                in artificial intelligence, machine learning, software engineering
+                and data-driven systems. During my degree, I developed a particular
+                interest in applying these areas to practical problems, from machine
+                learning and algorithmic systems to software architecture and
+                intelligent applications.
+              </p>
             </ScrollReveal>
 
-            <ScrollReveal as="p" delay={240}>
-              Ask Zebio about my background, projects, experience or skills.
+            <ScrollReveal
+              as="div"
+              className="portfolio-about-card"
+              delay={240}
+            >
+              <p>
+                My academic and independent work has given me experience building
+                projects across Python, machine learning, backend development and
+                data analysis. I enjoy understanding how complex systems work beneath
+                the surface and turning that understanding into practical,
+                well-structured software. I am currently continuing to develop these
+                skills through Zebio, my local AI software engineering platform, while
+                exploring opportunities to apply them professionally.
+              </p>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal
+            className="portfolio-about-prompt"
+            delay={280}
+          >
+            <p className="portfolio-about-prompt-label">
+              Want to know more about me?
+            </p>
+            <p className="portfolio-about-prompt-text">
+              Ask Zebio about my background, projects, experience or skills.
+            </p>
+            <span className="portfolio-about-prompt-arrow" aria-hidden="true">
+              →
+            </span>
+          </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={320}>
+        <ScrollReveal
+          className="portfolio-about-chat-reveal"
+          delay={320}
+        >
           <AboutChat />
         </ScrollReveal>
       </section>

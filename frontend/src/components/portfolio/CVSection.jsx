@@ -150,22 +150,22 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={160}>
-              Engineered a trading system using a hybrid CNN-BiLSTM model
+              · Engineered a trading system using a hybrid CNN-BiLSTM model
               evaluated against traditional CNN and LSTM architectures.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={220}>
-              Achieved a predictive R-squared score of 99.52% on 2016
+              · Achieved a predictive R-squared score of 99.52% on 2016
               NASDAQ-100 test data through the simple LSTM model.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={280}>
-              Demonstrated a Sharpe Ratio of 0.10 and generated $1,355 profit
+              · Demonstrated a Sharpe Ratio of 0.10 and generated $1,355 profit
               on a $100,000 simulated portfolio.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={340}>
-              Managed the complete project independently, including the legal,
+              · Managed the complete project independently, including the legal,
               social, ethical and professional considerations of AI in
               financial applications.
             </ScrollReveal>
@@ -200,17 +200,17 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={240}>
-              Developed regression models to estimate median house values using
+              · Developed regression models to estimate median house values using
               geographical and demographic features.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={300}>
-              Implemented binary classification pipelines using multiple
+              · Implemented binary classification pipelines using multiple
               machine learning models to predict passenger survival.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={360}>
-              Achieved an R-squared score of 63% with the Random Forest
+              · Achieved an R-squared score of 63% with the Random Forest
               Regressor and an F1 score of 86.21% with the Support Vector
               Classifier.
             </ScrollReveal>
@@ -244,12 +244,12 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={320}>
-              Developed and implemented predictive models for customer churn
+              · Developed and implemented predictive models for customer churn
               using several machine learning algorithms.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={380}>
-              Achieved an ROC-AUC score of 52% and an accuracy score of 78%
+              · Achieved an ROC-AUC score of 52% and an accuracy score of 78%
               using the Random Forest Classifier.
             </ScrollReveal>
           </ul>
@@ -277,12 +277,12 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={160}>
-              Maintained a 4.98/5.00 rating across more than 5,000 passenger
+              · Maintained a 4.98/5.00 rating across more than 5,000 passenger
               trips while consistently delivering high customer satisfaction.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={220}>
-              Used Uber's driver dashboard to analyse trip patterns, reduce
+              · Used Uber's driver dashboard to analyse trip patterns, reduce
               average idle time and improve weekly earnings.
             </ScrollReveal>
           </ul>
@@ -306,12 +306,12 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={240}>
-              Achieved a 95% guest-satisfaction rating while handling more than
+              · Achieved a 95% guest-satisfaction rating while handling more than
               40 daily check-ins and reservations.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={300}>
-              Managed more than 6,000 reservations in Opera PMS while
+              · Managed more than 6,000 reservations in Opera PMS while
               maintaining 99% data accuracy and producing daily occupancy
               reports.
             </ScrollReveal>
@@ -334,17 +334,17 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={320}>
-              Picked more than 400 products per day in a fast-paced warehouse
+              · Picked more than 400 products per day in a fast-paced warehouse
               environment.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={380}>
-              Reduced order-picking errors by 20% after introducing quality
+              · Reduced order-picking errors by 20% after introducing quality
               checklists.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={440}>
-              Adapted to VNA forklift technology, learning system controls and
+              · Adapted to VNA forklift technology, learning system controls and
               data-logging procedures within one week.
             </ScrollReveal>
           </ul>
@@ -366,12 +366,12 @@ function CVSection() {
 
           <ul>
             <ScrollReveal as="li" delay={400}>
-              Maintained 99.8% accuracy across more than 10,000 monthly
+              · Maintained 99.8% accuracy across more than 10,000 monthly
               records while meeting demanding deadlines.
             </ScrollReveal>
 
             <ScrollReveal as="li" delay={460}>
-              Maintained high data integrity while adapting to changing
+              · Maintained high data integrity while adapting to changing
               operational requirements.
             </ScrollReveal>
           </ul>
@@ -386,32 +386,32 @@ function CVSection() {
         <div className="portfolio-cv-skills">
           <ScrollReveal as="div" delay={100}>
             <h3>Programming</h3>
-            <p>Python · SQL · C++ · Java · R · PostgreSQL</p>
+            <p>Python | SQL | C++ | Java | R | PostgreSQL</p>
           </ScrollReveal>
 
           <ScrollReveal as="div" delay={160}>
             <h3>Machine Learning</h3>
-            <p>TensorFlow · PyTorch · Keras · scikit-learn · XGBoost</p>
+            <p>TensorFlow | PyTorch | Keras | scikit-learn | XGBoost</p>
           </ScrollReveal>
 
           <ScrollReveal as="div" delay={220}>
             <h3>Data & Scientific Computing</h3>
-            <p>NumPy · Pandas · Matplotlib · Seaborn · Jupyter</p>
+            <p>NumPy | Pandas | Matplotlib | Seaborn | Jupyter</p>
           </ScrollReveal>
 
           <ScrollReveal as="div" delay={280}>
             <h3>Development & Systems</h3>
-            <p>Linux/Unix · Git · GitHub · Microsoft Office 365</p>
+            <p>Linux/Unix | Git | GitHub | Microsoft Office 365</p>
           </ScrollReveal>
 
           <ScrollReveal as="div" delay={340}>
             <h3>Cloud & Infrastructure</h3>
-            <p>Microsoft Azure · Google Cloud · VMware</p>
+            <p>Microsoft Azure | Google Cloud | VMware</p>
           </ScrollReveal>
 
           <ScrollReveal as="div" delay={400}>
             <h3>Big Data</h3>
-            <p>Hadoop · HDFS · MapReduce</p>
+            <p>Hadoop | HDFS | MapReduce</p>
           </ScrollReveal>
         </div>
       </section>
@@ -425,11 +425,11 @@ function CVSection() {
 
             <ul>
               <ScrollReveal as="li" delay={100}>
-                Python for Data Science, AI and Development — IBM
+                · Python for Data Science, AI and Development — IBM
               </ScrollReveal>
 
               <ScrollReveal as="li" delay={160}>
-                Tools for Data Science — IBM
+                · Tools for Data Science — IBM
               </ScrollReveal>
             </ul>
           </div>
