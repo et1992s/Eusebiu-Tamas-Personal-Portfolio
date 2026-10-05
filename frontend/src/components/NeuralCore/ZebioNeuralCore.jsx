@@ -452,11 +452,20 @@ function Burst({ palette, active, reducedMotion }) {
     if (reducedMotion) {
       ref.current.rotation.y = 0.01;
       ref.current.rotation.x = 0.01;
+      ref.current.scale.setScalar(1);
       return;
     }
 
-    ref.current.rotation.y = Math.sin(t * 0.46) * 0.68;
-    ref.current.rotation.x = Math.sin(t * 0.16) * 0.08;
+    // Gentle whole-core breathing.
+    const breathe =
+      1 +
+      Math.sin(t * 0.5) * 0.10 +
+      Math.sin(t * 0.2) * 0.01;
+
+    ref.current.scale.setScalar(breathe);
+
+    ref.current.rotation.y = Math.sin(t * 0.0001) * 180;
+    ref.current.rotation.x = Math.sin(t * 0.0001) * 0.02;
   });
 
   const d = palette.dim;

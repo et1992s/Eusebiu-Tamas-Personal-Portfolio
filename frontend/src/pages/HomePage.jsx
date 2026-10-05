@@ -25,15 +25,6 @@ function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal
-            as="p"
-            className="portfolio-introduction"
-            delay={160}
-          >
-            I build practical software across artificial intelligence,
-            machine learning, data engineering and full-stack development.
-          </ScrollReveal>
-
-          <ScrollReveal
             className="portfolio-home-actions"
             delay={240}
           >
@@ -54,7 +45,7 @@ function HomePage() {
         className="portfolio-page portfolio-about-page"
       >
         <header className="portfolio-page-header">
-          <ScrollReveal as="h2">
+          <ScrollReveal as="h1">
             About
           </ScrollReveal>
         </header>
@@ -107,7 +98,7 @@ function HomePage() {
         className="portfolio-page"
       >
         <header className="portfolio-page-header">
-          <ScrollReveal as="h2">
+          <ScrollReveal as="h1">
             Projects
           </ScrollReveal>
 
@@ -149,7 +140,7 @@ function HomePage() {
             className="portfolio-project-card"
             delay={220}
           >
-            <h3>Intraday Trading ML System</h3>
+            <h3>Trading Lab</h3>
 
             <p>
               A machine-learning system for intraday stock-return
@@ -198,7 +189,7 @@ function HomePage() {
         className="portfolio-page portfolio-contact-page"
       >
         <header className="portfolio-page-header">
-          <ScrollReveal as="h2">
+          <ScrollReveal as="h1">
             Contact
           </ScrollReveal>
 
