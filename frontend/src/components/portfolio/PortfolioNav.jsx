@@ -11,8 +11,13 @@ function PortfolioNav() {
         <a
           href="#home"
           className="portfolio-nav-brand"
+          aria-label="Eusebiu Tamas — Home"
         >
-          ET
+          <img
+            src="/portfolio-logo.png"
+            alt="Eusebiu Tamas"
+            className="portfolio-nav-logo"
+          />
         </a>
 
         <nav
