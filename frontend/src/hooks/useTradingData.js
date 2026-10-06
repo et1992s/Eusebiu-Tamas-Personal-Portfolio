@@ -20,7 +20,7 @@ export function useTickers(assetClass = 'stocks') {
     setTickers([]); // Clear stale tickers immediately when asset class changes
     setError('');
 
-    fetch(`/api/v1/trading/assets?asset_class=${assetClass}`)
+    fetch(`/api/v1/trading/tickers?asset_class=${assetClass}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
