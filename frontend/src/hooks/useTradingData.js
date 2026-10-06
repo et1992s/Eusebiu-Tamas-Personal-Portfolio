@@ -3,6 +3,12 @@ import { tradingApi } from '../services/api';
 
 const DEFAULT_LIMIT = 200;
 
+const API_BASE_URL =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
+    ? ''
+    : 'https://api.eusebiutamas.com';
+
 /* ------------------------------------------------------------------
    useTickers
    ------------------------------------------------------------------
@@ -20,7 +26,7 @@ export function useTickers(assetClass = 'stocks') {
     setTickers([]); // Clear stale tickers immediately when asset class changes
     setError('');
 
-    fetch(`/api/v1/trading/tickers?asset_class=${assetClass}`)
+    fetch(`${API_BASE_URL}/api/v1/trading/tickers?asset_class=${assetClass}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
