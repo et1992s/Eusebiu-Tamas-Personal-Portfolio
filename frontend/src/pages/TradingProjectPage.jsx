@@ -587,11 +587,8 @@ function TradingProjectPage() {
     livePredictionHook?.error ?? '';
 
   const tickers = useMemo(
-    () =>
-      extractTickerStrings(
-        tickerHook?.tickers,
-      ),
-    [tickerHook],
+    () => (Array.isArray(tickerHook?.tickers) ? tickerHook.tickers : []),
+    [tickerHook?.tickers],
   );
 
   const tickersLoading =
