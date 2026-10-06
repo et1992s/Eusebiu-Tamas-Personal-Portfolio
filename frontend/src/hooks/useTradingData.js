@@ -28,8 +28,8 @@ export function useTickers(assetClass = 'stocks') {
       .then((payload) => {
         if (cancelled) return;
 
-        const list = Array.isArray(payload?.assets)
-          ? payload.assets
+        const list = Array.isArray(payload?.tickers)
+          ? payload.tickers
           : [];
 
         setTickers(list);
