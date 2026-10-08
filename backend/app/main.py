@@ -13,6 +13,7 @@ import websockets
 import json
 import os
 import time
+import asyncio
 from contextlib import asynccontextmanager
 from typing import Any, Dict, List
 
@@ -29,14 +30,33 @@ from app.api.ai import router as ai_router
 from app.api.contact import router as contact_router
 from app.services.trading.live.alpaca import AlpacaMarketDataProvider
 from app.services.trading.live.chart import LiveChartService
-from app.services.trading.live.prediction import LivePredictionService
+from app.services.trading.live.chart_stream import ChartStreamManager
+from app.services.trading.live.prediction import (LivePredictionService, MarketSessionClosedError, ModelUnavailableError)
 from app.services.trading.live.market_data import MarketDataService
 from app.services.trading.live.market_store import MarketDataStore
 from app.services.trading.live.stream import LivePredictionStream
 from app.services.trading.ml.inference import inference_service
 from app.services.trading.simulation.engine import TradingEngine
-from app.services.trading.paper.api import router as paper_router
+from app.services.trading.paper.api import create_router
 from app.services.trading.paper.bootstrap import ensure_portfolio
+from app.services.trading.ml.ranking import ModelRankingService
+from app.services.trading.paper.allocator import PortfolioAllocator
+from app.services.trading.paper.execution import PaperExecutionService
+from app.services.trading.paper.valuation import PaperValuationService
+from app.services.trading.paper.live_execution import (
+    LivePaperExecutionService,
+)
+from app.services.trading.paper.live_trading import (
+    LivePaperTradingService,
+)
+from app.services.trading.paper.position_monitor import (
+    PaperPositionMonitor,
+)
+from app.services.trading.paper.live_loop import (
+    LivePaperTradingLoop,
+)
+from app.services.trading.paper.repository import PaperRepository
+from app.services.trading.live.session import MarketSessionService
 from app.services.tube import tube_engine
 
 
@@ -63,6 +83,12 @@ trading_engine = TradingEngine(
 
 live_market_provider = AlpacaMarketDataProvider()
 
+chart_stream_manager = ChartStreamManager()
+
+market_session_service = MarketSessionService(
+    trading_client=live_market_provider.trading_client,
+)
+
 market_data_store = MarketDataStore(
     path="data/market_data.db",
 )
@@ -80,11 +106,60 @@ live_chart_service = LiveChartService(
 live_prediction_service = LivePredictionService(
     provider=market_data_service,
     bars_limit=100,
+    session_service=market_session_service,
 )
 
 live_prediction_stream = LivePredictionStream(
     prediction_service=live_prediction_service,
     interval_seconds=60.0,
+)
+
+model_ranking_service = ModelRankingService(
+    provider=market_data_service,
+)
+
+portfolio_allocator = PortfolioAllocator()
+
+paper_repository = PaperRepository()
+
+live_paper_execution_service = LivePaperExecutionService(
+    repository=paper_repository,
+    portfolio_name="default",
+)
+
+paper_position_monitor = PaperPositionMonitor(
+    repository=paper_repository,
+)
+
+live_paper_trading_service = LivePaperTradingService(
+    prediction_service=live_prediction_service,
+    repository=paper_repository,
+    entry_service=live_paper_execution_service,
+    position_monitor=paper_position_monitor,
+    portfolio_name="default",
+)
+
+live_paper_trading_loop = LivePaperTradingLoop(
+    prediction_stream=live_prediction_stream,
+    trading_service=live_paper_trading_service,
+    asset_class="stocks",
+)
+
+paper_valuation_service = PaperValuationService(
+    market_data=market_data_service,
+    repository=paper_repository,
+)
+
+paper_router = create_router(
+    repository=paper_repository,
+    valuation_service=paper_valuation_service,
+)
+
+paper_execution_service = PaperExecutionService(
+    ranking_service=model_ranking_service,
+    allocator=portfolio_allocator,
+    repository=paper_repository,
+    portfolio_name="default",
 )
 
 # ---------------------------------------------------------------------------
@@ -124,9 +199,24 @@ async def lifespan(app: FastAPI):
     except Exception:
         logger.exception("Paper portfolio bootstrap failed")
 
+    await chart_stream_manager.start()
+
+    live_paper_trading_task = asyncio.create_task(
+        live_paper_trading_loop.start()
+    )
+
     logger.info("Zebio Studio Engine ready")
 
     yield
+
+    await live_paper_trading_loop.stop()
+
+    await asyncio.gather(
+        live_paper_trading_task,
+        return_exceptions=True,
+    )
+
+    await chart_stream_manager.stop()
 
     logger.info("Shutting down Zebio Studio Engine")
 
@@ -692,10 +782,34 @@ async def predict_trading(
     "/api/v1/trading/live/predict/{ticker}",
     tags=["Trading"],
 )
-async def predict_live_trading(ticker: str):
+async def predict_live_trading(
+    ticker: str,
+    asset_class: str = Query(
+        "stocks",
+        description="One of: stocks, etf, crypto",
+    ),
+):
     """
     Fetch recent live market data and run the production ML model.
+
+    Supports stocks, ETFs, and crypto through the explicit
+    asset_class query parameter.
     """
+
+    normalized_asset_class = asset_class.lower().strip()
+
+    if normalized_asset_class not in {
+        "stocks",
+        "etf",
+        "crypto",
+    }:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "asset_class must be one of: "
+                "stocks, etf, crypto"
+            ),
+        )
 
     normalized = clean_ticker(ticker)
 
@@ -705,9 +819,12 @@ async def predict_live_trading(ticker: str):
             detail="Ticker must not be empty.",
         )
 
+    alpaca_ticker = denormalize_ticker(normalized)
+
     try:
         result = live_prediction_service.predict(
-            normalized,
+            alpaca_ticker,
+            asset_class=normalized_asset_class,
         )
 
         return {
@@ -715,6 +832,28 @@ async def predict_live_trading(ticker: str):
             "source": "live",
             "prediction": result,
         }
+
+    except MarketSessionClosedError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "code": "MARKET_CLOSED",
+                "message": str(exc),
+                "asset_class": exc.asset_class,
+                "next_open": exc.next_open,
+            },
+        ) from exc
+
+    except ModelUnavailableError as exc:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "code": "MODEL_UNAVAILABLE",
+                "message": str(exc),
+                "ticker": exc.ticker,
+                "asset_class": exc.asset_class,
+            },
+        ) from exc
 
     except ValueError as exc:
         raise HTTPException(
@@ -724,15 +863,16 @@ async def predict_live_trading(ticker: str):
 
     except Exception as exc:
         logger.exception(
-            "Live prediction failed for %s",
-            normalized,
+            "Live prediction failed for %s (%s)",
+            alpaca_ticker,
+            normalized_asset_class,
         )
 
         raise HTTPException(
             status_code=502,
             detail=(
-                f"Live market-data or inference request "
-                f"failed for '{normalized}'."
+                "Live market-data or inference request "
+                f"failed for '{alpaca_ticker}'."
             ),
         ) from exc
 
@@ -783,69 +923,170 @@ async def get_tradable_assets(
     }
 
 @app.websocket("/api/v1/trading/live/chart/stream/{ticker}")
-async def live_chart_stream(websocket: WebSocket, ticker: str, asset_class: str = "stocks"):
+async def live_chart_stream(
+    websocket: WebSocket,
+    ticker: str,
+    asset_class: str = "stocks",
+):
+    """
+    Stream live market bars through the shared Alpaca chart manager.
+
+    The manager owns the upstream Alpaca connection. This endpoint only
+    registers and unregisters the frontend WebSocket client.
+    """
+
+    normalized_asset_class = asset_class.lower().strip()
+
+    if normalized_asset_class not in {
+        "stocks",
+        "etf",
+        "crypto",
+    }:
+        await websocket.close(code=1008)
+        return
+
     await websocket.accept()
+
     alpaca_ticker = denormalize_ticker(ticker)
 
-    if asset_class == "crypto":
-        alpaca_url = "wss://stream.data.alpaca.markets/v1beta3/crypto/us"
-    else:
-        alpaca_url = "wss://stream.data.alpaca.markets/v2/iex"
+    client_id = (
+        f"{normalized_asset_class}:"
+        f"{alpaca_ticker}:"
+        f"{id(websocket)}"
+    )
 
-    logger.info("WS connect: ticker=%s asset=%s", alpaca_ticker, asset_class)
+    logger.info(
+        "Chart WS connected: client=%s ticker=%s asset=%s",
+        client_id,
+        alpaca_ticker,
+        normalized_asset_class,
+    )
 
     try:
-        async with websockets.connect(alpaca_url) as alpaca_ws:
-            # Auth
-            await alpaca_ws.send(json.dumps({
-                "action": "auth",
-                "key": os.getenv("ALPACA_API_KEY"),
-                "secret": os.getenv("ALPACA_API_SECRET"),
-            }))
+        await chart_stream_manager.connect(
+            client_id=client_id,
+            websocket=websocket,
+            ticker=alpaca_ticker,
+            asset_class=normalized_asset_class,
+        )
 
-            # Log Alpaca's auth/subscription responses
-            auth_resp = await alpaca_ws.recv()
-            logger.info("Alpaca auth: %s", auth_resp)
-
-            # Subscribe
-            await alpaca_ws.send(json.dumps({
-                "action": "subscribe",
-                "bars": [alpaca_ticker],
-            }))
-
-            sub_resp = await alpaca_ws.recv()
-            logger.info("Alpaca sub: %s", sub_resp)
-
-            async for message in alpaca_ws:
-                logger.info("Alpaca msg: %s", message[:200])
-                await websocket.send_text(message)
+        while True:
+            await websocket.receive_text()
 
     except WebSocketDisconnect:
-        logger.info("Frontend chart WS disconnected: %s", alpaca_ticker)
-    except Exception as exc:
-        logger.exception("Alpaca WS error for %s", alpaca_ticker)
+        logger.info(
+            "Chart WS disconnected: client=%s ticker=%s asset=%s",
+            client_id,
+            alpaca_ticker,
+            normalized_asset_class,
+        )
+
+    except Exception:
+        logger.exception(
+            "Chart WS error: client=%s ticker=%s asset=%s",
+            client_id,
+            alpaca_ticker,
+            normalized_asset_class,
+        )
+
+    finally:
+        await chart_stream_manager.disconnect(
+            client_id=client_id,
+            asset_class=normalized_asset_class,
+        )
+
+@app.websocket("/api/v1/trading/live/stream/{ticker}")
+async def live_trading_stream(
+    websocket: WebSocket,
+    ticker: str,
+    asset_class: str = Query(
+        "stocks",
+        description="One of: stocks, etf, crypto",
+    ),
+):
+    """
+    Stream production ML predictions for a ticker.
+
+    The asset class controls both:
+        - market-session eligibility;
+        - market-data routing.
+
+    Stocks and ETFs follow regular US equity sessions.
+    Crypto is treated as continuously traded.
+    """
+
+    await websocket.accept()
+
+    normalized_asset_class = asset_class.lower().strip()
+
+    if normalized_asset_class not in {
+        "stocks",
+        "etf",
+        "crypto",
+    }:
+        await websocket.close(code=1008)
+        return
+
+    alpaca_ticker = denormalize_ticker(ticker)
+
+    logger.info(
+        "Live prediction WS connected: ticker=%s asset=%s",
+        alpaca_ticker,
+        normalized_asset_class,
+    )
+
+    try:
+        async for prediction in live_prediction_stream.run(
+            alpaca_ticker,
+            asset_class=normalized_asset_class,
+        ):
+            await websocket.send_json(
+                {
+                    "status": "success",
+                    "source": "live",
+                    "prediction": prediction,
+                }
+            )
+
+    except WebSocketDisconnect:
+        logger.info(
+            "Live prediction WS disconnected: ticker=%s asset=%s",
+            alpaca_ticker,
+            normalized_asset_class,
+        )
+
+    except ModelUnavailableError as exc:
+        logger.info(
+            "Live prediction model unavailable: "
+            "ticker=%s asset=%s",
+            exc.ticker,
+            exc.asset_class,
+        )
+
         try:
-            await websocket.close(code=1011)
+            await websocket.send_json(
+                {
+                    "status": "error",
+                    "source": "live",
+                    "error": {
+                        "code": "MODEL_UNAVAILABLE",
+                        "message": str(exc),
+                        "ticker": exc.ticker,
+                        "asset_class": exc.asset_class,
+                    },
+                }
+            )
+            await websocket.close(code=1000)
         except Exception:
             pass
 
-@app.websocket("/api/v1/trading/live/stream/{ticker}")
-async def live_trading_stream(websocket: WebSocket, ticker: str):
-    await websocket.accept()
-    alpaca_ticker = denormalize_ticker(ticker)
-
-    try:
-        async for prediction in live_prediction_stream.run(alpaca_ticker):
-            await websocket.send_json({
-                "status": "success",
-                "source": "live",
-                "prediction": prediction,
-            })
-            
-    except WebSocketDisconnect:
-        logger.info("Live prediction WS disconnected: %s", alpaca_ticker)
     except Exception:
-        logger.exception("Live prediction WS failed for %s", alpaca_ticker)
+        logger.exception(
+            "Live prediction WS failed: ticker=%s asset=%s",
+            alpaca_ticker,
+            normalized_asset_class,
+        )
+
         try:
             await websocket.close(code=1011)
         except Exception:

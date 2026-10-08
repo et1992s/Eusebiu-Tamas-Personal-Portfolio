@@ -1,7 +1,3 @@
--- ─────────────────────────────────────────────────────────────
--- Zebio paper-trading schema
--- ─────────────────────────────────────────────────────────────
-
 CREATE TABLE IF NOT EXISTS paper_portfolio (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   name             TEXT    NOT NULL UNIQUE,
@@ -15,18 +11,18 @@ CREATE TABLE IF NOT EXISTS paper_portfolio (
 );
 
 CREATE TABLE IF NOT EXISTS paper_positions (
-  id               INTEGER PRIMARY KEY AUTOINCREMENT,
-  portfolio_id     INTEGER NOT NULL REFERENCES paper_portfolio(id),
-  ticker           TEXT    NOT NULL,
-  side             TEXT    NOT NULL CHECK (side IN ('LONG')),
-  quantity         REAL    NOT NULL,
-  entry_price      REAL    NOT NULL,
-  entry_time       TEXT    NOT NULL,
-  stop_loss        REAL,
-  take_profit      REAL,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  portfolio_id INTEGER NOT NULL REFERENCES paper_portfolio(id),
+  ticker TEXT NOT NULL,
+  side TEXT NOT NULL CHECK (side IN ('LONG')),
+  quantity REAL NOT NULL,
+  entry_price REAL NOT NULL,
+  entry_time TEXT NOT NULL,
+  stop_loss REAL,
+  take_profit REAL,
   predicted_return REAL,
-  signal           TEXT,
-  status           TEXT    NOT NULL DEFAULT 'OPEN' CHECK (status IN ('OPEN')),
+  signal TEXT,
+  status TEXT NOT NULL DEFAULT 'OPEN' CHECK (status IN ('OPEN', 'CLOSED')),
   UNIQUE (portfolio_id, ticker)
 );
 

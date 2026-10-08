@@ -540,6 +540,7 @@ function TradingProjectPage() {
     useTradingPrediction(
       selectedTicker,
       barLimit,
+      assetClass === 'stocks',
     );
 
   const livePredictionHook =
@@ -1044,7 +1045,18 @@ function TradingProjectPage() {
   ]);
 
   useEffect(() => {
-    if (!historicalBars.length) {
+    if (
+      assetClass !== 'stocks' ||
+      !historicalBars.length
+    ) {
+      clearTimeout(
+        backtestTimerRef.current,
+      );
+
+      setBacktestLoading(false);
+      setBacktestError('');
+      setBacktestResult(null);
+
       return undefined;
     }
 
@@ -1083,6 +1095,7 @@ function TradingProjectPage() {
         backtestTimerRef.current,
       );
   }, [
+    assetClass,
     selectedTicker,
     barLimit,
     strategyParams,
@@ -1139,47 +1152,39 @@ function TradingProjectPage() {
             source={liveChartSource}
           />
 
-          <div className="market-controls">
-            <div className="market-control-primary">
-              <TickerSelector
-                tickers={tickers}
-                selectedTicker={
-                  selectedTicker
+        <div className="market-controls">
+          <div className="asset-class-switcher">
+            {[
+              ['stocks', 'Stocks'],
+              ['etf', 'ETFs'],
+              ['crypto', 'Crypto'],
+            ].map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                className={
+                  assetClass === value
+                    ? 'asset-class-option asset-class-option-active'
+                    : 'asset-class-option'
                 }
-                onSelect={
-                  setSelectedTicker
-                }
-                loading={
-                  tickersLoading
-                }
-              />
-            </div>
-
-            <label className="bars-control">
-              <span>Asset class</span>
-
-              <select
-                value={assetClass}
-                onChange={(event) =>
-                  handleAssetClassChange(
-                    event.target.value,
-                  )
+                onClick={() =>
+                  handleAssetClassChange(value)
                 }
               >
-                <option value="stocks">
-                  Stocks
-                </option>
-
-                <option value="etf">
-                  ETFs
-                </option>
-
-                <option value="crypto">
-                  Crypto
-                </option>
-              </select>
-            </label>
+                {label}
+              </button>
+            ))}
           </div>
+
+          <div className="market-control-primary">
+            <TickerSelector
+              tickers={tickers}
+              selectedTicker={selectedTicker}
+              onSelect={setSelectedTicker}
+              loading={tickersLoading}
+            />
+          </div>
+        </div>
         </section>
 
         <section className="chart-section">
@@ -1207,74 +1212,70 @@ function TradingProjectPage() {
           </div>
 
           <div className="chart-toolbar">
-            <label className="bars-control">
-              <span>Timeframe</span>
+            <div className="chart-toolbar-group chart-timeframe-group">
+              <span className="chart-toolbar-label">
+                Timeframe
+              </span>
 
-              <select
-                value={chartTimeframe}
-                onChange={(event) =>
-                  setChartTimeframe(
-                    event.target.value,
-                  )
-                }
-              >
-                <option value="1m">
-                  1 minute
-                </option>
+              <div className="chart-segmented">
+                {[
+                  ['1m', '1m'],
+                  ['5m', '5m'],
+                  ['15m', '15m'],
+                  ['30m', '30m'],
+                  ['1h', '1H'],
+                  ['4h', '4H'],
+                  ['1D', '1D'],
+                ].map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    className={
+                      chartTimeframe === value
+                        ? 'chart-segment chart-segment-active'
+                        : 'chart-segment'
+                    }
+                    onClick={() =>
+                      setChartTimeframe(value)
+                    }
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-                <option value="5m">
-                  5 minutes
-                </option>
+            <div className="chart-toolbar-group">
+              <span className="chart-toolbar-label">
+                Chart
+              </span>
 
-                <option value="15m">
-                  15 minutes
-                </option>
+              <div className="chart-segmented chart-type-selector">
+                {[
+                  ['candlestick', 'Candles'],
+                  ['line', 'Line'],
+                  ['area', 'Area'],
+                ].map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    className={
+                      chartType === value
+                        ? 'chart-segment chart-segment-active'
+                        : 'chart-segment'
+                    }
+                    onClick={() =>
+                      setChartType(value)
+                    }
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-                <option value="30m">
-                  30 minutes
-                </option>
-
-                <option value="1h">
-                  1 hour
-                </option>
-
-                <option value="4h">
-                  4 hours
-                </option>
-
-                <option value="1D">
-                  1 day
-                </option>
-              </select>
-            </label>
-
-            <label className="bars-control">
-              <span>Chart type</span>
-
-              <select
-                value={chartType}
-                onChange={(event) =>
-                  setChartType(
-                    event.target.value,
-                  )
-                }
-              >
-                <option value="candlestick">
-                  Candlesticks
-                </option>
-
-                <option value="line">
-                  Line
-                </option>
-
-                <option value="area">
-                  Area
-                </option>
-              </select>
-            </label>
-
-            <div className="indicator-control">
-              <span className="indicator-control-label">
+            <div className="chart-toolbar-group chart-indicators-group">
+              <span className="chart-toolbar-label">
                 Indicators
               </span>
 
@@ -1284,89 +1285,81 @@ function TradingProjectPage() {
                   ['sma50', 'SMA 50'],
                   ['ema200', 'EMA 200'],
                   ['vwap', 'VWAP'],
-                ].map(
-                  ([value, label]) => {
-                    const active =
-                      selectedIndicators.includes(
-                        value,
-                      );
+                ].map(([value, label]) => {
+                  const active =
+                    selectedIndicators.includes(value);
 
-                    return (
-                      <button
-                        key={value}
-                        type="button"
-                        className={
-                          active
-                            ? 'indicator-option indicator-option-active'
-                            : 'indicator-option'
-                        }
-                        onClick={() => {
-                          setSelectedIndicators(
-                            (previous) =>
-                              active
-                                ? previous.filter(
-                                    (
-                                      item,
-                                    ) =>
-                                      item !==
-                                      value,
-                                  )
-                                : [
-                                    ...previous,
-                                    value,
-                                  ],
-                          );
-                        }}
-                      >
-                        {label}
-                      </button>
-                    );
-                  },
-                )}
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      className={
+                        active
+                          ? 'indicator-option indicator-option-active'
+                          : 'indicator-option'
+                      }
+                      onClick={() => {
+                        setSelectedIndicators(
+                          (previous) =>
+                            active
+                              ? previous.filter(
+                                  (item) =>
+                                    item !== value,
+                                )
+                              : [
+                                  ...previous,
+                                  value,
+                                ],
+                        );
+                      }}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            <label className="chart-toggle">
-              <input
-                type="checkbox"
-                checked={showVolume}
-                onChange={(event) =>
-                  setShowVolume(
-                    event.target.checked,
-                  )
-                }
-              />
+            <div className="chart-toolbar-actions">
+              <label className="chart-toggle">
+                <input
+                  type="checkbox"
+                  checked={showVolume}
+                  onChange={(event) =>
+                    setShowVolume(
+                      event.target.checked,
+                    )
+                  }
+                />
+                <span>Volume</span>
+              </label>
 
-              <span>Volume</span>
-            </label>
+              <label className="chart-toggle">
+                <input
+                  type="checkbox"
+                  checked={logScale}
+                  onChange={(event) =>
+                    setLogScale(
+                      event.target.checked,
+                    )
+                  }
+                />
+                <span>Log</span>
+              </label>
 
-            <label className="chart-toggle">
-              <input
-                type="checkbox"
-                checked={logScale}
-                onChange={(event) =>
-                  setLogScale(
-                    event.target.checked,
-                  )
-                }
-              />
-
-              <span>Log scale</span>
-            </label>
-
-            <label className="chart-toggle">
-              <input
-                type="checkbox"
-                checked={showStrategyLines}
-                onChange={(event) =>
-                  setShowStrategyLines(
-                    event.target.checked,
-                  )
-                }
-              />
-
-              <span>SL / TP</span>
-            </label>
+              <label className="chart-toggle">
+                <input
+                  type="checkbox"
+                  checked={showStrategyLines}
+                  onChange={(event) =>
+                    setShowStrategyLines(
+                      event.target.checked,
+                    )
+                  }
+                />
+                <span>SL / TP</span>
+              </label>
+            </div>
           </div>
 
           <div className="chart-wrap">
@@ -1542,139 +1535,148 @@ function TradingProjectPage() {
             <div>
               <span>RESEARCH</span>
               <h2>
-                Backtest Configuration
+                {assetClass === 'stocks'
+                  ? 'Backtest Configuration'
+                  : 'Research Availability'}
               </h2>
             </div>
 
             <span className="section-heading-model">
-              HISTORICAL
+              {assetClass === 'stocks'
+                ? 'HISTORICAL'
+                : 'LIVE MARKET'}
             </span>
           </div>
 
-          <div className="research-controls">
-            <label className="bars-control">
-              <span>Backtest bars</span>
+          {assetClass === 'stocks' ? (
+            <>
+              <div className="research-controls">
+                <label className="bars-control">
+                  <span>Backtest bars</span>
 
-              <select
-                value={barLimit}
-                onChange={(event) =>
-                  setBarLimit(
-                    Number(
-                      event.target.value,
-                    ),
-                  )
-                }
-              >
-                <option value={100}>
-                  100
-                </option>
+                  <select
+                    value={barLimit}
+                    onChange={(event) =>
+                      setBarLimit(
+                        Number(
+                          event.target.value,
+                        ),
+                      )
+                    }
+                  >
+                    <option value={100}>
+                      100
+                    </option>
 
-                <option value={200}>
-                  200
-                </option>
+                    <option value={200}>
+                      200
+                    </option>
 
-                <option value={500}>
-                  500
-                </option>
+                    <option value={500}>
+                      500
+                    </option>
 
-                <option value={1000}>
-                  1000
-                </option>
-              </select>
-            </label>
+                    <option value={1000}>
+                      1000
+                    </option>
+                  </select>
+                </label>
 
+                <div className="research-description">
+                  <span>
+                    HISTORICAL EVALUATION
+                  </span>
+
+                  <strong>
+                    {selectedTicker}
+                  </strong>
+
+                  <p>
+                    Historical strategy evaluation
+                    using the configured signal,
+                    stop-loss, take-profit and
+                    position-size parameters.
+                  </p>
+                </div>
+              </div>
+
+              {backtestLoading && (
+                <div className="research-state">
+                  <div className="loader-ring" />
+
+                  <span>
+                    Running historical backtest…
+                  </span>
+                </div>
+              )}
+
+              {backtestResult && (
+                <div className="research-results">
+                  <div>
+                    <span>TRADES</span>
+                    <strong>
+                      {backtestResult.trade_count}
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span>WIN RATE</span>
+                    <strong>
+                      {(backtestResult.win_rate * 100).toFixed(2)}%
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span>TOTAL RETURN</span>
+                    <strong>
+                      {(backtestResult.total_return_pct * 100).toFixed(2)}%
+                    </strong>
+                  </div>
+                </div>
+              )}
+
+              {historicalError && (
+                <div className="market-error">
+                  <strong>
+                    Historical data unavailable
+                  </strong>
+
+                  <span>
+                    {historicalError}
+                  </span>
+                </div>
+              )}
+
+              {backtestError &&
+                !historicalError && (
+                  <div className="market-error">
+                    <strong>
+                      Backtest unavailable
+                    </strong>
+
+                    <span>
+                      {backtestError}
+                    </span>
+                  </div>
+                )}
+            </>
+          ) : (
             <div className="research-description">
-              <span>HISTORICAL EVALUATION</span>
+              <span>
+                RESEARCH STATUS
+              </span>
 
               <strong>
                 {selectedTicker}
               </strong>
 
               <p>
-                Historical strategy evaluation
-                using the configured signal,
-                stop-loss, take-profit and
-                position-size parameters.
+                Historical strategy evaluation is
+                not currently available for this
+                asset class.
               </p>
             </div>
-          </div>
-
-          {backtestLoading && (
-            <div className="research-state">
-              <div className="loader-ring" />
-
-              <span>
-                Running historical backtest…
-              </span>
-            </div>
           )}
-
-          {backtestResult && (
-            <div className="research-results">
-              <div>
-                <span>TRADES</span>
-                <strong>
-                  {backtestResult.trade_count}
-                </strong>
-              </div>
-
-              <div>
-                <span>WIN RATE</span>
-
-                <strong>
-                  {(
-                    backtestResult.win_rate *
-                    100
-                  ).toFixed(1)}
-                  %
-                </strong>
-              </div>
-
-              <div>
-                <span>RETURN</span>
-
-                <strong
-                  className={
-                    backtestResult.total_return_pct >=
-                    0
-                      ? 'positive-value'
-                      : 'negative-value'
-                  }
-                >
-                  {(
-                    backtestResult.total_return_pct *
-                    100
-                  ).toFixed(2)}
-                  %
-                </strong>
-              </div>
-            </div>
-          )}
-
-          {historicalError && (
-            <div className="market-error">
-              <strong>
-                Historical data unavailable
-              </strong>
-
-              <span>
-                {historicalError}
-              </span>
-            </div>
-          )}
-
-          {backtestError &&
-            !historicalError && (
-              <div className="market-error">
-                <strong>
-                  Backtest unavailable
-                </strong>
-
-                <span>
-                  {backtestError}
-                </span>
-              </div>
-            )}
 
           {livePredictionError && (
             <div className="market-error">

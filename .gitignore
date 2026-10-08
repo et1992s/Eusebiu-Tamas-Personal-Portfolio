@@ -39,3 +39,6 @@ backend/data/*.pkl
 backend/data/*.db
 backend/data/chat_history.pkl*
 backend/app/services/trading/models/
+
+# Paper trading runtime state
+backend/data/paper_trading*.sqlite

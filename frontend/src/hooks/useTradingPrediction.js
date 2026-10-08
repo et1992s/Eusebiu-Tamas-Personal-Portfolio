@@ -6,13 +6,14 @@ const DEFAULT_LIMIT = 500;
 export function useTradingPrediction(
   ticker,
   limit = DEFAULT_LIMIT,
+  enabled = true,
 ) {
   const [prediction, setPrediction] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!ticker) {
+    if (!enabled || !ticker) {
       setPrediction(null);
       setLoading(false);
       setError('');
@@ -53,7 +54,7 @@ export function useTradingPrediction(
     return () => {
       cancelled = true;
     };
-  }, [ticker, limit]);
+  }, [ticker, limit, enabled]);
 
   return {
     prediction,

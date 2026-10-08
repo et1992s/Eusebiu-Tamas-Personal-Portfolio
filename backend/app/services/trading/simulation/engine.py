@@ -39,7 +39,7 @@ class TradingEngine:
         self._loaded = True
         
         elapsed = (pd.Timestamp.now() - start).total_seconds()
-        logger.info(f"✅ Loaded {len(self.tickers)} tickers in {elapsed:.1f}s")
+        logger.info(f"Loaded {len(self.tickers)} tickers in {elapsed:.1f}s")
     
     def get_tickers(self) -> List[str]:
         if not self._loaded:

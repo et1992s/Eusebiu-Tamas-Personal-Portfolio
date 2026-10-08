@@ -33,8 +33,12 @@ export function useLiveTradingPrediction(ticker, assetClass = 'stocks') {
 
     const safeTicker = encodeTicker(ticker);
 
+    const params = new URLSearchParams({
+      asset_class: assetClass,
+    });
+
     websocket = new WebSocket(
-      `${WS_BASE_URL}/api/v1/trading/live/stream/${safeTicker}`,
+      `${WS_BASE_URL}/api/v1/trading/live/stream/${safeTicker}?${params.toString()}`,
     );
 
     websocket.onopen = () => {
@@ -62,7 +66,13 @@ export function useLiveTradingPrediction(ticker, assetClass = 'stocks') {
 
         if (payload?.status === 'error') {
           setConnected(false);
-          setError(payload.error || 'Live prediction failed.');
+
+          const message =
+            typeof payload.error === 'string'
+              ? payload.error
+              : payload.error?.message || 'Live prediction failed.';
+
+          setError(message);
         }
       } catch {
         setError('Invalid live prediction response.');
