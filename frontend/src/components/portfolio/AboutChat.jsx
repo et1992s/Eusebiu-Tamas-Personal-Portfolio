@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import ZebioAvatar from './ZebioAvatar';
+
 
 const API_BASE_URL =
   window.location.hostname === 'localhost' ||
@@ -9,6 +11,8 @@ const API_BASE_URL =
 
 function AboutChat() {
   const textareaRef = useRef(null);
+
+  const [avatarActive, setAvatarActive] = useState(false);
 
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
@@ -241,8 +245,11 @@ function AboutChat() {
         className="portfolio-about-chat-form"
         onSubmit={handleSubmit}
       >
+        <ZebioAvatar active={avatarActive} />
+
         <textarea
           ref={textareaRef}
+          onFocus={() => setAvatarActive(true)}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           onKeyDown={handleKeyDown}
