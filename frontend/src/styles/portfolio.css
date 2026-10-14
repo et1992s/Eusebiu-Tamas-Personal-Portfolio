@@ -2302,3 +2302,193 @@ html {
     font-size: 0.65rem;
   }
 }
+
+
+/* =========================================================
+   ZEBIO — Interactive About Chat Avatar
+   ========================================================= */
+
+.portfolio-about-chat-form {
+  position: relative;
+}
+
+
+.portfolio-about-chat-form .Zebio-avatar {
+  position: absolute;
+  left: -62px;
+  bottom: 0%;
+  z-index: 5;
+
+  display: block;
+  flex: none;
+  width: 52px;
+  height: 59px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(50%);
+  cursor: pointer;
+
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.portfolio-about-chat-form .Zebio-avatar--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  animation: zebio-pop-out 700ms cubic-bezier(0.2, 0.8, 0.25, 1.15) both;
+}
+
+.portfolio-about-chat-form .Zebio-avatar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Happy expression: open eyes and a smile. */
+.portfolio-about-chat-form .Zebio-avatar-normal-eyes {
+  display: block;
+}
+
+.portfolio-about-chat-form .Zebio-avatar-happy-eyes,
+.portfolio-about-chat-form .Zebio-avatar-wow {
+  display: none;
+}
+
+.portfolio-about-chat-form .Zebio-avatar-smile {
+  display: block;
+}
+
+/* Amazed expression: inverted-U eyes and a round mouth. */
+.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-normal-eyes,
+.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-smile {
+  display: none;
+}
+
+.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-happy-eyes,
+.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-wow {
+  display: block;
+}
+
+/* Keep the avatar independent of the send-button hover styles. */
+.portfolio-about-chat-form .Zebio-avatar:hover:not(:disabled) {
+  transform: translateY(50%);
+  box-shadow: none;
+}
+
+.portfolio-about-chat-form .Zebio-avatar:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* One entrance bounce, triggered when the avatar becomes active. */
+@keyframes zebio-pop-out {
+  0% {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.45);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translate(0, -7px) scale(1.08);
+  }
+
+  75% {
+    transform: translate(0, 2px) scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Respect visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-about-chat-form .Zebio-avatar {
+    transition: none;
+  }
+
+  .portfolio-about-chat-form .Zebio-avatar--active {
+    animation: none;
+  }
+}
+
+
+/* Mobile and tablet layout: centre Zebio below the chat input */
+@media (max-width: 1024px) {
+  .portfolio-about-chat-form .Zebio-avatar {
+    left: 50%;
+    right: auto;
+    top: calc(100% + 8px);
+    bottom: auto;
+    transform: translateX(-50%);
+  }
+
+  .portfolio-about-chat-form .Zebio-avatar:hover:not(:disabled) {
+    transform: translateX(-50%);
+  }
+
+  @keyframes zebio-pop-out {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -18px) scale(0.45);
+    }
+
+    55% {
+      opacity: 1;
+      transform: translate(-50%, 6px) scale(1.08);
+    }
+
+    75% {
+      transform: translate(-50%, -2px) scale(0.97);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0) scale(1);
+    }
+  }
+}
+
+
+/* Zebio: soft shadow and green back-glow */
+.portfolio-about-chat-form .Zebio-avatar {
+  filter:
+    drop-shadow(0 5px 2px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 6px rgba(57, 255, 20, 0.28));
+  transition:
+    filter 220ms ease,
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.portfolio-about-chat-form .Zebio-avatar:hover:not(:disabled) {
+  filter:
+    drop-shadow(0 4px 2px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 10px rgba(57, 255, 20, 0.55));
+}
+
+.portfolio-about-chat-form .Zebio-avatar:focus-visible {
+  filter:
+    drop-shadow(0 0 12px rgba(57, 255, 20, 0.55));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-about-chat-form .Zebio-avatar {
+    transition: none;
+  }
+}
