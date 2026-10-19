@@ -7,7 +7,7 @@ function PortfolioNav({ onOpenChat }) {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     if (!isMobileMenuOpen) {
       return;
     }
@@ -42,7 +42,7 @@ function PortfolioNav({ onOpenChat }) {
         <a
           href="#home"
           className="portfolio-nav-brand"
-          aria-label="Eusebiu Tamas â€” Home"
+          aria-label="Eusebiu Tamas — Home"
         >
           <img
             src="/portfolio-logo.png"
@@ -60,28 +60,8 @@ function PortfolioNav({ onOpenChat }) {
               onClick={() => setIsMobileMenuOpen(false)}
             />
           )}
-          <nav
-            id="portfolio-mobile-navigation"
-            className={[
-              'portfolio-nav-links',
-              isMobileMenuOpen ? 'portfolio-nav-links--mobile-open' : '',
-            ].filter(Boolean).join(' ')}
-            aria-label="Main navigation"
-          >
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>
-              About
-            </a>
-            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>
-              Projects
-            </a>
-            <a href="#cv" onClick={() => setIsMobileMenuOpen(false)}>
-              CV
-            </a>
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-              Contact
-            </a>
-          </nav>
 
+          {/* Zebio avatar — positioned before the navigation links */}
           <div
             className={[
               'portfolio-zebio-menu',
@@ -106,9 +86,11 @@ function PortfolioNav({ onOpenChat }) {
               <p className="portfolio-zebio-popover-title">
                 Meet Zebio
               </p>
+
               <p className="portfolio-zebio-popover-text">
                 Curious about my background or projects?
               </p>
+
               <button
                 type="button"
                 className="portfolio-zebio-open-chat"
@@ -118,6 +100,31 @@ function PortfolioNav({ onOpenChat }) {
               </button>
             </div>
           </div>
+
+          <nav
+            id="portfolio-mobile-navigation"
+            className={[
+              'portfolio-nav-links',
+              isMobileMenuOpen ? 'portfolio-nav-links--mobile-open' : '',
+            ].filter(Boolean).join(' ')}
+            aria-label="Main navigation"
+          >
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>
+              About
+            </a>
+
+            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>
+              Projects
+            </a>
+
+            <a href="#cv" onClick={() => setIsMobileMenuOpen(false)}>
+              CV
+            </a>
+
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              Contact
+            </a>
+          </nav>
 
           <button
             type="button"
@@ -166,7 +173,11 @@ function PortfolioNav({ onOpenChat }) {
             type="button"
             className="portfolio-mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
-            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={
+              isMobileMenuOpen
+                ? 'Close navigation menu'
+                : 'Open navigation menu'
+            }
             aria-expanded={isMobileMenuOpen}
             aria-controls="portfolio-mobile-navigation"
           >

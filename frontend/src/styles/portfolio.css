@@ -1083,7 +1083,6 @@
   }
 }
 
-
 /* =========================================================
    FLOATING ZEBIO CHAT WINDOW
 ========================================================= */
@@ -1509,6 +1508,30 @@
     right: 20px;
   }
 }
+
+
+/* Desktop: place the graduation photo beside the About text */
+@media (min-width: 701px) {
+  .portfolio-about-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1180px;
+    gap: 32px;
+  }
+
+  .portfolio-about-image {
+    flex: 0 0 36%;
+    width: 36%;
+    max-width: 420px;
+    margin: 0;
+  }
+
+  .portfolio-about-content {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
 
 /* =========================================================
    ABOUT CHAT THINKING INDICATOR
