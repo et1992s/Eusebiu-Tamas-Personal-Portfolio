@@ -1,5 +1,6 @@
 ﻿
 import { useEffect, useRef, useState } from 'react';
+import avatarSvg from '../../assets/avatar.svg?raw';
 
 const clamp = (value, min, max) =>
   Math.min(max, Math.max(min, value));
@@ -66,10 +67,14 @@ function playZebioSound(type) {
   }
 }
 
-function ZebioAvatar({ active = false, onMoodChange }) {
+function ZebioAvatar({
+  active = false,
+  onMoodChange,
+  onClick,
+}) {
   const [amazed, setAmazed] = useState(false);
   const moodTimeoutRef = useRef(null);
-  const [gaze, setGaze] = useState({ x: 0, y: 0 });
+  const avatarArtRef = useRef(null);
 
 
   useEffect(() => {
@@ -79,8 +84,20 @@ function ZebioAvatar({ active = false, onMoodChange }) {
   }, [active]);
 
   useEffect(() => {
+    const svg = avatarArtRef.current?.querySelector('svg');
+
+    if (!svg) return undefined;
+
+    const pupils = svg.querySelectorAll('.eye-tracking-pupil');
+
+    const resetGaze = () => {
+      pupils.forEach((pupil) => {
+        pupil.setAttribute('transform', 'translate(0 0)');
+      });
+    };
+
     if (!active) {
-      setGaze({ x: 0, y: 0 });
+      resetGaze();
       return undefined;
     }
 
@@ -88,9 +105,11 @@ function ZebioAvatar({ active = false, onMoodChange }) {
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
 
-      setGaze({
-        x: clamp((event.clientX - centerX) / 35, -5, 5),
-        y: clamp((event.clientY - centerY) / 45, -4, 4),
+      const x = clamp((event.clientX - centerX) / 35, -5, 5);
+      const y = clamp((event.clientY - centerY) / 45, -4, 4);
+
+      pupils.forEach((pupil) => {
+        pupil.setAttribute('transform', `translate(${x} ${y})`);
       });
     };
 
@@ -98,6 +117,7 @@ function ZebioAvatar({ active = false, onMoodChange }) {
 
     return () => {
       window.removeEventListener('pointermove', handlePointerMove);
+      resetGaze();
     };
   }, [active]);
 
@@ -105,6 +125,7 @@ function ZebioAvatar({ active = false, onMoodChange }) {
 
   const toggleMood = () => {
     playZebioSound('click');
+    onClick?.();
 
     if (moodTimeoutRef.current) {
       window.clearTimeout(moodTimeoutRef.current);
@@ -146,121 +167,12 @@ function ZebioAvatar({ active = false, onMoodChange }) {
       tabIndex={active ? 0 : -1}
       aria-hidden={!active}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 400 450"
-        role="img"
-        aria-label={amazed ? 'Amazed Zebio' : 'Happy Zebio'}
-      >
-        <defs>
-          <linearGradient
-            id="ZebioAvatarGradient"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop offset="0%" stopColor="#2d8d7fa6" />
-            <stop offset="50%" stopColor="#118d5793" />
-            <stop offset="100%" stopColor="#067e3493" />
-          </linearGradient>
-
-          <linearGradient
-            id="ZebioAvatarHighlight"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop offset="0%" stopColor="#26796ca6" stopOpacity=".19" />
-            <stop offset="50%" stopColor="#0f794b93" stopOpacity=".21" />
-            <stop offset="100%" stopColor="#05692b93" stopOpacity=".18" />
-          </linearGradient>
-        </defs>
-
-        <path
-          d="M120 40 L280 40 A55 55 0 0 1 335 95
-             L220 210 A10 10 0 0 0 220 225
-             L335 340 A55 55 0 0 1 280 395
-             L120 395 A55 55 0 0 1 65 340
-             L180 225 A10 10 0 0 0 180 210
-             L65 95 A55 55 0 0 1 120 40 Z"
-          fill="url(#ZebioAvatarGradient)"
-          stroke="url(#ZebioAvatarGradient)"
-          strokeWidth="46"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-
-        <path
-          d="M120 40 L280 40 A55 55 0 0 1 335 95
-             L220 210 A10 10 0 0 0 220 225
-             L335 340 A55 55 0 0 1 280 395
-             L120 395 A55 55 0 0 1 65 340
-             L180 225 A10 10 0 0 0 180 210
-             L65 95 A55 55 0 0 1 120 40 Z"
-          fill="none"
-          stroke="url(#ZebioAvatarHighlight)"
-          strokeWidth="40"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-
-        <g
-          className="Zebio-avatar-normal-eyes"
-          fill="#050505"
-          transform={`translate(${gaze.x} ${gaze.y})`}
-        >
-          <ellipse cx="130" cy="90" rx="12" ry="14">
-            <animate
-              attributeName="ry"
-              dur="5.8s"
-              repeatCount="indefinite"
-              values="14;14;1.2;14;14;1.2;14"
-              keyTimes="0;.12;.145;.17;.50;.525;1"
-            />
-          </ellipse>
-
-          <ellipse cx="270" cy="90" rx="12" ry="14">
-            <animate
-              attributeName="ry"
-              dur="5.8s"
-              repeatCount="indefinite"
-              values="14;14;1.2;14;14;1.2;14"
-              keyTimes="0;.12;.145;.17;.50;.525;1"
-            />
-          </ellipse>
-        </g>
-
-        <g
-          className="Zebio-avatar-happy-eyes"
-          fill="none"
-          stroke="#050505"
-          strokeWidth="9"
-          strokeLinecap="round"
-          transform={`translate(${gaze.x} ${gaze.y})`}
-        >
-          <path d="M114 98 Q130 72 146 98" />
-          <path d="M254 98 Q270 72 286 98" />
-        </g>
-
-        <path
-          className="Zebio-avatar-smile"
-          d="M160 300 Q200 340 240 300"
-          fill="none"
-          stroke="#050505"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-
-        <circle
-          className="Zebio-avatar-wow"
-          cx="200"
-          cy="303"
-          r="25"
-          fill="#050505"
-        />
-      </svg>
+      <span
+        ref={avatarArtRef}
+        className="Zebio-avatar-art"
+        aria-hidden="true"
+        dangerouslySetInnerHTML={{ __html: avatarSvg }}
+      />
     </button>
   );
 }

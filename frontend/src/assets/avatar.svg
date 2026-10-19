@@ -1,0 +1,334 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Ambient Green Glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#37ff147a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0a120a71" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Fade / Glossy Dark Green Clock Face -->
+    <radialGradient id="faceGradient" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#85a88793"/>
+      <stop offset="45%" stop-color="#5f836291"/>
+      <stop offset="75%" stop-color="#27582775"/>
+      <stop offset="100%" stop-color="#1f421f75"/>
+    </radialGradient>
+
+    <!-- Glossy Highlight Sweep -->
+    <linearGradient id="glossHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Realistic Glove Shading -->
+    <radialGradient id="gloveShading" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F2F2F2"/>
+      <stop offset="100%" stop-color="#D1D1D1"/>
+    </radialGradient>
+
+    <!-- Soft Green Neon Glow Filter -->
+    <filter id="greenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* ---- Body animation ---- */
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(15deg); }
+      20% { transform: rotate(-5deg); }
+      30% { transform: rotate(15deg); }
+      40% { transform: rotate(-5deg); }
+      50% { transform: rotate(15deg); }
+      60%, 90% { transform: rotate(0deg); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    /* ---- Blink (synced to the 16s expression cycle) ---- */
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+
+    /* ---- Expression cycle ---- */
+    @keyframes exprHappy {
+      0%, 35% { opacity: 1; }
+      38%, 100% { opacity: 0; }
+    }
+
+    @keyframes exprAmazed {
+      0%, 35% { opacity: 0; }
+      38%, 63% { opacity: 1; }
+      66%, 100% { opacity: 0; }
+    }
+
+    @keyframes exprWink {
+      0%, 63% { opacity: 0; }
+      66%, 97% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .waving-arm {
+      transform-origin: 600px 400px;
+      animation: wave 4s ease-in-out infinite;
+    }
+    .body-group {
+      transform-origin: 400px 400px;
+      animation: float 3s ease-in-out infinite;
+    }
+    .eye-blink {
+      animation: blink 8s infinite;
+    }
+    .expression-happy  { animation: exprHappy  16s infinite; }
+    .expression-amazed { animation: exprAmazed 16s infinite; }
+    .expression-wink   { animation: exprWink   16s infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="#0a120a00"/>
+
+  <!-- Ambient Glow Layer -->
+  <circle cx="400" cy="400" r="350" fill="url(#ambientGlow)"/>
+
+  <!-- === SITTING SURFACE / LEDGE === -->
+  <g class="platform">
+    <ellipse cx="400" cy="605" rx="160" ry="15" fill="#000000" opacity="0.3"/>
+  </g>
+
+  <!-- === MAIN BODY GROUP (floating animation) === -->
+  <g class="body-group">
+    <!-- Outer Clock Chassis -->
+    <circle cx="400" cy="400" r="220" fill="#0a1f0a77" stroke="#0612067a" stroke-width="10"/>
+
+    <!-- Glossy Dark Green Clock Face -->
+    <circle cx="400" cy="400" r="210" fill="url(#faceGradient)"/>
+
+    <!-- Glossy Highlight Overlay -->
+    <ellipse cx="345" cy="310" rx="135" ry="70"
+             transform="rotate(-22 345 310)"
+             fill="url(#glossHighlight)"
+             opacity="0.55"/>
+    <circle cx="310" cy="275" r="14" fill="#FFFFFF" opacity="0.18"/>
+
+    <!-- Piping / Rim -->
+    <circle cx="400" cy="400" r="210" fill="none" stroke="#1a3d1a6c" stroke-width="6"/>
+    <circle cx="400" cy="400" r="200" fill="none" stroke="#06120670" stroke-width="2" opacity="0.6"/>
+
+    <!-- Subtle green rim glow -->
+    <circle cx="400" cy="400" r="210" fill="none" stroke="#37ff1475" stroke-width="2"
+            filter="url(#greenGlow)" opacity="0.25"/>
+
+    <!-- 16 Tick Marks around the perimeter -->
+    <g stroke="#06120669" stroke-width="8" stroke-linecap="round">
+      <line x1="400" y1="200" x2="400" y2="220" stroke-width="12"/>
+      <line x1="580" y1="400" x2="600" y2="400" stroke-width="12"/>
+      <line x1="400" y1="580" x2="400" y2="600" stroke-width="12"/>
+      <line x1="200" y1="400" x2="220" y2="400" stroke-width="12"/>
+
+      <line x1="484" y1="216" x2="492" y2="232"/>
+      <line x1="548" y1="252" x2="560" y2="264"/>
+      <line x1="584" y1="316" x2="600" y2="324"/>
+      <line x1="584" y1="484" x2="600" y2="476"/>
+      <line x1="548" y1="548" x2="560" y2="536"/>
+      <line x1="484" y1="584" x2="492" y2="568"/>
+      <line x1="316" y1="584" x2="308" y2="568"/>
+      <line x1="252" y1="548" x2="240" y2="536"/>
+      <line x1="216" y1="484" x2="200" y2="476"/>
+      <line x1="216" y1="316" x2="200" y2="324"/>
+      <line x1="252" y1="252" x2="240" y2="264"/>
+      <line x1="316" y1="216" x2="308" y2="232"/>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- EXPRESSION 1 — HAPPY (smile)                                  -->
+    <!-- ============================================================ -->
+    <g class="expression-happy">
+      <path d="M 305 318 Q 330 300 355 318" fill="none" stroke="#0612067e" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 445 318 Q 470 300 495 318" fill="none" stroke="#06120680" stroke-width="5" stroke-linecap="round"/>
+
+      <ellipse cx="330" cy="370" rx="38" ry="45" fill="#FFFFFF" stroke="#061206" stroke-width="4"/>
+      <ellipse cx="470" cy="370" rx="38" ry="45" fill="#FFFFFF" stroke="#061206" stroke-width="4"/>
+
+      <g class="eye-blink" style="transform-origin: 330px 370px;">
+        <g class="eye-tracking-pupil">
+          <ellipse cx="330" cy="370" rx="18" ry="22" fill="#061206"/>
+          <circle cx="324" cy="362" r="5" fill="#FFFFFF" opacity="0.4"/>
+        </g>
+      </g>
+      <g class="eye-blink" style="transform-origin: 470px 370px;">
+        <g class="eye-tracking-pupil">
+          <ellipse cx="470" cy="370" rx="18" ry="22" fill="#061206"/>
+          <circle cx="464" cy="362" r="5" fill="#FFFFFF" opacity="0.4"/>
+        </g>
+      </g>
+
+      <path d="M 305 338 L 315 328 M 330 333 L 330 320 M 355 338 L 345 328" stroke="#061206" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M 445 338 L 455 328 M 470 333 L 470 320 M 495 338 L 485 328" stroke="#061206" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+      <circle cx="330" cy="440" r="8" fill="#39FF14" opacity="0.14"/>
+      <circle cx="470" cy="440" r="8" fill="#39FF14" opacity="0.14"/>
+
+      <path d="M 340 450 Q 400 510 460 450" fill="none" stroke="#061206" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="400" cy="400" r="10" fill="#FFFFFF" stroke="#061206" stroke-width="3"/>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- EXPRESSION 3 — AMAZED                                         -->
+    <!-- ============================================================ -->
+    <g class="expression-amazed">
+      <path d="M 305 295 Q 330 275 355 295" fill="none" stroke="#061206" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 445 295 Q 470 275 495 295" fill="none" stroke="#061206" stroke-width="5" stroke-linecap="round"/>
+
+      <circle cx="330" cy="365" r="47" fill="#FFFFFF" stroke="#061206" stroke-width="4"/>
+      <circle cx="470" cy="365" r="47" fill="#FFFFFF" stroke="#061206" stroke-width="4"/>
+
+      <g class="eye-tracking-pupil">
+        <circle cx="330" cy="365" r="25" fill="#061206"/>
+        <circle cx="320" cy="355" r="7" fill="#FFFFFF" opacity="0.5"/>
+      </g>
+      <g class="eye-tracking-pupil">
+        <circle cx="470" cy="365" r="25" fill="#061206"/>
+        <circle cx="460" cy="355" r="7" fill="#FFFFFF" opacity="0.5"/>
+      </g>
+
+      <ellipse cx="400" cy="468" rx="22" ry="28" fill="#061206"/>
+      <ellipse cx="400" cy="480" rx="13" ry="10" fill="#2E7D32" opacity="0.7"/>
+      <circle cx="400" cy="400" r="10" fill="#FFFFFF" stroke="#061206" stroke-width="3"/>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- EXPRESSION 4 — CHEEKY WINK                                    -->
+    <!-- ============================================================ -->
+    <g class="expression-wink">
+      <path d="M 305 305 Q 330 285 355 305" fill="none" stroke="#061206" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 445 320 Q 470 305 495 320" fill="none" stroke="#061206" stroke-width="5" stroke-linecap="round"/>
+
+      <ellipse cx="330" cy="370" rx="38" ry="45" fill="#FFFFFF" stroke="#061206" stroke-width="4"/>
+      <g class="eye-tracking-pupil">
+        <ellipse cx="330" cy="370" rx="18" ry="22" fill="#061206"/>
+        <circle cx="324" cy="362" r="5" fill="#FFFFFF" opacity="0.4"/>
+      </g>
+
+      <path d="M 442 375 Q 470 360 498 375" fill="none" stroke="#061206" stroke-width="6" stroke-linecap="round"/>
+
+      <circle cx="330" cy="440" r="10" fill="#39FF14" opacity="0.18"/>
+      <circle cx="470" cy="440" r="10" fill="#39FF14" opacity="0.18"/>
+
+      <path d="M 350 478 Q 400 470 462 450" fill="none" stroke="#061206" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="400" cy="400" r="10" fill="#FFFFFF" stroke="#061206" stroke-width="3"/>
+    </g>
+
+    <!-- === LEFT ARM (Static, Resting) === -->
+    <g>
+      <!-- Arm -->
+      <path d="M 180 400 Q 150 600 210 600" fill="none" stroke="#0A1A0A" stroke-width="12" stroke-linecap="round"/>
+
+      <!-- Detailed Fabric Cuff -->
+      <g transform="translate(210, 600) rotate(-40)">
+        <!-- Cuff Base -->
+        <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#689c6c" stroke="#061206" stroke-width="3"/>
+        <!-- Fabric Ribbing -->
+        <line x1="-12" y1="-4" x2="12" y2="-4" stroke="#406940" stroke-width="2"/>
+        <line x1="-12" y1="2" x2="12" y2="2" stroke="#406940" stroke-width="2"/>
+        <line x1="-12" y1="8" x2="12" y2="8" stroke="#406940" stroke-width="2"/>
+      </g>
+
+      <!-- Resting Realistic Glove -->
+      <g transform="translate(225, 610) rotate(-30)">
+        <!-- Hand Silhouette (Palm & Curled Fingers) -->
+        <path d="M -18 -5 C -28 5, -28 30, -15 40 C -5 48, 12 45, 18 32 C 25 15, 20 -5, 5 -10 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Thumb -->
+        <path d="M -15 0 C -25 -12, -35 5, -22 15 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Thumb Knuckle Crease -->
+        <path d="M -22 5 Q -18 8 -15 5" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+        <!-- Finger Creases (Knuckles) -->
+        <path d="M -10 35 Q -5 38 0 35" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+        <path d="M 0 32 Q 5 35 10 32" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+        <path d="M 10 28 Q 14 30 18 26" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+      </g>
+    </g>
+
+    <!-- === RIGHT ARM (Waving) === -->
+    <g class="waving-arm">
+      <!-- Arm -->
+      <path d="M 625 395 Q 750 380 750 350" fill="none" stroke="#0A1A0A" stroke-width="12" stroke-linecap="round"/>
+
+      <!-- Detailed Fabric Cuff -->
+      <g transform="translate(750, 350) rotate(-20)">
+        <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#689c6c" stroke="#061206" stroke-width="3"/>
+        <line x1="-12" y1="-4" x2="12" y2="-4" stroke="#406940" stroke-width="2"/>
+        <line x1="-12" y1="2" x2="12" y2="2" stroke="#406940" stroke-width="2"/>
+        <line x1="-12" y1="8" x2="12" y2="8" stroke="#406940" stroke-width="2"/>
+      </g>
+
+      <!-- Waving Realistic Glove -->
+      <g transform="translate(735, 320) rotate(-30)">
+        <!-- Palm Base -->
+        <path d="M -18 0 C -25 -12, -10 -22, 5 -22 C 20 -22, 28 -10, 28 5 C 28 20, 18 25, 0 25 C -10 25, -15 15, -18 0 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+
+        <!-- Thumb -->
+        <path d="M -15 -5 C -28 -15, -40 0, -25 12 C -20 15, -15 12, -12 8 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <!-- Thumb joint crease -->
+        <path d="M -22 2 Q -18 5 -15 2" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+
+        <!-- Index Finger (Curved naturally) -->
+        <path d="M -5 -18 C -10 -35, 0 -50, 12 -48 C 18 -46, 18 -35, 8 -20 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M 0 -32 Q 5 -35 8 -32" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+
+        <!-- Middle Finger (Tallest) -->
+        <path d="M 5 -22 C 5 -40, 15 -55, 25 -52 C 32 -50, 30 -38, 18 -22 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M 12 -35 Q 18 -38 22 -35" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+
+        <!-- Ring Finger -->
+        <path d="M 15 -18 C 20 -32, 32 -42, 42 -38 C 48 -35, 42 -22, 28 -15 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M 22 -26 Q 28 -28 32 -25" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+
+        <!-- Pinky Finger -->
+        <path d="M 22 -10 C 30 -20, 42 -25, 48 -18 C 52 -12, 42 -2, 30 5 Z" fill="url(#gloveShading)" stroke="#061206" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M 32 -12 Q 38 -14 42 -10" fill="none" stroke="#061206" stroke-width="2" opacity="0.6"/>
+
+        <!-- Palm Lines (Life line & Head line) -->
+        <path d="M -5 0 Q 10 5 20 -5" fill="none" stroke="#061206" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+        <path d="M -5 5 Q 5 15 15 10" fill="none" stroke="#061206" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- === LEGS === -->
+    <g class="left-leg">
+      <path d="M 330 600 Q 316 680 296 720" fill="none" stroke="#000000" stroke-width="17" stroke-linecap="round" opacity="0.35" transform="translate(7 7)"/>
+      <ellipse cx="297" cy="735" rx="31" ry="15" fill="#000000" opacity="0.1"/>
+
+      <path d="M 330 600 Q 316 680 296 720" fill="none" stroke="#0A1A0A" stroke-width="12" stroke-linecap="round"/>
+
+      <g transform="translate(296, 720)">
+        <path d="M -15 5 C -35 5, -45 15, -45 25 L -45 35 C -45 45, -35 45, -15 45 L 15 45 C 25 45, 25 30, 15 10 Z" fill="#689c6c" stroke="#406940" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="5" y="15" width="20" height="30" rx="6" fill="#406940" stroke="#061206" stroke-width="3"/>
+        <path d="M -30 15 Q -20 10 -10 15" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+      </g>
+    </g>
+
+    <g class="right-leg">
+      <path d="M 470 600 Q 484 680 504 720" fill="none" stroke="#000000" stroke-width="17" stroke-linecap="round" opacity="0.35" transform="translate(7 7)"/>
+      <ellipse cx="505" cy="735" rx="31" ry="15" fill="#000000" opacity="0.3"/>
+
+      <path d="M 470 600 Q 484 680 504 720" fill="none" stroke="#0A1A0A" stroke-width="12" stroke-linecap="round"/>
+
+      <g transform="translate(504, 720)">
+        <path d="M 15 5 C 35 5, 45 15, 45 25 L 45 35 C 45 45, 35 45, 15 45 L -15 45 C -25 45, -25 30, -15 10 Z" fill="#689c6c" stroke="#406940" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="-25" y="15" width="20" height="30" rx="6" fill="#406940" stroke="#061206" stroke-width="3"/>
+        <path d="M 30 15 Q 20 10 10 15" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+      </g>
+    </g>
+  </g>
+</svg>

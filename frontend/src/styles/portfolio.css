@@ -1,4 +1,4 @@
-html {
+﻿html {
   scroll-behavior: smooth;
 }
 
@@ -630,22 +630,23 @@ html {
 
   width: 100%;
 
-  border-bottom: 2px solid var(--portfolio-border-subtle);
+  border-bottom: 3px solid var(--portfolio-border-subtle);
 
   background:
     color-mix(
       in srgb,
-      var(--portfolio-background) 82%,
+      var(--portfolio-background) 90%,
       transparent
     );
 
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(5px);
 }
+
 
 .portfolio-nav-inner {
   width: min(calc(100% - 48px), 1180px);
 
-  min-height: 72px;
+  min-height: 50px;
 
   margin: 0 auto;
 
@@ -656,6 +657,37 @@ html {
   justify-content: space-between;
 
   gap: 32px;
+}
+
+.portfolio-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  position: relative;
+  min-width: 0;
+}
+
+.portfolio-mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 9px;
+  background: var(--portfolio-surface);
+  color: var(--portfolio-text);
+  font: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.portfolio-mobile-menu-toggle:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
 }
 
 .portfolio-nav-brand {
@@ -804,6 +836,513 @@ html {
 .portfolio-theme-toggle:hover
   .portfolio-theme-toggle-icon {
   transform: rotate(12deg) scale(1.08);
+}
+
+/* =========================================================
+   NAVIGATION ZEBIO ASSISTANT
+========================================================= */
+
+.portfolio-zebio-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin: 0 4px;
+}
+
+.portfolio-zebio-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+}
+
+.portfolio-zebio-menu .Zebio-avatar {
+  position: relative;
+  top: 9px;
+  display: block;
+  flex: none;
+  width: 70px;
+  height: 74px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  filter:
+    drop-shadow(0 3px 2px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 0 5px rgba(57, 255, 20, 0.22));
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.portfolio-zebio-menu .Zebio-avatar--active {
+  animation: none;
+}
+
+.portfolio-zebio-menu .Zebio-avatar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter:
+    drop-shadow(0 3px 2px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 0 9px rgba(57, 255, 20, 0.5));
+}
+
+.portfolio-zebio-menu .Zebio-avatar:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+.portfolio-zebio-menu .Zebio-avatar-art,
+.portfolio-zebio-menu .Zebio-avatar-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+
+/* Contact shadow: anchors Zebio to the navbar edge. */
+.portfolio-zebio-trigger {
+  position: relative;
+  isolation: isolate;
+}
+
+.portfolio-zebio-trigger::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 20%;
+  right: 20%;
+  bottom: -1px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Keep Zebio's body seated on the navbar border. */
+.portfolio-zebio-menu .body-group {
+  animation: none !important;
+}
+
+
+@keyframes portfolio-zebio-left-leg-dangle {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes portfolio-zebio-right-leg-dangle {
+  0%, 100% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+}
+
+.portfolio-zebio-menu .left-leg {
+  transform-box: view-box;
+  transform-origin: 330px 600px;
+  animation: portfolio-zebio-left-leg-dangle 2s ease-in-out infinite;
+}
+
+.portfolio-zebio-menu .right-leg {
+  transform-box: view-box;
+  transform-origin: 470px 600px;
+  animation: portfolio-zebio-right-leg-dangle 2s ease-in-out infinite;
+}
+
+.portfolio-zebio-menu .Zebio-avatar--amazed
+  .expression-happy,
+.portfolio-zebio-menu .Zebio-avatar--amazed
+  .expression-wink {
+  animation: none !important;
+  opacity: 0 !important;
+}
+
+.portfolio-zebio-menu .Zebio-avatar--amazed
+  .expression-amazed {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+.portfolio-zebio-popover {
+  position: absolute;
+  top: 140%;
+  right: -14px;
+  z-index: 30;
+  width: 260px;
+  padding: 18px;
+  border: 1px solid var(--portfolio-border-strong);
+  border-radius: 16px;
+  background: var(--portfolio-surface-solid);
+  box-shadow: 0 16px 40px var(--portfolio-shadow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease,
+    transform 180ms ease;
+}
+
+.portfolio-zebio-popover::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  right: 24px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--portfolio-border-strong);
+  border-left: 1px solid var(--portfolio-border-strong);
+  background: var(--portfolio-surface-solid);
+  transform: rotate(45deg);
+}
+
+.portfolio-zebio-menu--open .portfolio-zebio-popover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.portfolio-zebio-popover-title {
+  margin: 0 0 6px;
+  color: var(--portfolio-text);
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+.portfolio-zebio-popover-text {
+  margin: 0 0 14px;
+  color: var(--portfolio-text-secondary);
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+.portfolio-zebio-open-chat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid var(--portfolio-accent);
+  border-radius: 10px;
+  background: rgba(57, 255, 20, 0.09);
+  color: var(--portfolio-text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.portfolio-zebio-open-chat:hover {
+  background: rgba(57, 255, 20, 0.17);
+  transform: translateY(-1px);
+}
+
+.portfolio-zebio-open-chat:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-zebio-menu {
+    margin: 0px 5px -10px 3px;
+  }
+
+  .portfolio-zebio-popover {
+    right: -8px;
+    width: min(260px, calc(100vw - 24px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-zebio-menu .Zebio-avatar,
+  .portfolio-zebio-popover,
+  .portfolio-zebio-open-chat {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   FLOATING ZEBIO CHAT WINDOW
+========================================================= */
+
+.portfolio-chat-window {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: min(420px, calc(100vw - 32px));
+  height: min(640px, calc(100dvh - 48px));
+  overflow: hidden;
+  border: 1px solid var(--portfolio-border-strong);
+  border-radius: 20px;
+  background: var(--portfolio-surface-solid);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.025);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px) scale(0.98);
+  transform-origin: bottom right;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease;
+}
+
+.portfolio-chat-window--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.portfolio-chat-window-header {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 100px;
+  padding: 17px 16px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--portfolio-border);
+  background:
+    radial-gradient(
+      ellipse at 12% 0%,
+      rgba(57, 255, 20, 0.17),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.025)
+    ),
+    var(--portfolio-surface);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.portfolio-chat-window-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.portfolio-chat-window-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.portfolio-chat-window-avatar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 54px;
+}
+
+.portfolio-chat-window-avatar .Zebio-avatar {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  animation: none;
+  filter: drop-shadow(0 0 7px rgba(57, 255, 20, 0.3));
+}
+
+.portfolio-chat-window-avatar .Zebio-avatar-art,
+.portfolio-chat-window-avatar .Zebio-avatar-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.portfolio-chat-window-heading {
+  min-width: 0;
+}
+
+.portfolio-chat-window-heading h2 {
+  margin: 0;
+  color: var(--portfolio-text);
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.portfolio-chat-window-heading p {
+  margin: 5px 0 0;
+  color: var(--portfolio-text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.portfolio-chat-window-close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 10px;
+  background: var(--portfolio-surface);
+  color: var(--portfolio-text-secondary);
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.portfolio-chat-window-close:hover {
+  border-color: var(--portfolio-border-strong);
+  background: var(--portfolio-surface-muted);
+  color: var(--portfolio-text);
+}
+
+.portfolio-chat-window-close:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+/* Keep the existing chat implementation inside the window. */
+.portfolio-chat-window .portfolio-about-chat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  padding: 18px 16px 14px;
+  overflow: hidden;
+}
+
+.portfolio-chat-window .portfolio-about-chat-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.portfolio-chat-window .portfolio-about-chat-form {
+  flex: none;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-chat-window {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: calc(100vw - 24px);
+    height: min(620px, calc(100dvh - 24px));
+    border-radius: 18px;
+  }
+
+  .portfolio-chat-window-header {
+    min-height: 92px;
+    padding: 14px 12px;
+    gap: 8px;
+  }
+
+  .portfolio-chat-window-identity {
+    gap: 8px;
+  }
+
+  .portfolio-chat-window-avatar {
+    width: 40px;
+    height: 46px;
+  }
+
+  .portfolio-chat-window-avatar .Zebio-avatar {
+    width: 38px;
+    height: 44px;
+  }
+
+  .portfolio-chat-window-heading h2 {
+    font-size: 0.9rem;
+  }
+
+  .portfolio-chat-window-heading p {
+    font-size: 0.7rem;
+  }
+
+  .portfolio-chat-window .portfolio-about-chat {
+    padding: 14px 12px 12px;
+  }
+}
+
+@media (max-height: 520px) {
+  .portfolio-chat-window {
+    height: calc(100dvh - 16px);
+    bottom: 8px;
+  }
+
+  .portfolio-chat-window-header {
+    min-height: 76px;
+    padding-block: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-chat-window,
+  .portfolio-chat-window-close {
+    transition: none;
+  }
 }
 
 /* =========================================================
@@ -1334,22 +1873,106 @@ html {
     max-width: 88%;
   }
 
+  /* Mobile navbar layout */
   .portfolio-nav-inner {
     width: min(calc(100% - 32px), 1180px);
-
     min-height: 64px;
+    gap: 12px;
   }
 
-  .portfolio-nav-links {
+  .portfolio-nav-controls {
     gap: 8px;
   }
 
+    .portfolio-mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 39;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.48);
+    cursor: default;
+    animation: portfolio-menu-backdrop-in 200ms ease both;
+  }
+
+  @keyframes portfolio-menu-backdrop-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Full-height drawer that slides in from the right */
+  .portfolio-nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 40;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    width: 360px;
+    max-width: calc(100vw - 64px);
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    margin: 0;
+    padding: 24px 18px;
+
+    border: 1px solid var(--portfolio-border);
+    border-right: 0;
+    border-radius: 0;
+
+    background: var(--portfolio-surface-solid);
+    box-shadow: 0 12px 30px var(--portfolio-shadow);
+
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform 250ms ease,
+      visibility 250ms ease;
+  }
+
+  .portfolio-nav-links.portfolio-nav-links--mobile-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .portfolio-nav-links a {
-    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    flex: none;
+    width: 100%;
+    min-height: 46px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    font-size: 0.92rem;
   }
 
   .portfolio-nav-links a::after {
     bottom: -6px;
+  }
+
+  /* Show the hamburger only on mobile */
+  .portfolio-mobile-menu-toggle {
+    display: inline-flex;
+    flex: none;
   }
 }
 
@@ -1360,20 +1983,25 @@ html {
 
 @media (max-width: 450px) {
   .portfolio-nav-inner {
-    gap: 16px;
+    gap: 8px;
   }
 
   .portfolio-nav-brand {
     font-size: 0.88rem;
   }
 
-  .portfolio-nav-links {
+  .portfolio-nav-controls {
     gap: 5px;
   }
 
+  .portfolio-nav-links {
+    gap: 8px;
+    padding: 20px 14px;
+  }
+
   .portfolio-nav-links a {
-    font-size: 0.76rem;
-    padding: 0 8px;
+    font-size: 0.88rem;
+    padding: 0 10px;
   }
 
   .portfolio-project-card {
@@ -1387,7 +2015,6 @@ html {
 
   .portfolio-home-actions {
     flex-direction: column;
-
     align-items: stretch;
   }
 
@@ -1396,6 +2023,15 @@ html {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-mobile-menu-backdrop,
+  .portfolio-nav-links {
+    animation: none;
+    transition: none;
+  }
+}
+
+
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
@@ -1403,7 +2039,7 @@ html {
 .portfolio-reveal {
   opacity: 0;
   transform: translateY(32px);
-  
+
   transition:
     opacity 700ms ease var(--portfolio-reveal-delay, 0ms),
     transform 700ms ease var(--portfolio-reveal-delay, 0ms);
@@ -1442,21 +2078,6 @@ html {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .portfolio-project-card,
-  .portfolio-home-actions a,
-  .portfolio-about-chat-form button,
-  .portfolio-nav-links a,
-  .portfolio-nav-links a::after {
-    transition: none;
-  }
-
-  .portfolio-project-card:hover,
-  .portfolio-home-actions a:hover,
-  .portfolio-about-chat-form button:hover:not(:disabled) {
-    transform: none;
-  }
-}
 
 /* CV */
 
@@ -2154,7 +2775,7 @@ html {
 .portfolio-footer {
   padding: 14px 48px 14px;
   border-top: 2px solid var(--portfolio-border-subtle);
-  background: color-mix(in srgb, var(--portfolio-background) 82%, transparent);
+  background: color-mix(in srgb, var(--portfolio-background) 80%, #00000000);
 }
 
 .portfolio-footer-inner {
@@ -2358,28 +2979,35 @@ html {
 }
 
 /* Happy expression: open eyes and a smile. */
-.portfolio-about-chat-form .Zebio-avatar-normal-eyes {
+
+/* New inline SVG artwork */
+.portfolio-about-chat-form .Zebio-avatar-art {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.portfolio-about-chat-form .Zebio-avatar-happy-eyes,
-.portfolio-about-chat-form .Zebio-avatar-wow {
-  display: none;
-}
-
-.portfolio-about-chat-form .Zebio-avatar-smile {
+.portfolio-about-chat-form .Zebio-avatar-art svg {
   display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-/* Amazed expression: inverted-U eyes and a round mouth. */
-.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-normal-eyes,
-.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-smile {
-  display: none;
+/* The SVG runs its own four-expression animation cycle.
+   A click temporarily forces the amazed expression. */
+.portfolio-about-chat-form .Zebio-avatar--amazed
+  .expression-happy,
+.portfolio-about-chat-form .Zebio-avatar--amazed
+  .expression-wink {
+  animation: none !important;
+  opacity: 0 !important;
 }
 
-.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-happy-eyes,
-.portfolio-about-chat-form .Zebio-avatar--amazed .Zebio-avatar-wow {
-  display: block;
+.portfolio-about-chat-form .Zebio-avatar--amazed
+  .expression-amazed {
+  animation: none !important;
+  opacity: 1 !important;
 }
 
 /* Keep the avatar independent of the send-button hover styles. */
@@ -2433,7 +3061,7 @@ html {
   .portfolio-about-chat-form .Zebio-avatar {
     left: 50%;
     right: auto;
-    top: calc(100% + 8px);
+    top: calc(100% + 16px);
     bottom: auto;
     transform: translateX(-50%);
   }

@@ -24,6 +24,7 @@ function HomePage() {
             AI software, ML systems and data-driven applications.
           </ScrollReveal>
 
+
           <ScrollReveal
             className="portfolio-home-actions"
             delay={240}
@@ -93,29 +94,7 @@ function HomePage() {
               </p>
             </ScrollReveal>
           </div>
-
-          <ScrollReveal
-            className="portfolio-about-prompt"
-            delay={280}
-          >
-            <p className="portfolio-about-prompt-label">
-              Want to know more about me?
-            </p>
-            <p className="portfolio-about-prompt-text">
-              Ask Zebio about my background, projects, experience or skills.
-            </p>
-            <span className="portfolio-about-prompt-arrow" aria-hidden="true">
-              →
-            </span>
-          </ScrollReveal>
         </div>
-
-        <ScrollReveal
-          className="portfolio-about-chat-reveal"
-          delay={320}
-        >
-          <AboutChat />
-        </ScrollReveal>
       </section>
 
       {/* Projects */}
