@@ -731,6 +731,8 @@
 
 .portfolio-mobile-menu-toggle {
   display: none;
+  position: relative;
+  z-index: 41;
   align-items: center;
   justify-content: center;
   flex: none;
