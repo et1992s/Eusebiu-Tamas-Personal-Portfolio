@@ -710,6 +710,10 @@
   backdrop-filter: blur(5px);
 }
 
+.portfolio-nav:has(.portfolio-mobile-menu-backdrop) {
+  backdrop-filter: none;
+}
+
 .portfolio-nav-inner {
   width: min(calc(100% - 48px), 1180px);
   min-height: 50px;
