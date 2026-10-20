@@ -6,9 +6,9 @@
 text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-serif}
 .textbg {stroke:#fff;stroke-width:3;stroke-linejoin:round}
 .zone {font-size:35px;font-weight:600;text-anchor:middle}
-.st {font-size:14px;fill:#000}
-.small {font-size:11px;fill:#000}
-.intline {font-size:11px;fill:#fff}
+.st {font-size:14px;fill:#888888}
+.small {font-size:11px;fill:#888888}
+.intline {font-size:11px;fill:#888888}
 .x {fill:#999}
 .b {font-weight:600}
 .mid {text-anchor:middle}
@@ -89,9 +89,9 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 .progress:active {cursor:progress}
 .zone_layer {visibility:visible}
 .acc_layer {visibility:hidden}
-.doublezone {fill:#efe;stroke:#aaa;stroke-width:1}
-.zonefw {font-size:35px;fill:#fff;stroke:#ddd;stroke-width:1}
-.zonefg {font-size:35px;fill:#efefef;stroke:#ddd;stroke-width:1}
+.doublezone {fill:#efe;stroke:#none;stroke-width:1}
+.zonefw {font-size:35px;fill:#fff;stroke:#none;stroke-width:1}
+.zonefg {font-size:35px;fill:#efefef;stroke:#none;stroke-width:1}
 .zonedf {font-size:13px;fill:#999;stroke:none}
 	</style>
 	<defs>
@@ -196,7 +196,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		<g id="sttl"><circle cx="0" cy="0" r="4" class="ftl"/></g>
 		<g id="sttlnr">
 			<circle cx="0" cy="0" r="5.5" style="fill:#fff;stroke:#000;stroke-width:0.75"/>
-			<path style="fill:none;stroke:#ef2721;stroke-width:1" d="
+			<path style="fill:none;stroke:none;stroke-width:1" d="
 			M -5,-1.25 H 5
 			M -5,1.25 H 5
 			M -2.5,-3.75 L 2.5,-1.25 -2.5,1.25 2.5,3.75"/>
@@ -221,7 +221,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		</g>
 		<g id="intnrx" cursor="help">
 			<circle cx="0" cy="0" r="8.25" fill="#ffffff00"/>
-			<circle cx="0" cy="0" r="7" style="fill:#fff;stroke:#999;stroke-width:1"/>
+			<circle cx="0" cy="0" r="7" style="fill:#fff;stroke:none;stroke-width:1"/>
 			<use xlink:href="#nr"/>
 		</g>
 		<g id="int">
@@ -300,7 +300,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			<rect x="-200" y="-200" width="3000" height="3000" style="fill:none"/>
 			<g>
 				<title>Fare zone 1. If possible, avoid this zone in your journey and tap your touched-in Oyster card or contactless card at any pink card reader (route validator) for potential fare discount.</title>
-				<g style="fill:none;stroke:#eca;stroke-width:1">
+				<g style="fill:none;stroke:none;stroke-width:1">
 					<use xlink:href="#zone1_base"/>
 					<rect x="-20" y="-35" width="410" height="20" rx="10"/>
 				</g>
@@ -665,7 +665,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			<text x="1520" y="643" class="st rn b">River Thames</text>
 			<text transform="translate(2273,694)rotate(-36.78)" class="st rn b">River <tspan dx="7">Thames</tspan></text>
 		</g>
-		<g id="double_zones" cursor="help" class="zone_layer doublezone">
+		<g id="double_zones" cursor="help" class="zone_layer doublezone" style="fill:none">
 			<g id="zone1-2">
 				<title>Station between fare zones 1/2. Cheaper fare applies on traveling to/from these stations.</title>
 				<rect x="1516.625" y="390.5" width="91" height="20" rx="10" id="Hoxton_zone"/><!--

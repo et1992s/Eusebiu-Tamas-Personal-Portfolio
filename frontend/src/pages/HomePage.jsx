@@ -28,8 +28,8 @@ function HomePage() {
             </ScrollReveal>
 
             <ScrollReveal as="p" className="portfolio-introduction" delay={180}>
-              I design and engineer intelligent applications — from
-              LLM-powered developer tools to machine-learning pipelines —
+              I design and engineer intelligent applications. From
+              LLM-powered developer tools to machine-learning pipelines,
               with a focus on clean architecture and practical results.
             </ScrollReveal>
 
