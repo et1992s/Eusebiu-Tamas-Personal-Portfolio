@@ -6,6 +6,25 @@ function PortfolioNav({ onOpenChat }) {
   const { theme, toggleTheme } = usePortfolioTheme();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'home';
+    }
+
+    const sectionId = window.location.hash.slice(1);
+
+    return [
+      'home',
+      'about',
+      'projects',
+      'skills',
+      'education',
+      'experience',
+      'contact',
+    ].includes(sectionId)
+      ? sectionId
+      : 'home';
+  });
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
@@ -19,6 +38,49 @@ function PortfolioNav({ onOpenChat }) {
       document.body.style.overflow = previousOverflow;
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const sectionIds = [
+      'home',
+      'about',
+      'projects',
+      'skills',
+      'education',
+      'experience',
+      'contact',
+    ];
+
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (sections.length === 0) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              a.boundingClientRect.top - b.boundingClientRect.top,
+          );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
+      },
+      {
+        rootMargin: '-18% 0px -65% 0px',
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   const isDark = theme === 'dark';
 
@@ -109,20 +171,83 @@ function PortfolioNav({ onOpenChat }) {
             ].filter(Boolean).join(' ')}
             aria-label="Main navigation"
           >
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>
+            <a
+              href="#about"
+              className={activeSection === 'about' ? 'active' : undefined}
+              aria-current={activeSection === 'about' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               About
             </a>
 
-            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>
+            <a
+              href="#projects"
+              className={activeSection === 'projects' ? 'active' : undefined}
+              aria-current={activeSection === 'projects' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Projects
             </a>
 
-            <a href="#cv" onClick={() => setIsMobileMenuOpen(false)}>
-              CV
+            <a
+              href="#skills"
+              className={activeSection === 'skills' ? 'active' : undefined}
+              aria-current={activeSection === 'skills' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Skills
             </a>
 
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <a
+              href="#education"
+              className={activeSection === 'education' ? 'active' : undefined}
+              aria-current={activeSection === 'education' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Education
+            </a>
+
+            <a
+              href="#experience"
+              className={activeSection === 'experience' ? 'active' : undefined}
+              aria-current={activeSection === 'experience' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Experience
+            </a>
+
+            <a
+              href="#contact"
+              className={activeSection === 'contact' ? 'active' : undefined}
+              aria-current={activeSection === 'contact' ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Contact
+            </a>
+
+            <a
+              href="/Eusebiu_Tamas_Computer_Science_Graduate_CV.pdf"
+              className="portfolio-nav-download"
+              download
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span>Download CV</span>
+
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
             </a>
           </nav>
 

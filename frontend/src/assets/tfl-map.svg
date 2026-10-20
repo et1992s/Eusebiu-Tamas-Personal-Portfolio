@@ -215,45 +215,45 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			z"/>
 		</g>
 		<g id="intnr" cursor="help">
-			<circle id="intnrbase" cx="0" cy="0" r="8.25" fill="#fff"/>
+			<circle id="intnrbase" cx="0" cy="0" r="8.25" fill="#ffffff00"/>
 			<circle id="intnrtop" cx="0" cy="0" r="7" style="fill:#fff;stroke:#000;stroke-width:1"/>
 			<use xlink:href="#nr"/>
 		</g>
 		<g id="intnrx" cursor="help">
-			<circle cx="0" cy="0" r="8.25" fill="#fff"/>
+			<circle cx="0" cy="0" r="8.25" fill="#ffffff00"/>
 			<circle cx="0" cy="0" r="7" style="fill:#fff;stroke:#999;stroke-width:1"/>
 			<use xlink:href="#nr"/>
 		</g>
 		<g id="int">
-			<circle id="intbase" cx="0" cy="0" r="8.25" fill="#fff"/>
+			<circle id="intbase" cx="0" cy="0" r="8.25" fill="#ffffff00"/>
 			<circle id="inttop" cx="0" cy="0" r="6" style="fill:#fff;stroke:#000;stroke-width:3"/>
 		</g>
 		<g id="intx">
-			<circle cx="0" cy="0" r="8.25" fill="#fff"/>
+			<circle cx="0" cy="0" r="8.25" fill="#ffffff00"/>
 			<circle cx="0" cy="0" r="6" style="fill:#fff;stroke:#999;stroke-width:3"/>
 		</g>
 		<g id="cap2">
-			<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.25" fill="#fff"/>
+			<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.25" fill="#ffffff00"/>
 			<rect x="-6" y="-6" width="26.5" height="12" rx="6" style="fill:#fff;stroke:#000;stroke-width:3"/><!--end width: 14.5-->
 		</g>
 		<g id="cap2l">
-			<rect x="-8.25" y="-8.25" width="34.5" height="16.5" rx="8.25" fill="#fff"/>
+			<rect x="-8.25" y="-8.25" width="34.5" height="16.5" rx="8.25" fill="#ffffff00"/>
 			<rect x="-6" y="-6" width="30" height="12" rx="6" style="fill:#fff;stroke:#000;stroke-width:3"/>
 		</g>
 		<g id="cap2lx">
-			<rect x="-8.25" y="-8.25" width="34.5" height="16.5" rx="8.25" fill="#fff"/>
+			<rect x="-8.25" y="-8.25" width="34.5" height="16.5" rx="8.25" fill="#ffffff00"/>
 			<rect x="-6" y="-6" width="30" height="12" rx="6" style="fill:#fff;stroke:#999;stroke-width:3"/>
 		</g>
 		<g id="cap2nr" cursor="help">
-			<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.25" fill="#fff"/>
+			<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.25" fill="#ffffff00"/>
 			<rect x="-7" y="-7" width="28.5" height="14" rx="7" style="fill:#fff;stroke:#000;stroke-width:1"/>
 		</g>
 		<g id="cap3nr" cursor="help">
-			<rect x="-8.25" y="-8.25" width="38" height="16.5" rx="8.25" fill="#fff"/>
+			<rect x="-8.25" y="-8.25" width="38" height="16.5" rx="8.25" fill="#ffffff00"/>
 			<rect x="-7" y="-7" width="35.5" height="14" rx="7" style="fill:#fff;stroke:#000;stroke-width:1"/>
 		</g>
 		<g id="STRg"><path style="fill:#fff;stroke:none" d="M 0,0 L 3,3 v -2.5 L 0,-2.5 -3,0.5 v 2.5 z"/></g>
-		<g id="airport" transform="rotate(-90)scale(0.04)translate(-250,-250)" style="stroke:none;fill:#000">
+		<g id="airport" transform="rotate(-90)scale(0.04)translate(-250,-250)" style="stroke:none;fill:none">
 			<polygon points="490,250 450,225 320,225 170,10 140,10 200,225 80,225 30,150 10,150 30,240 30,260 10,350 30,350 80,275 200,275 140,490 170,490 320,275 450,275"/>
 			<ellipse cx="441" cy="250" rx="50" ry="24" stroke="#000"/>
 		</g>
@@ -267,7 +267,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			M 150,140 L 350,140 410,190 90,190
 			M 430,190 A 70,140 0 0,1 430,580 H 70 A 70,140 0 0,1 70,190
 			"/>
-			<path fill="#fff" d="
+			<path fill="#ffffff00" d="
 			M 430,220 A 70,190 0 0,1 500,380 H 0 A 70,190 0 0,1 70,220
 			"/>
 		</g>
@@ -288,19 +288,19 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			a 4,4 0 0,1 -7,0
 			h -1.5 a 2,2 0 0,1 -2,-2
 			"/>
-			<rect fill="#fff" x="1" y="-1" width="2" height="6" rx="0.5"/>
-			<rect fill="#fff" x="5" y="-2" width="4" height="3"/>
-			<rect fill="#fff" x="11" y="-2" width="4" height="3"/>
-			<rect fill="#fff" x="17" y="-2" width="4" height="3"/>
-			<rect fill="#fff" x="23" y="-2" width="4" height="3"/>
+			<rect fill="#ffffff00" x="1" y="-1" width="2" height="6" rx="0.5"/>
+			<rect fill="#ffffff00" x="5" y="-2" width="4" height="3"/>
+			<rect fill="#ffffff00" x="11" y="-2" width="4" height="3"/>
+			<rect fill="#ffffff00" x="17" y="-2" width="4" height="3"/>
+			<rect fill="#ffffff00" x="23" y="-2" width="4" height="3"/>
 		</g>
 	</defs>
 	<g id="bg">
 		<g style="visibility:visible" class="progress">
-			<rect x="-200" y="-200" width="3000" height="3000" style="fill:#fff"/>
+			<rect x="-200" y="-200" width="3000" height="3000" style="fill:none"/>
 			<g>
 				<title>Fare zone 1. If possible, avoid this zone in your journey and tap your touched-in Oyster card or contactless card at any pink card reader (route validator) for potential fare discount.</title>
-				<g style="fill:#ffffea;stroke:#eca;stroke-width:1">
+				<g style="fill:none;stroke:#eca;stroke-width:1">
 					<use xlink:href="#zone1_base"/>
 					<rect x="-20" y="-35" width="410" height="20" rx="10"/>
 				</g>
@@ -322,7 +322,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		<g id="zones" class="zone_layer" style="stroke:none;cursor:help">
 			<g id="zone9">
 				<title>Fare zone 9</title>
-				<rect x="-50" y="-150" width="2520" height="1360" fill="#fff"/>
+				<rect x="-50" y="-150" width="2520" height="1360" fill="#ffffff00"/>
 				<g class="zonefg b mid">
 					<text x="80" y="50">9</text><!--Chesham-->
 					<text x="2370" y="67">9</text><!--Brentwood-->
@@ -330,7 +330,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone8">
 				<title>Fare zone 8</title>
-				<path fill="#eee" d="
+				<path fill="#eeeeee00" d="
 				M 534,30
 				H 660 q 7.5,0 13.5,-4.5
 				l 400,-300
@@ -349,7 +349,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone7">
 				<title>Fare zone 7</title>
-				<path fill="#fff" d="
+				<path fill="#ffffff00" d="
 				M 534,111
 				H 625 q 7.5,0 13.5,-4.5
 				l 400,-300
@@ -375,7 +375,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone6">
 				<title>Fare zone 6</title>
-				<path fill="#eee" d="
+				<path fill="#ffffff00" d="
 				M 534,151
 				H 625 q 7.5,0 13.5,-4.5
 				l 400,-300
@@ -403,7 +403,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			<g id="Elizabeth_Line_beyond_eastern_boundary">
 				<title>Special fares apply. Oyster card not valid because of technical limitations. Use other contactless payments instead.</title>
 				<g id="Reading_zone_base">
-					<path fill="#e0ddff" d="
+					<path fill="#e0ddff00" d="
 					M -50,420
 					H 65 a 30,30 0 0,1 30,30
 					V 640 q 0,20 -16,32
@@ -415,7 +415,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone5">
 				<title>Fare zone 5</title>
-				<path fill="#fff" d="
+				<path fill="#ffffff00" d="
 				M 534,181
 				H 595 q 7.5,0 13.5,-4.5
 				l 324,-243 q 6,-4.5 13.5,-4.5
@@ -453,7 +453,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone4">
 				<title>Fare zone 4</title>
-				<path fill="#eee" d="
+				<path fill="#ffffff00" d="
 				M 545,259
 				H 615 a 20,20 0 0,0 20,-20
 				V 228 a 20,20 0 0,1 20,-20
@@ -498,7 +498,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone3">
 				<title>Fare zone 3</title>
-				<path fill="#fff" d="
+				<path fill="#ffffff00" d="
 				M 513,420
 				H 608 a 20,20 0 0,0 20,-20
 				V 336 q 0,-7.5 4.5,-13.5
@@ -553,7 +553,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone2">
 				<title>Fare zone 2</title>
-				<path fill="#eee" d="
+				<path fill="#ffffff00" d="
 				M 696.5,466
 				V 372 a 20,20 0 0,1 20,-20
 				H 781 a 20,20 0 0,0 20,-20
@@ -597,7 +597,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="zone1">
 				<title>Fare zone 1. If possible, avoid this zone in your journey and tap your touched-in Oyster card or contactless card at any pink card reader (route validator) for potential fare discount.</title>
-				<g fill="#fff">
+				<g fill="#ffffff00">
 					<path id="zone1_base" d="
 					M 871,590.375 q 0,-10 8,-16
 					L 1181.5,347.25 q 6,-4.5 13.5,-4.5
@@ -795,12 +795,12 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 			</g>
 			<g id="Watford_Junction_special_fare_zone">
 				<title>Watford Junction special fare zone</title>
-				<rect x="524" y="-20" width="150" height="50" rx="10" style="fill:#fed"/>
+				<rect x="524" y="-20" width="150" height="50" rx="10" style="fill:none"/>
 				<text x="596.5" y="-3" class="zonedf b mid">Special fares apply</text>
 			</g>
 			<g id="Shenfield_special_fare_zone">
 				<title>Shenfield special fare zone</title>
-				<path fill="#e0ddff" d="
+				<path fill="#e0ddff00" d="
 				M 2387,28 a 10,10 0 1,1 -20,0
 				h -104    a 10,10 0 0,1 -10,-10
 				v -18     a 10,10 0 0,1 10,-10
@@ -1355,8 +1355,8 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		</g>
 	</g>
 	<g id="key_to_symbols_box" transform="translate(1825,965)">
-		<rect x="0.5" y="0.5" width="210" height="230" rx="25" fill="#fff"/>
-		<path fill="#eee" stroke="none" d="
+		<rect x="0.5" y="0.5" width="210" height="230" rx="25" fill="#ffffff00"/>
+		<path fill="#ffffff00" stroke="none" d="
 		M 0,73 H 210 v 40 H 0 z
 		M 0,157 H 210 v 40 H 0 z
 		"/>
@@ -1393,8 +1393,8 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		</g>
 	</g>
 	<g id="key_to_lines_box" transform="translate(2045,840)">
-		<rect x="0.5" y="0.5" width="410" height="355" rx="25" fill="#fff"/>
-		<path fill="#eee" stroke="none" d="
+		<rect x="0.5" y="0.5" width="410" height="355" rx="25" fill="#ffffff00"/>
+		<path fill="#ffffff00" stroke="none" d="
 		M 0,185 H 410 v 90 H 0 z
 		M 0,310 H 410 V 330 a 25,25 0 0,1 -25,25 H 25 a 25,25 0 0,1 -25,-25 z
 		"/>
@@ -1477,61 +1477,61 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 					<set
 					begin="lbakerloo.click;Bakerloo_line_route.click"
 					end="bg.click;Thames_stripe.click;Bakerloo_line_blink.click;Bakerloo_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lbakerloo.click;Bakerloo_line_route.click"
 					end="bg.click;Thames_stripe.click;Bakerloo_line_blink.click;Bakerloo_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="40" class="toff fcentral scentral" id="Central_line_off" visibility="hidden">Central line
 					<set
 					begin="lcentral.click;Central_line_route.click"
 					end="bg.click;Thames_stripe.click;Central_line_blink.click;Central_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lcentral.click;Central_line_route.click"
 					end="bg.click;Thames_stripe.click;Central_line_blink.click;Central_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="62" class="toff fcircle scircle" id="Circle_line_off" visibility="hidden">Circle line
 					<set
 					begin="lcircle.click;Circle_line_route.click"
 					end="bg.click;Thames_stripe.click;Circle_line_blink.click;Circle_line_off.click;Circle_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lcircle.click;Circle_line_route.click"
 					end="bg.click;Thames_stripe.click;Circle_line_blink.click;Circle_line_off.click;Circle_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="84" class="toff fdistrict sdistrict" id="District_line_off" visibility="hidden">District line
 					<set
 					begin="ldistrict.click;District_line_route.click"
 					end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="ldistrict.click;District_line_route.click"
 					end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="106" class="toff fhnc shnc" id="Hammersmith_and_City_line_off" visibility="hidden">Hammersmith &amp; City line
 					<set
 					begin="lhnc.click;Hammersmith_and_City_line_route.click"
 					end="bg.click;Thames_stripe.click;Hammersmith_and_City_line_blink.click;Hammersmith_and_City_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lhnc.click;Hammersmith_and_City_line_route.click"
 					end="bg.click;Thames_stripe.click;Hammersmith_and_City_line_blink.click;Hammersmith_and_City_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="128" class="toff fjubilee sjubilee" id="Jubilee_line_off" visibility="hidden">Jubilee line
 					<set
 					begin="ljubilee.click;Jubilee_line_route.click"
 					end="bg.click;Thames_stripe.click;Jubilee_line_blink.click;Jubilee_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="ljubilee.click;Jubilee_line_route.click"
 					end="bg.click;Thames_stripe.click;Jubilee_line_blink.click;Jubilee_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<!--
 				begin="lmetropolitan.click;Metropolitan_line_route.click;Metropolitan_line_Croxley_extension.click"
@@ -1541,51 +1541,51 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 					<set
 					begin="lmetropolitan.click;Metropolitan_line_route.click"
 					end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lmetropolitan.click;Metropolitan_line_route.click"
 					end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="40" class="toff fnorthern snorthern" id="Northern_line_off" visibility="hidden">Northern line
 					<set
 					begin="lnorthern.click;Northern_line_route.click"
 					end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lnorthern.click;Northern_line_route.click"
 					end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="62" class="toff fpiccadilly spiccadilly" id="Piccadilly_line_off" visibility="hidden">Piccadilly line
 					<set
 					begin="lpiccadilly.click;Piccadilly_line_route.click"
 					end="bg.click;Thames_stripe.click;Piccadilly_line_blink.click;Piccadilly_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lpiccadilly.click;Piccadilly_line_route.click"
 					end="bg.click;Thames_stripe.click;Piccadilly_line_blink.click;Piccadilly_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="84" class="toff fvictoria svictoria" id="Victoria_line_off" visibility="hidden">Victoria line
 					<set
 					begin="lvictoria.click;Victoria_line_route.click"
 					end="bg.click;Thames_stripe.click;Victoria_line_blink.click;Victoria_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lvictoria.click;Victoria_line_route.click"
 					end="bg.click;Thames_stripe.click;Victoria_line_blink.click;Victoria_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="106" class="toff fwnc swnc" id="Waterloo_and_City_line_off" visibility="hidden">Waterloo &amp; City line
 					<set
 					begin="lwnc.click;Waterloo_and_City_line_route.click"
 					end="bg.click;Thames_stripe.click;Waterloo_and_City_line_blink.click;Waterloo_and_City_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lwnc.click;Waterloo_and_City_line_route.click"
 					end="bg.click;Thames_stripe.click;Waterloo_and_City_line_blink.click;Waterloo_and_City_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 			</g>
 			<g transform="translate(10,200)">
@@ -1602,61 +1602,61 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 					<set
 					begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 					end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 					end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="40" class="toff fmildmay smildmay" id="North_and_West_London_line_off" visibility="hidden">Mildmay line
 					<set
 					begin="lmildmay.click;Mildmay_lines_route.click;Mildmay_lines_route_stripe.click"
 					end="bg.click;North_and_West_London_lines_blink.click;North_and_West_London_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lmildmay.click;Mildmay_lines_route.click;Mildmay_lines_route_stripe.click"
 					end="bg.click;North_and_West_London_lines_blink.click;North_and_West_London_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="0" dy="62" class="toff fsuffragette ssuffragette" id="Suffragette_line_off" visibility="hidden">Suffragette line
 					<set
 					begin="lsuffragette.click;Suffragette_line_route.click;Suffragette_line_route_stripe.click"
 					end="bg.click;Suffragette_line_blink.click;Suffragette_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lsuffragette.click;Suffragette_line_route.click;Suffragette_line_route_stripe.click"
 					end="bg.click;Suffragette_line_blink.click;Suffragette_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="18" class="toff fwindrush swindrush" id="East_and_South_London_line_off" visibility="hidden">Windrush line
 					<set
 					begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 					end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 					end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="40" class="toff fweaver sweaver" id="Weaver_line_off" visibility="hidden">Weaver line
 					<set
 					begin="lweaver.click;Weaver_line_routes.click;Weaver_line_routes_stripe.click"
 					end="bg.click;Weaver_line_blink.click;Weaver_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lweaver.click;Weaver_line_routes.click;Weaver_line_routes_stripe.click"
 					end="bg.click;Weaver_line_blink.click;Weaver_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 				<text x="200" dy="62" class="toff fogromford sliberty" id="Romford_line_off" visibility="hidden">Liberty line
 					<set
 					begin="lliberty.click;Liberty_line_route.click;Liberty_line_route_stripe.click"
 					end="bg.click;Liberty_line_blink.click;Romford_line_off.click"
-					attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+					attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 					<animate
 					begin="lliberty.click;Liberty_line_route.click;Liberty_line_route_stripe.click"
 					end="bg.click;Liberty_line_blink.click;Romford_line_off.click"
-					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+					attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 				</text>
 			</g>
 			<text x="10" y="295" class="tleg" id="lelizabeth">Elizabeth line (Crossrail)</text>
@@ -1664,22 +1664,22 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lelizabeth.click;Elizabeth_route.click;Elizabeth_stripe.click;Elizabeth_branch_east_stripe.click"
 				end="bg.click;Elizabeth_blink.click;Elizabeth_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lelizabeth.click;Elizabeth_route.click;Elizabeth_stripe.click;Elizabeth_branch_east_stripe.click"
 				end="bg.click;Elizabeth_blink.click;Elizabeth_off.click"
-				attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+				attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 			</text>
 			<text x="10" y="330" class="tleg" id="ldlr">Docklands Light Railway (DLR)</text>
 			<text x="10" y="330" class="toff fdlr sdlr" id="DLR_off" visibility="hidden">Docklands Light Railway (DLR)
 				<set
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click"
-				attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="remove"/>
+				attributeName="stroke-width" attributeType="CSS" values="0; 2; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" dur="0.5s" fill="none"/>
 			</text>
 			<text x="250" y="330" id="ltr">Tramlink</text>
 		</g>
@@ -1704,11 +1704,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lelizabeth.click;Elizabeth_route.click;Elizabeth_stripe.click;Elizabeth_branch_east_stripe.click"
 				end="bg.click;Elizabeth_blink.click;Elizabeth_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lelizabeth.click;Elizabeth_route.click;Elizabeth_stripe.click;Elizabeth_branch_east_stripe.click"
 				end="bg.click;Elizabeth_blink.click;Elizabeth_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1718,11 +1718,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lwnc.click;Waterloo_and_City_line_route.click"
 				end="bg.click;Thames_stripe.click;Waterloo_and_City_line_blink.click;Waterloo_and_City_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lwnc.click;Waterloo_and_City_line_route.click"
 				end="bg.click;Thames_stripe.click;Waterloo_and_City_line_blink.click;Waterloo_and_City_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1732,11 +1732,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="ljubilee.click;Jubilee_line_route.click"
 				end="bg.click;Thames_stripe.click;Jubilee_line_blink.click;Jubilee_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ljubilee.click;Jubilee_line_route.click"
 				end="bg.click;Thames_stripe.click;Jubilee_line_blink.click;Jubilee_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1746,11 +1746,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lcentral.click;Central_line_route.click;Central_line_route_over.click"
 				end="bg.click;Thames_stripe.click;Central_line_blink.click;Central_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lcentral.click;Central_line_route.click;Central_line_route_over.click"
 				end="bg.click;Thames_stripe.click;Central_line_blink.click;Central_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1760,11 +1760,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lnorthern.click;Northern_line_route.click"
 				end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lnorthern.click;Northern_line_route.click"
 				end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1774,11 +1774,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lnorthern.click;Northern_line_route.click"
 				end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lnorthern.click;Northern_line_route.click"
 				end="bg.click;Thames_stripe.click;Northern_line_blink.click;Northern_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1788,11 +1788,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lvictoria.click;Victoria_line_route.click"
 				end="bg.click;Thames_stripe.click;Victoria_line_blink.click;Victoria_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lvictoria.click;Victoria_line_route.click"
 				end="bg.click;Thames_stripe.click;Victoria_line_blink.click;Victoria_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1802,11 +1802,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lbakerloo.click;Bakerloo_line_route.click"
 				end="bg.click;Thames_stripe.click;Bakerloo_line_blink.click;Bakerloo_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lbakerloo.click;Bakerloo_line_route.click"
 				end="bg.click;Thames_stripe.click;Bakerloo_line_blink.click;Bakerloo_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1816,11 +1816,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lpiccadilly.click;Piccadilly_line_route.click"
 				end="bg.click;Thames_stripe.click;Piccadilly_line_blink.click;Piccadilly_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lpiccadilly.click;Piccadilly_line_route.click"
 				end="bg.click;Thames_stripe.click;Piccadilly_line_blink.click;Piccadilly_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1830,11 +1830,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click;DLR_over_blink.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click;DLR_over_blink.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1844,11 +1844,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="ldistrict.click;District_line_route.click;District_Olympia_branch.click;District_Olympia_branch_stripe.click"
 				end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ldistrict.click;District_line_route.click;District_Olympia_branch.click;District_Olympia_branch_stripe.click"
 				end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1858,11 +1858,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="ldistrict.click;District_line_route.click;District_Olympia_branch.click;District_Olympia_branch_stripe.click"
 				end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ldistrict.click;District_line_route.click;District_Olympia_branch.click;District_Olympia_branch_stripe.click"
 				end="bg.click;Thames_stripe.click;District_line_blink.click;District_Olympia_branch_blink.click;District_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1872,11 +1872,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lmildmay.click;Mildmay_lines_route.click;Mildmay_lines_route_stripe.click"
 				end="bg.click;North_and_West_London_lines_blink.click;North_and_West_London_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lmildmay.click;Mildmay_lines_route.click;Mildmay_lines_route_stripe.click"
 				end="bg.click;North_and_West_London_lines_blink.click;North_and_West_London_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1886,11 +1886,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lhnc.click;Hammersmith_and_City_line_route.click"
 				end="bg.click;Thames_stripe.click;Hammersmith_and_City_line_blink.click;Hammersmith_and_City_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lhnc.click;Hammersmith_and_City_line_route.click" 
 				end="bg.click;Thames_stripe.click;Hammersmith_and_City_line_blink.click;Hammersmith_and_City_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1900,11 +1900,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lcircle.click;Circle_line_route.click"
 				end="bg.click;Thames_stripe.click;Circle_line_blink.click;Circle_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lcircle.click;Circle_line_route.click"
 				end="bg.click;Thames_stripe.click;Circle_line_blink.click;Circle_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1914,11 +1914,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 				end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 				end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1929,11 +1929,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lmetropolitan.click;Metropolitan_line_route.click;Metropolitan_line_Croxley_extension.click"
 				end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click;Metropolitan_line_Croxley_extension_blink.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lmetropolitan.click;Metropolitan_line_route.click;Metropolitan_line_Croxley_extension.click"
 				end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click;Metropolitan_line_Croxley_extension_blink.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1948,11 +1948,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lmetropolitan.click;Metropolitan_line_route.click"
 				end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lmetropolitan.click;Metropolitan_line_route.click"
 				end="bg.click;Thames_stripe.click;Metropolitan_line_blink.click;Metropolitan_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1962,11 +1962,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 				end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="llioness.click;Lioness_line_route.click;Lioness_line_route_over.click;Lioness_line_over_stripe.click;Lioness_line_stripe.click"
 				end="bg.click;Lioness_line_blink.click;Lioness_line_blink_over.click;Lioness_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1976,11 +1976,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lsuffragette.click;Suffragette_line_route.click;Suffragette_line_route_stripe.click"
 				end="bg.click;Suffragette_line_blink.click;Suffragette_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lsuffragette.click;Suffragette_line_route.click;Suffragette_line_route_stripe.click"
 				end="bg.click;Suffragette_line_blink.click;Suffragette_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -1990,11 +1990,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lweaver.click;Weaver_line_routes.click;Weaver_line_routes_stripe.click"
 				end="bg.click;Weaver_line_blink.click;Weaver_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lweaver.click;Weaver_line_routes.click;Weaver_line_routes_stripe.click"
 				end="bg.click;Weaver_line_blink.click;Weaver_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -2004,11 +2004,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lliberty.click;Liberty_line_route.click;Liberty_line_route_stripe.click"
 				end="bg.click;Liberty_line_blink.click;Romford_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lliberty.click;Liberty_line_route.click;Liberty_line_route_stripe.click"
 				end="bg.click;Liberty_line_blink.click;Romford_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -2018,11 +2018,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 				end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 				end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -2032,11 +2032,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 				end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="lwindrush.click;Windrush_line_Battersea_Park_branch.click;Windrush_line_route.click;Windrush_line_route_stripe.click;Windrush_line_Battersea_Park_branch_stripe.click"
 				end="bg.click;Windrush_line_blink.click;Windrush_line_Battersea_Park_branch_blink.click;East_and_South_London_line_off.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -2046,11 +2046,11 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<set
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click;DLR_over_blink.click"
-				attributeName="visibility" attributeType="CSS" to="visible" fill="remove"/>
+				attributeName="visibility" attributeType="CSS" to="visible" fill="none"/>
 				<animate
 				begin="ldlr.click;DLR_routes.click;DLR_routes_stripe.click;DLR_route_over.click;DLR_route_stripe_over.click"
 				end="bg.click;Thames_stripe.click;DLR_blink.click;DLR_off.click;DLR_over_blink.click"
-				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="remove" repeatCount="indefinite"
+				attributeName="opacity" attributeType="CSS" dur="0.5s" fill="none" repeatCount="indefinite"
 				values="0; 1; 0" keyTimes="0; 0.5; 1"/>
 			</use>
 		</g>
@@ -2096,10 +2096,10 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				</g>
 				<use xlink:href="#Fenchurch_Street_osi_base" class="osi" style="stroke:#ef2721"/>
 				<g transform="translate(1582.25,563.25)">
-					<ellipse fill="#fff" rx="8" ry="6"/>
+					<ellipse fill="#ffffff00" rx="8" ry="6"/>
 					<use xlink:href="#nr"/>
 				</g>
-				<text transform="translate(1575,560)scale(0.9,1)" class="end" style="fill:#ef2721;font-size:10px">Fenchurch Street</text>
+				<text transform="translate(1575,560)scale(0.9,1)" class="end" style="fill:none;font-size:10px">Fenchurch Street</text>
 			</g>
 			<g id="Aldgate">
 				<g>
@@ -2137,8 +2137,8 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<g id="Bank_Monument_hub">
 					<title>Free out-of-station interchange between all Bank-Monument gatelines within 15 minutes.</title>
 					<path d="M 0,0 l 20.25,27" style="stroke:#fff;stroke-width:7.5"/>
-					<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.5" fill="#fff" transform="rotate(53.13)"/>
-					<circle cx="20.25" cy="27" r="8.25" fill="#fff"/>
+					<rect x="-8.25" y="-8.25" width="31" height="16.5" rx="8.5" fill="#ffffff00" transform="rotate(53.13)"/>
+					<circle cx="20.25" cy="27" r="8.25" fill="#ffffff00"/>
 					<rect x="-6" y="-6" width="26.5" height="12" rx="6" style="stroke:#000;stroke-width:3" transform="rotate(53.13)"/>
 					<circle cx="20.25" cy="27" r="6" style="stroke:#000;stroke-width:3"/>
 					<path d="M 0,0 l 20.25,27" style="stroke:#000;stroke-width:6"/>
@@ -3171,7 +3171,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 	</g>
 	<defs>
 		<g id="wheelchair" transform="scale(0.05,0.05)">
-			<circle cx="0" cy="0" r="150" style="fill:#034EA2;stroke:#034EA2;stroke-width:40"/>
+			<circle cx="0" cy="0" r="150" style="fill:none;stroke:#034EA2;stroke-width:40"/>
 			<g fill="white">
 				<path d="M -51,44 A 57.5,57.5 0 1 0 43,-15 L 46,-40 A 80,80 0 1 1 -63,69"/>
 				<circle cx="25" cy="-100" r="22"/>
@@ -3187,7 +3187,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 		</g>
 		<g id="x_acc">
 			<circle cx="0" cy="0" r="7.5" style="fill:#fff;stroke:#034EA2;stroke-width:1"/>
-			<path id="x_arrow" style="fill:#034EA2;stroke:none" d="
+			<path id="x_arrow" style="fill:none;stroke:none" d="
 			M -4,-3 c 3,-3.5 9.5,-3.5 9.5,4
 			l -6,-2.5 3,-1.5
 			C 0,-5.5 -3.5,-2.5 -4,-3
@@ -3252,7 +3252,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<use xlink:href="#crutch" x="224" y="509.4"/>
 				<g>
 					<use xlink:href="#x_acc" x="224" y="509.4"/>
-					<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0.5;0;0;1;1;0.5" keyTimes="0;0.1;0.4;0.6;0.9;1" dur="2.5s" fill="freeze"/>
+					<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0.5;0;0;1;1;0.5" keyTimes="0;0.1;0.4;0.6;0.9;1" dur="2.5s" fill="none"/>
 				</g>
 			</g>
 			<use xlink:href="#x_acc" x="1812.5" y="445" id="Mile_End_acc">
@@ -3452,7 +3452,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 				<!--Elizabeth line-->
 				<use xlink:href="#crutch" x="2257" y="118" id="Romford_acc"/>
 				<use xlink:href="#crutch" x="2377" y="28" id="Shenfield_acc"/>
-				<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0.5;0;0;1;1;0.5" keyTimes="0;0.1;0.4;0.6;0.9;1" dur="2.5s" fill="freeze"/>
+				<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0.5;0;0;1;1;0.5" keyTimes="0;0.1;0.4;0.6;0.9;1" dur="2.5s" fill="none"/>
 			</g>
 			<g id="flashing_acc_triplet">
 				<!--Central line-->
@@ -3476,7 +3476,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 					<title>Only Overground station provides step-free access from street to platform. The rest is inaccessible to mobility-disabled users. Platforms of Victoria line and National Rail of the same directions are arranged in cross-platform interchange layouts.</title>
 					<use xlink:href="#x_acc" x="1420" y="300" id="Highbury_and_Islington_Victoria_NR_acc"/>
 				</g>
-				<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.23;0.43;0.57;0.77;1" dur="3.5s" fill="freeze"/>
+				<animate attributeName="opacity" attributeType="CSS" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.23;0.43;0.57;0.77;1" dur="3.5s" fill="none"/>
 			</g>
 		</g>
 		<set begin="acc_switch_base.click"
@@ -3485,7 +3485,7 @@ text {font-family:Arimo,Liberation Sans,HammersmithOne,Helvetica,Arial,sans-seri
 	</g>
 	<defs>
 		<g id="rv">
-			<circle cx="0" cy="0" r="10" style="fill:#f6c;stroke:#f6c;stroke-width:1"/>
+			<circle cx="0" cy="0" r="10" style="fill:none;stroke:#f6c;stroke-width:1"/>
 			<text style="font-size:11px;fill:#fff" y="4" class="b mid">RV</text>
 		</g>
 	</defs>

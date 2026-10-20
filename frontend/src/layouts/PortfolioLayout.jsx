@@ -1,10 +1,11 @@
-
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import PortfolioNav from '../components/portfolio/PortfolioNav';
 import PortfolioFooter from '../components/portfolio/PortfolioFooter';
 import AboutChat from '../components/portfolio/AboutChat';
 import ZebioAvatar from '../components/portfolio/ZebioAvatar';
+import SmoothScroll from '../components/portfolio/SmoothScroll';
+import MouseLight from '../components/portfolio/MouseLight';
 import '../styles/portfolio.css';
 
 function PortfolioLayout() {
@@ -12,6 +13,10 @@ function PortfolioLayout() {
 
   return (
     <div className="portfolio-site">
+      {/* Global ambience — once per site */}
+      <SmoothScroll />
+      <MouseLight />
+
       <PortfolioNav onOpenChat={() => setIsChatOpen(true)} />
 
       <Outlet />
