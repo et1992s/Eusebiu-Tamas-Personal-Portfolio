@@ -1,4 +1,4 @@
-﻿html {
+html {
   scroll-behavior: smooth;
 }
 
@@ -702,12 +702,25 @@
 
 .portfolio-nav {
   position: sticky;
-  top: 0;
+  top: 24px; /* Floats away from the top edge */
   z-index: 20;
-  width: 100%;
-  border-bottom: 3px solid var(--portfolio-border-subtle);
-  background: color-mix(in srgb, var(--portfolio-background) 90%, transparent);
-  backdrop-filter: blur(5px);
+  width: calc(100% - 48px);
+  max-width: 1100px; /* Controls the width of the pill */
+  margin: 0 auto; /* Centers it horizontally */
+  border-radius: 999px; /* Perfect pill shape */
+
+  /* Glassmorphism Background */
+  background: var(--portfolio-surface);
+  backdrop-filter: blur(5px) saturate(150%);
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+
+  /* Glass Borders & Shadows */
+  border: 1px solid var(--portfolio-border);
+  box-shadow:
+    0 10px 30px var(--portfolio-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Top inner highlight */
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .portfolio-nav:has(.portfolio-mobile-menu-backdrop) {
@@ -715,13 +728,13 @@
 }
 
 .portfolio-nav-inner {
-  width: min(calc(100% - 48px), 1180px);
-  min-height: 50px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  min-height: 64px; /* Slightly taller for the pill look */
+  max-width: 1090px;
+  padding: 0 10px; /* Padding inside the pill */
+  gap: 20px;
 }
 
 .portfolio-nav-controls {
@@ -970,11 +983,11 @@
   color: var(--portfolio-text-secondary);
   cursor: pointer;
   transition:
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    color 350ms ease-in-out,
+    background-color 350ms ease-in-out,
+    border-color 350ms ease-in-out,
+    box-shadow 350ms ease-in-out,
+    transform 200ms ease;
 }
 
 .portfolio-theme-toggle:hover {
@@ -1046,7 +1059,7 @@
 
 .portfolio-zebio-menu .Zebio-avatar {
   position: relative;
-  top: 9px;
+  top: 12px;
   display: block;
   flex: none;
   width: 70px;
@@ -1212,7 +1225,7 @@
 }
 
 @media (max-width: 600px) {
-  .portfolio-zebio-menu { margin: 0 5px -10px 3px; }
+  .portfolio-zebio-menu { margin: 0 5px 0px 3px; }
   .portfolio-zebio-popover {
     right: -8px;
     width: min(260px, calc(100vw - 24px));
@@ -3137,7 +3150,7 @@
 
   /* Nav layout */
   .portfolio-nav-inner {
-    width: min(calc(100% - 32px), 1180px);
+    width: min(calc(100% - 10px), 1180px);
     min-height: 64px;
     gap: 12px;
   }
@@ -3409,4 +3422,81 @@ html.lenis body {
     var(--portfolio-background) 82%,
     transparent
   );
+}
+/* =========================================================
+   THEME TRANSITION — Smooth Light/Dark Switching
+========================================================= */
+
+/* Apply transitions to the structural elements and cards */
+.portfolio-site,
+.portfolio-nav,
+.portfolio-project-card,
+.portfolio-about-card,
+.portfolio-about-prompt,
+.portfolio-about-chat-form,
+.portfolio-profile-skill-group,
+.portfolio-profile-education-entry,
+.portfolio-profile-experience-entry,
+.portfolio-profile-certification-list li,
+.portfolio-cv-section,
+.portfolio-contact-form input,
+.portfolio-contact-form textarea,
+.portfolio-footer {
+  transition:
+    background-color 360ms ease-in-out,
+    color 360ms ease-in-out,
+    border-color 360ms ease-in-out,
+    box-shadow 360ms ease-in-out;
+}
+
+/* Smooth out the complex pseudo-element backgrounds */
+.portfolio-page::before,
+.portfolio-home::before {
+  transition:
+    background-color 360ms ease-in-out,
+    opacity 360ms ease-in-out;
+}
+
+/* Ensure text elements transition smoothly when the theme changes */
+.portfolio-site h1,
+.portfolio-site h2,
+.portfolio-site h3,
+.portfolio-site h4,
+.portfolio-site p,
+.portfolio-site span,
+.portfolio-site a,
+.portfolio-site strong {
+  transition:
+    color 360ms ease-in-out,
+    border-color 360ms ease-in-out;
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-site,
+  .portfolio-nav,
+  .portfolio-project-card,
+  .portfolio-about-card,
+  .portfolio-about-prompt,
+  .portfolio-about-chat-form,
+  .portfolio-profile-skill-group,
+  .portfolio-profile-education-entry,
+  .portfolio-profile-experience-entry,
+  .portfolio-profile-certification-list li,
+  .portfolio-cv-section,
+  .portfolio-contact-form input,
+  .portfolio-contact-form textarea,
+  .portfolio-footer,
+  .portfolio-page::before,
+  .portfolio-home::before,
+  .portfolio-site h1,
+  .portfolio-site h2,
+  .portfolio-site h3,
+  .portfolio-site h4,
+  .portfolio-site p,
+  .portfolio-site span,
+  .portfolio-site a,
+  .portfolio-site strong {
+    transition: none !important;
+  }
 }

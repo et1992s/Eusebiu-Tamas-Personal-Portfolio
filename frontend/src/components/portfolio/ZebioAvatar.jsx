@@ -1,4 +1,4 @@
-﻿
+
 import { useEffect, useRef, useState } from 'react';
 import avatarSvg from '../../assets/avatar.svg?raw';
 
@@ -67,11 +67,7 @@ function playZebioSound(type) {
   }
 }
 
-function ZebioAvatar({
-  active = false,
-  onMoodChange,
-  onClick,
-}) {
+function ZebioAvatar({ active = false, onMoodChange }) {
   const [amazed, setAmazed] = useState(false);
   const moodTimeoutRef = useRef(null);
   const avatarArtRef = useRef(null);
@@ -83,49 +79,48 @@ function ZebioAvatar({
     }
   }, [active]);
 
-  useEffect(() => {
-    const svg = avatarArtRef.current?.querySelector('svg');
+useEffect(() => {
+  const svg = avatarArtRef.current?.querySelector('svg');
 
-    if (!svg) return undefined;
+  if (!svg) return undefined;
 
-    const pupils = svg.querySelectorAll('.eye-tracking-pupil');
+  const pupils = svg.querySelectorAll('.eye-tracking-pupil');
 
-    const resetGaze = () => {
-      pupils.forEach((pupil) => {
-        pupil.setAttribute('transform', 'translate(0 0)');
-      });
-    };
+  const resetGaze = () => {
+    pupils.forEach((pupil) => {
+      pupil.setAttribute('transform', 'translate(0 0)');
+    });
+  };
 
-    if (!active) {
-      resetGaze();
-      return undefined;
-    }
+  if (!active) {
+    resetGaze();
+    return undefined;
+  }
 
-    const handlePointerMove = (event) => {
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
+  const handlePointerMove = (event) => {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
-      const x = clamp((event.clientX - centerX) / 35, -5, 5);
-      const y = clamp((event.clientY - centerY) / 45, -4, 4);
+    const x = clamp((event.clientX - centerX) / 35, -5, 5);
+    const y = clamp((event.clientY - centerY) / 45, -4, 4);
 
-      pupils.forEach((pupil) => {
-        pupil.setAttribute('transform', `translate(${x} ${y})`);
-      });
-    };
+    pupils.forEach((pupil) => {
+      pupil.setAttribute('transform', `translate(${x} ${y})`);
+    });
+  };
 
-    window.addEventListener('pointermove', handlePointerMove);
+  window.addEventListener('pointermove', handlePointerMove);
 
-    return () => {
-      window.removeEventListener('pointermove', handlePointerMove);
-      resetGaze();
-    };
-  }, [active]);
+  return () => {
+    window.removeEventListener('pointermove', handlePointerMove);
+    resetGaze();
+  };
+}, [active]);
 
 
 
   const toggleMood = () => {
     playZebioSound('click');
-    onClick?.();
 
     if (moodTimeoutRef.current) {
       window.clearTimeout(moodTimeoutRef.current);
