@@ -7,7 +7,6 @@ import ZebioAvatar from '../components/portfolio/ZebioAvatar';
 import SmoothScroll from '../components/portfolio/SmoothScroll';
 import MouseLight from '../components/portfolio/MouseLight';
 import '../styles/portfolio.css';
-import '../styles/jobTracker.css';
 
 function PortfolioLayout() {
   const [isChatOpen, setIsChatOpen] = useState(false);
